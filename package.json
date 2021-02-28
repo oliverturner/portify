@@ -1,0 +1,27 @@
+{
+  "name": "portify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Oliver Turner",
+  "license": "ISC",
+  "dependencies": {
+    "@architect/functions": "3.13.9",
+    "@architect/sandbox": "3.3.6",
+    "tiny-json-http": "7.3.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "1.0.7",
+    "@types/spotify-api": "0.0.7",
+    "cross-env": "7.0.3",
+    "nock": "13.0.9",
+    "npm-run-all": "4.1.5",
+    "tap-spec": "5.0.0",
+    "tape": "5.2.1"
+  },
+  "scripts": {
+    "test:arc": "cross-env NODE_ENV=testing PORT=6666 tape ./test/**/*.spec.js | tap-spec",
+    "test": "run-s test:*"
+  }
+}

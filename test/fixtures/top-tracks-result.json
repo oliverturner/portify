@@ -1,0 +1,42 @@
+{
+  "1rWmUQ5HVtoswLviuK0OwH": {
+    "id": "1rWmUQ5HVtoswLviuK0OwH",
+    "artists": [
+      { "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
+      { "id": "7sMOGsm8T0YZ230abl9TcP", "name": "Nōpi" }
+    ],
+    "name": "Consciousness Switch",
+    "audio": {
+      "keys": { "camelot": "7B", "musical": "F" },
+      "bpm": 122,
+      "analysis_url": "https://api.spotify.com/v1/audio-analysis/1rWmUQ5HVtoswLviuK0OwH"
+    }
+  },
+  "1bVNOAzR9giwIivkcshTpP": {
+    "id": "1bVNOAzR9giwIivkcshTpP",
+    "artists": [
+      { "id": "1TqcQwnBqloJrKkGs4l4LT", "name": "D-Nox" },
+      { "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" }
+    ],
+    "name": "Passion - Original Mix",
+    "audio": {
+      "keys": { "camelot": "9B", "musical": "G" },
+      "bpm": 123,
+      "analysis_url": "https://api.spotify.com/v1/audio-analysis/1bVNOAzR9giwIivkcshTpP"
+    }
+  },
+  "5iE3PyNL1BxMBTLkq5iLIM": {
+    "id": "5iE3PyNL1BxMBTLkq5iLIM",
+    "artists": [
+      { "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" },
+      { "id": "2q4QQApDOk5PUdFGWfHmJR", "name": "Max Freegrant" },
+      { "id": "3m91RDu6WNtDGSHblWjZ7w", "name": "Slow Fish" }
+    ],
+    "name": "Listen - Max Freegrant & Slow Fish Remix",
+    "audio": {
+      "keys": { "camelot": "3B", "musical": "C♯, D♭" },
+      "bpm": 123,
+      "analysis_url": "https://api.spotify.com/v1/audio-analysis/5iE3PyNL1BxMBTLkq5iLIM"
+    }
+  }
+}
