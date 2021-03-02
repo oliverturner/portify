@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/tiny-json-http/index.d.ts b/node_modules/@types/tiny-json-http/index.d.ts
+index 8c14023..b375740 100644
+--- a/node_modules/@types/tiny-json-http/index.d.ts
++++ b/node_modules/@types/tiny-json-http/index.d.ts
+@@ -5,7 +5,7 @@
+ 
+ declare namespace TinyJsonHttp {
+   interface Options {
+-    url: string;
++    url: URL | string;
+     data?: any;
+     headers?: any;
+     /**

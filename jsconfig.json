@@ -16,9 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@typings/*": ["typings/*"],
-      "@architect/shared/*": ["shared/*"]
+      "@architect/shared/*": ["src/shared/*"]
     }
   },
-  "include": ["./typings", "./src", "shared"],
+  "include": ["./typings", "./src"],
   "exclude": ["node_modules"]
 }
