@@ -1,5 +1,5 @@
 {
-  "pitches": {
+  "camelot": {
     "minor": [
       "5A",
       "12A",
@@ -29,7 +29,7 @@
       "1B"
     ]
   },
-  "tones": {
+  "musical": {
     "minor": [
       "Cm",
       "D♭m",

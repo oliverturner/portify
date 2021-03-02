@@ -14,6 +14,7 @@
   "devDependencies": {
     "@tsconfig/node12": "1.0.7",
     "@types/spotify-api": "0.0.7",
+    "@types/tiny-json-http": "7.3.0",
     "cross-env": "7.0.3",
     "nock": "13.0.9",
     "npm-run-all": "4.1.5",
@@ -21,6 +22,15 @@
     "tape": "5.2.1"
   },
   "scripts": {
+    "build:rollup": "rollup -c",
+    "build": "run-s build:*",
+    "dev": "rollup -c -w",
+    "lint": "eslint src --fix",
+    "start": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
+    "deploy:build": "npm run build",
+    "deploy:arc": "npx arc deploy",
+    "deploy": "run-s deploy:*",
+    "test:types": "tsc -p jsconfig.json",
     "test:arc": "cross-env NODE_ENV=testing PORT=6666 tape ./test/**/*.spec.js | tap-spec",
     "test": "run-s test:*"
   }

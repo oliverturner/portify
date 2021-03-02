@@ -12,12 +12,13 @@
       "es2020.string"
     ],
     "noEmit": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@typings/*": ["typings/*"],
-      "@architect/shared/*": ["src/shared/*"]
+      "@architect/shared/*": ["shared/*"]
     }
   },
-  "include": ["./typings", "./src"],
+  "include": ["./typings", "./src", "shared"],
   "exclude": ["node_modules"]
 }

@@ -3,8 +3,10 @@ const test = require("tape");
 const sandbox = require("@architect/sandbox");
 const nock = require("nock");
 
-const { ROOT_URL, getTop } = require("../../../src/http/api/top");
-const apiUrl = `${ROOT_URL}/v1`;
+const { getTop } = require("../../../src/http/get-api-top");
+const { ROOT_URL, API_VERSION } = require("../../../src/shared/utils");
+
+const apiUrl = `${ROOT_URL}/${API_VERSION}`;
 
 const fixturePath = __dirname + "../../../fixtures";
 const topTracksResult = require(`${fixturePath}/top-tracks-result.json`);
