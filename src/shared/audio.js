@@ -2,10 +2,10 @@
  * @typedef {import("@typings/app").TrackItemAudio} TrackItemAudio
  */
 
-const { urlBuilder } = require("./utils");
 const { get } = require("tiny-json-http");
 
-const notation = require("../../data/notation.json");
+const { urlBuilder } = require("./utils");
+const notation = require("./notation.json");
 
 /**
  * @param {string[]} ids
