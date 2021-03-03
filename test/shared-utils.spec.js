@@ -6,9 +6,10 @@ const { buildUrl } = require("../src/shared/utils");
  * Sandbox / http test
  * - Demonstrates execising basic web integration tests using the local dev server
  */
-test("Set up env", (t) => {
+test("Set up env", async (t) => {
   t.plan(1);
-  t.ok(sandbox, "sandbox loaded");
+  await sandbox.start();
+  t.ok(true, "started");
 });
 
 test("Build request", async (t) => {
@@ -38,7 +39,7 @@ test("Build request", async (t) => {
 
 test("Shut down sandbox", async (t) => {
   console.log(process.env);
-  
+
   t.plan(1);
   let result = await sandbox.end();
   t.equal(result, "Sandbox successfully shut down");

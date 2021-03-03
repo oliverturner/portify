@@ -13,9 +13,10 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-test("Set up env", (t) => {
+test("Set up env", async (t) => {
   t.plan(1);
-  t.ok(sandbox, "sandbox loaded");
+  await sandbox.start();
+  t.ok(true, "started");
 });
 
 test("Mock request", async (t) => {

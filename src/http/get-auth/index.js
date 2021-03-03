@@ -1,4 +1,8 @@
-// learn more about HTTP functions here: https://arc.codes/primitives/http
+/**
+ * @typedef {import("@architect/functions").HttpHandler} HttpHandler
+ */
+
+/** @type {HttpHandler} */
 exports.handler = async function http (req) {
   return {
     statusCode: 200,

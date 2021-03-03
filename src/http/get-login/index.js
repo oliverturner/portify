@@ -1,5 +1,7 @@
 /**
  * @typedef {import("@architect/functions").HttpHandler} HttpHandler
+ * @typedef {import("@architect/functions").HttpRequest} HttpRequest
+ * @typedef {import("@architect/functions").HttpResponse} HttpResponse
  */
 
 const { http } = require("@architect/functions");
@@ -30,6 +32,11 @@ const loginURL = buildUrl({
 
 const defaultSession = { user: undefined };
 
+/**
+ * 
+ * @param {HttpRequest} req 
+ * @returns {Promise<HttpResponse>}
+ */
 /** @type {HttpHandler} */
 const login = async (req) => {
   const { user } = req.session || defaultSession;
