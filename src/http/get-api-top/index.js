@@ -9,8 +9,8 @@
 const { http } = require('@architect/functions')
 const { get } = require('tiny-json-http')
 
-const { urlBuilder } = require('@architect/shared/utils')
-const { getAudioData, processItemAudio } = require('@architect/shared/audio')
+const { buildUrl } = require("@architect/shared/utils");
+const { getAudioData, processItemAudio } = require("@architect/shared/audio");
 
 /** @type {TimeRange} */
 const TIME_RANGE = 'short_term'
@@ -33,9 +33,12 @@ function processItem (item) {
  * @returns
  */
 const getTop = async (req, headers = {}) => {
-  const { limit = LIMIT, time_range = TIME_RANGE } = req.query
-  const url = urlBuilder('/me/top/tracks', { time_range, limit })
-  const topTrackRes = (await get({ url, headers })).body
+  const { limit = LIMIT, time_range = TIME_RANGE } = req.query;
+  const url = buildUrl({
+    path: "/me/top/tracks",
+    params: { time_range, limit },
+  });
+  const topTrackRes = (await get({ url, headers })).body;
 
   /** @type {Record<string, TrackItem>} */
   const trackItemDict = {}

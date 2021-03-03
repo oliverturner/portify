@@ -4,16 +4,21 @@
 
 const { get } = require('tiny-json-http')
 
+<<<<<<< HEAD
 const { urlBuilder } = require('./utils')
 const notation = require('./notation.json')
+=======
+const { buildUrl } = require("./utils");
+const notation = require("./notation.json");
+>>>>>>> c8b65cf (Add unit tests for utils)
 
 /**
  * @param {string[]} ids
  * @returns { Promise<{body: {audio_features: SpotifyApi.AudioFeaturesObject[]}}> }
  */
-function getAudioData (ids) {
-  const headers = {}
-  const url = urlBuilder('/audio-features', { ids })
+function getAudioData(ids) {
+  const headers = {};
+  const url = buildUrl({ path: "/audio-features", params: { ids } });
 
   return get({ url, headers })
 }

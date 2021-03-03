@@ -1,21 +1,27 @@
-const ROOT_URL = 'https://api.spotify.com'
-const API_VERSION = 'v1'
+const {
+  SPOTIFY_API_URL: apiUrl = "https://local.portify.test",
+  SPOTIFY_API_VERSION: apiVersion = "v0",
+} = process.env;
 
 /**
- * @param {string} path
- * @param {Record<string, unknown>} params
- * @param {boolean} toString
+ * @param {{
+ *   base?: string;
+ *   path: string;
+ *   params?: Record<string, unknown>;
+ *   asObject?: boolean;
+ * }} params
  *
  * @returns {URL|string}
  */
-function urlBuilder (path, params, toString = true) {
-  const url = new URL(`${API_VERSION}${path}`, ROOT_URL)
+function buildUrl({ base = apiUrl, path, params = {}, asObject = false }) {
+  const prefix = base === apiUrl ? apiVersion : "";
+  const url = new URL(`${prefix}${path}`, base);
 
   for (const [ key, val ] of Object.entries(params)) {
     url.searchParams.set(key, String(val))
   }
 
-  return toString ? url.toString() : url
+  return asObject ? url : url.toString();
 }
 
 /**
@@ -36,8 +42,6 @@ function filterProps (target, keys = []) {
 }
 
 module.exports = {
-  ROOT_URL,
-  API_VERSION,
-  urlBuilder,
+  buildUrl,
   filterProps,
 }
