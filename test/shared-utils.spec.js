@@ -1,6 +1,6 @@
 const test = require("tape");
 const sandbox = require("@architect/sandbox");
-const { buildUrl } = require("../src/shared/utils");
+const { buildUrl, filterProps } = require("../src/shared/utils");
 
 /**
  * Sandbox / http test
@@ -13,6 +13,9 @@ test("Set up env", async (t) => {
 });
 
 test("Build request", async (t) => {
+  const base = "https://local.portify.test";
+  const prefix = "v0";
+  
   const urls = [
     {
       desc: "Specifying base forms URL and path",
@@ -21,12 +24,12 @@ test("Build request", async (t) => {
     },
     {
       desc: "Omitting base defaults URL and adds version prefix",
-      input: { path: "/test-path-1" },
+      input: { base, prefix, path: "/test-path-1" },
       expected: "https://local.portify.test/v0/test-path-1",
     },
     {
       desc: "Params are appended",
-      input: { path: "/test-path-2", params: { a: 1, b: 2 } },
+      input: { base, prefix, path: "/test-path-2", params: { a: 1, b: 2 } },
       expected: "https://local.portify.test/v0/test-path-2?a=1&b=2",
     },
   ];
@@ -37,9 +40,28 @@ test("Build request", async (t) => {
   }
 });
 
-test("Shut down sandbox", async (t) => {
-  console.log(process.env);
+test("filterProps", (t) => {
+  const target = { a: 1, b: 2, "c-0": undefined };
+  const scenarios = [
+    {
+      desc: "All props allowed",
+      filters: ["a", "b", "c-0"],
+      expected: target,
+    },
+    {
+      desc: "Undefined filters are ignored",
+      expected: target,
+    },
+  ];
 
+  t.plan(scenarios.length);
+  for (const { desc, filters, expected } of scenarios) {
+    const input = filterProps(target, filters);
+    t.deepEqual(input, expected, desc);
+  }
+});
+
+test("Shut down sandbox", async (t) => {
   t.plan(1);
   let result = await sandbox.end();
   t.equal(result, "Sandbox successfully shut down");

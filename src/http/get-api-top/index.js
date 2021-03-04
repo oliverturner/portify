@@ -1,5 +1,6 @@
 /**
  * @typedef {import("@architect/functions").HttpRequest} HttpRequest
+ * @typedef {import("@architect/functions").HttpHandler} HttpHandler
  *
  * @typedef {import("@typings/app").TrackItem} TrackItem
  * @typedef {import("@typings/app").TrackItemAudio} TrackItemAudio
@@ -9,8 +10,8 @@
 const { http } = require('@architect/functions')
 const { get } = require('tiny-json-http')
 
-const { buildUrl } = require("@architect/shared/utils");
-const { getAudioData, processItemAudio } = require("@architect/shared/audio");
+const { getApiUrl } = require("@architect/shared/utils");
+const { addTrackAudio } = require("@architect/shared/audio");
 
 /** @type {TimeRange} */
 const TIME_RANGE = 'short_term'
@@ -28,17 +29,18 @@ function processItem (item) {
 }
 
 /**
- * @param {*} req
- * @param {*} headers
- * @returns
+ * @type {HttpHandler}
  */
 const getTop = async (req, headers = {}) => {
-  const { limit = LIMIT, time_range = TIME_RANGE } = req.query;
-  const url = buildUrl({
-    path: "/me/top/tracks",
-    params: { time_range, limit },
-  });
-  const topTrackRes = (await get({ url, headers })).body;
+  const { limit = LIMIT, time_range = TIME_RANGE } =
+    req.queryStringParameters || {};
+
+  const topTrackRes = (
+    await get({
+      url: getApiUrl("/me/top/tracks", { time_range, limit }),
+      headers,
+    })
+  ).body;
 
   /** @type {Record<string, TrackItem>} */
   const trackItemDict = {}
@@ -46,16 +48,8 @@ const getTop = async (req, headers = {}) => {
     trackItemDict[item.id] = processItem(item)
   }
 
-  const trackItemIds = Object.keys(trackItemDict)
-  const { audio_features } = (await getAudioData(trackItemIds)).body
-
-  for (const itemAudio of audio_features) {
-    const trackItem = trackItemDict[itemAudio.id]
-    trackItem.audio = processItemAudio(itemAudio)
-  }
-
-  return trackItemDict
-}
+  return addTrackAudio(trackItemDict, headers);
+};
 
 module.exports = {
   TIME_RANGE,
