@@ -1,5 +1,5 @@
-const ROOT_URL = "https://api.spotify.com";
-const API_VERSION = "v1";
+const ROOT_URL = 'https://api.spotify.com'
+const API_VERSION = 'v1'
 
 /**
  * @param {string} path
@@ -8,14 +8,14 @@ const API_VERSION = "v1";
  *
  * @returns {URL|string}
  */
-function urlBuilder(path, params, toString = true) {
-  const url = new URL(`${API_VERSION}${path}`, ROOT_URL);
+function urlBuilder (path, params, toString = true) {
+  const url = new URL(`${API_VERSION}${path}`, ROOT_URL)
 
-  for (const [key, val] of Object.entries(params)) {
-    url.searchParams.set(key, String(val));
+  for (const [ key, val ] of Object.entries(params)) {
+    url.searchParams.set(key, String(val))
   }
 
-  return toString ? url.toString() : url;
+  return toString ? url.toString() : url
 }
 
 /**
@@ -25,14 +25,14 @@ function urlBuilder(path, params, toString = true) {
  *
  * @returns {Record<string, unknown>}
  */
-function filterProps(target, keys = []) {
+function filterProps (target, keys = []) {
   /** @type {Record<string, unknown>} */
-  const filtered = {};
+  const filtered = {}
   for (const key of keys) {
-    filtered[key] = target[key];
+    filtered[key] = target[key]
   }
 
-  return filtered;
+  return filtered
 }
 
 module.exports = {
@@ -40,4 +40,4 @@ module.exports = {
   API_VERSION,
   urlBuilder,
   filterProps,
-};
+}

@@ -8,33 +8,33 @@
   "license": "ISC",
   "dependencies": {
     "@architect/functions": "3.13.9",
-    "@architect/sandbox": "3.3.6",
-    "patch-package": "6.4.4",
+    "@architect/sandbox": "3.3.7",
+    "patch-package": "6.4.5",
     "tiny-json-http": "7.3.0"
   },
   "devDependencies": {
     "@architect/eslint-config": "1.0.0",
     "@tsconfig/node12": "1.0.7",
     "@types/architect__functions": "3.13.2",
-    "@types/spotify-api": "0.0.7",
+    "@types/spotify-api": "0.0.8",
     "@types/tiny-json-http": "7.3.0",
     "cross-env": "7.0.3",
     "eslint": "7.21.0",
-    "nock": "13.0.9",
+    "nock": "13.0.10",
     "npm-run-all": "4.1.5",
     "tap-spec": "5.0.0",
-    "tape": "5.2.1"
+    "tape": "5.2.2"
   },
   "scripts": {
     "postinstall": "patch-package",
     "build:rollup": "rollup -c",
     "build": "run-s build:*",
     "dev": "rollup -c -w",
-    "lint": "eslint src --fix",
     "start": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
     "deploy:build": "npm run build",
     "deploy:arc": "npx arc deploy",
     "deploy": "run-s deploy:*",
+    "lint": "eslint src --fix",
     "test:types": "tsc -p jsconfig.json",
     "test:arc": "cross-env NODE_ENV=testing PORT=6666 tape ./test/**/*.spec.js | tap-spec",
     "test": "run-s test:*"
