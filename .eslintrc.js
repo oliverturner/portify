@@ -1,3 +1,1 @@
-module.exports = {
-  extends: "@architect"
-}
+module.exports = {};
