@@ -5,41 +5,32 @@
  */
 
 const { http } = require("@architect/functions");
-const { buildUrl } = require("@architect/shared/utils");
-
-const {
-  SPOTIFY_ACCOUNTS_URL: base = "",
-  SPOTIFY_CLIENT_ID: client_id = "",
-  SPOTIFY_LOGIN_REDIRECT: redirect_uri = "",
-} = process.env;
-
-const scopes = [
-  "playlist-read-private",
-  "user-top-read",
-  "user-modify-playback-state",
-];
-
-const loginURL = buildUrl({
-  base,
-  path: "/authorize",
-  params: {
-    client_id,
-    redirect_uri,
-    response_type: "code",
-    scope: scopes.join(" "),
-  },
-});
+const { getLoginUrl } = require("@architect/shared/utils");
 
 const defaultSession = { user: undefined };
 
 /**
- * 
- * @param {HttpRequest} req 
+ *
+ * @param {HttpRequest} req
  * @returns {Promise<HttpResponse>}
  */
 /** @type {HttpHandler} */
 const login = async (req) => {
   const { user } = req.session || defaultSession;
+
+  const {
+    SPOTIFY_CLIENT_ID: client_id = "",
+    SPOTIFY_LOGIN_URL: base = "",
+    SPOTIFY_LOGIN_REDIRECT: redirect_uri = "",
+  } = process.env;
+
+  const scopes = [
+    "playlist-read-private",
+    "user-top-read",
+    "user-modify-playback-state",
+  ];
+
+  const loginURL = getLoginUrl({ base, client_id, redirect_uri, scopes });
 
   return {
     headers: {

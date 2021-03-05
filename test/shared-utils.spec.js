@@ -1,21 +1,22 @@
 const test = require("tape");
 const sandbox = require("@architect/sandbox");
-const { buildUrl, filterProps } = require("../src/shared/utils");
+const {
+  buildUrl,
+  getApiUrl,
+  getLoginUrl,
+  filterProps,
+} = require("../src/shared/utils");
 
-/**
- * Sandbox / http test
- * - Demonstrates execising basic web integration tests using the local dev server
- */
 test("Set up env", async (t) => {
   t.plan(1);
   await sandbox.start();
   t.ok(true, "started");
 });
 
-test("Build request", async (t) => {
+test("Build request", (t) => {
   const base = "https://local.portify.test";
   const prefix = "v0";
-  
+
   const urls = [
     {
       desc: "Specifying base forms URL and path",
@@ -38,6 +39,29 @@ test("Build request", async (t) => {
   for (const { desc, input, expected } of urls) {
     t.equals(buildUrl(input), expected, desc);
   }
+});
+
+test("getApiUrl", (t) => {
+  const url = getApiUrl("/me/top/tracks", { a: 1, b: 2 });
+  const expected = "https://api.spotify.com/v1/me/top/tracks?a=1&b=2";
+  const desc = "getApiUrl matches";
+
+  t.plan(1);
+  t.equals(url, expected, desc);
+});
+
+test("getLoginUrl", (t) => {
+  const url = getLoginUrl({
+    base: "https://a.b.com",
+    client_id: "",
+    redirect_uri: "",
+    scopes: ["a", "b", "c"]
+  });
+  const expected = "https://a.b.com/authorize?client_id=&redirect_uri=&response_type=code&scope=a+b+c";
+  const desc = "getLoginUrl matches";
+
+  t.plan(1);
+  t.equals(url, expected, desc);
 });
 
 test("filterProps", (t) => {

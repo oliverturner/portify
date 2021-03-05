@@ -2,27 +2,27 @@
  * @param {{
  *   base: string;
  *   path: string;
- *   prefix?: string; 
+ *   prefix?: string;
  *   params?: Record<string, unknown>;
- *   asObject?: boolean;
  * }} params
  *
- * @returns {URL|string}
+ * @returns {string}
  */
-function buildUrl({ base, path, prefix = "", params = {}, asObject = false }) {
+function buildUrl({ base, path, prefix = "", params = {} }) {
   const url = new URL(`${prefix}${path}`, base);
 
-  for (const [ key, val ] of Object.entries(params)) {
-    url.searchParams.set(key, String(val))
+  for (const [key, val] of Object.entries(params)) {
+    url.searchParams.set(key, String(val));
   }
 
-  return asObject ? url : url.toString();
+  return url.toString();
 }
 
 /**
- * @param {string} path 
- * @param {Record<string, unknown>} params 
- * @returns 
+ * @param {string} path
+ * @param {Record<string, unknown>} params
+ *
+ * @returns {string}
  */
 function getApiUrl(path, params) {
   const {
@@ -31,6 +31,29 @@ function getApiUrl(path, params) {
   } = process.env;
 
   return buildUrl({ base, prefix, path, params });
+}
+
+/**
+ * @param {{
+ *   base: string, 
+ *   client_id: string, 
+ *   redirect_uri: string, 
+ *   scopes: string[]
+ * }} args
+ *
+ * @returns {string}
+ */
+function getLoginUrl({ base, client_id, redirect_uri, scopes }) {
+  return buildUrl({
+    base,
+    path: "/authorize",
+    params: {
+      client_id,
+      redirect_uri,
+      response_type: "code",
+      scope: scopes.join(" "),
+    },
+  });
 }
 
 /**
@@ -44,16 +67,17 @@ function filterProps(target, keys = []) {
   if (keys.length === 0) return target;
 
   /** @type {Record<string, unknown>} */
-  const filtered = {}
+  const filtered = {};
   for (const key of keys) {
-    filtered[key] = target[key]
+    filtered[key] = target[key];
   }
 
-  return filtered
+  return filtered;
 }
 
 module.exports = {
   buildUrl,
   getApiUrl,
+  getLoginUrl,
   filterProps,
-}
+};
