@@ -20,3 +20,11 @@ export interface TrackItem {
   artists: TrackItemArtist[];
   audio?: TrackItemAudio;
 }
+
+export interface Session {
+  access_token: string;
+  refresh_token: string;
+  user: Record<string, string>;
+}
+
+export as namespace Portify

@@ -1,4 +1,8 @@
 /**
+ * @typedef {import("@architect/functions/http").SessionData} SessionData
+ */
+
+/**
  * @param {{
  *   base: string;
  *   path: string;
@@ -9,75 +13,87 @@
  * @returns {string}
  */
 function buildUrl({ base, path, prefix = "", params = {} }) {
-  const url = new URL(`${prefix}${path}`, base);
+	const url = new URL(`${prefix}${path}`, base);
 
-  for (const [key, val] of Object.entries(params)) {
-    url.searchParams.set(key, String(val));
-  }
+	for (const [key, val] of Object.entries(params)) {
+		url.searchParams.set(key, String(val));
+	}
 
-  return url.toString();
+	return url.toString();
 }
 
 /**
+ * @param {NodeJS.ProcessEnv} envVars
  * @param {string} path
- * @param {Record<string, unknown>} params
- *
+ * @param {Record<string, unknown>} [params]
  * @returns {string}
  */
-function getApiUrl(path, params) {
-  const {
-    SPOTIFY_API_URL: base = "",
-    SPOTIFY_API_VERSION: prefix = "",
-  } = process.env;
+function getApiUrl(envVars, path, params) {
+	const {
+		SPOTIFY_API_URL: base = "",
+		SPOTIFY_API_VERSION: prefix = "",
+	} = envVars;
 
-  return buildUrl({ base, prefix, path, params });
+	return buildUrl({ base, prefix, path, params });
 }
 
 /**
- * @param {{
- *   base: string, 
- *   client_id: string, 
- *   redirect_uri: string, 
- *   scopes: string[]
- * }} args
+ * Return an object containing a built url and authorised headers
+ * Once instantiated can be used by subsequent requests in the same Lambda
  *
- * @returns {string}
+ * Usage:
+ *  const getRequest = requestFactory(process.env, session);
+ *  const trackRequest = getRequest("/me/top/tracks", { time_range, limit });
+ *  const topTrackRes = (await get(trackRequest)).body;
+ *
+ * @param {NodeJS.ProcessEnv} envVars
+ * @param {SessionData} session
  */
-function getLoginUrl({ base, client_id, redirect_uri, scopes }) {
-  return buildUrl({
-    base,
-    path: "/authorize",
-    params: {
-      client_id,
-      redirect_uri,
-      response_type: "code",
-      scope: scopes.join(" "),
-    },
-  });
+function requestFactory(envVars, session = {}) {
+	const { access_token } = session;
+
+	/**
+	 * @param {string} path
+	 * @param {Record<string, unknown>} [params]
+	 */
+	function getRequestConfig(path, params) {
+		return {
+			url: getApiUrl(envVars, path, params),
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${access_token}`,
+			},
+		};
+	}
+
+	return getRequestConfig;
 }
 
 /**
- * Dispose of illicit keys from an object
+ * Only retain the properties specified by `keys` in an object
+ *
  * @param {Record<string, unknown>} target
  * @param {string[]} [keys]
  *
  * @returns {Record<string, unknown>}
  */
 function filterProps(target, keys = []) {
-  if (keys.length === 0) return target;
+	if (keys.length === 0) return target;
 
-  /** @type {Record<string, unknown>} */
-  const filtered = {};
-  for (const key of keys) {
-    filtered[key] = target[key];
-  }
+	/** @type {Record<string, unknown>} */
+	const filtered = {};
+	for (const key of keys) {
+		if (key in target) {
+			filtered[key] = target[key];
+		}
+	}
 
-  return filtered;
+	return filtered;
 }
 
 module.exports = {
-  buildUrl,
-  getApiUrl,
-  getLoginUrl,
-  filterProps,
+	buildUrl,
+	getApiUrl,
+	requestFactory,
+	filterProps,
 };

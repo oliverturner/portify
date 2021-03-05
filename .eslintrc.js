@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    ecmaVersion: 2017,
+    es2017: true,
     node: true,
   },
   extends: "eslint:recommended",
