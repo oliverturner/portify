@@ -39,9 +39,13 @@ test("Mock request", async (t) => {
     .reply(200, topTracksAudioResponse);
 
   const req = { queryStringParameters: tracksQuery };
-  const res = await getTop(req);
+  const input = await getTop(req);
+  const expected = {
+    status: 200,
+    body: JSON.stringify(topTracksResult),
+  }
 
-  t.deepEqual(res, topTracksResult, "Top tracks have audio added and format matches spec");
+  t.deepEqual(input, expected, "Top tracks have audio added and format matches spec");
 });
 
 testEnv.down();

@@ -6,7 +6,7 @@ const { http } = require("@architect/functions");
 const { get, post } = require("tiny-json-http");
 
 const { requestFactory } = require("@architect/shared/utils");
-const { makeSessionRequest } = require("@architect/shared/session-init");
+const { makeSessionRequest } = require("@architect/shared/session-request");
 
 /** @type {HttpHandler} */
 const getAuth = async (req) => {
@@ -15,11 +15,9 @@ const getAuth = async (req) => {
 			queryStringParameters: { code = "" },
 		} = req;
 
-		let session = {};
-		if (code.length > 0) {
-			const sessionRequest = makeSessionRequest(code, process.env);
-			session = (await post(sessionRequest)).body;
-		}
+		const grant_type = "authorization_code";
+		const sessionReq = makeSessionRequest(process.env, { code, grant_type });
+		const session = (await post(sessionReq)).body;
 
 		const getRequest = requestFactory(process.env, session);
 		const userRequest = getRequest("/me");

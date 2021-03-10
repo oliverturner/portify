@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    es2017: true,
+    es2020: true,
     node: true,
   },
   extends: "eslint:recommended",
