@@ -30,10 +30,18 @@ function makeSessionRequest(envVars, data) {
 	return {
 		url: `${loginUrl}/api/token`,
 		headers: getTokenHeaders(clientId, clientSecret),
-		data: {...data, redirect_uri},
+		data: { ...data, redirect_uri },
+	};
+}
+
+function getLogoutResponse() {
+	return {
+		session: {},
+		location: "/",
 	};
 }
 
 module.exports = {
+	getLogoutResponse,
 	makeSessionRequest,
 };

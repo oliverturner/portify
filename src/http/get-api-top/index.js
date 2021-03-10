@@ -2,25 +2,25 @@
  * @typedef {import("@architect/functions").HttpRequest} HttpRequest
  * @typedef {import("@architect/functions").HttpHandler} HttpHandler
  * @typedef {import("@architect/functions/http").SessionData} SessionData
- *
- * @typedef {import("@typings/app").TrackItem} TrackItem
- * @typedef {import("@typings/app").TrackItemAudio} TrackItemAudio
- * @typedef {import("@typings/app").TimeRange} TimeRange
  */
 
 const { http } = require("@architect/functions");
-const { get } = require("tiny-json-http");
+const { get, post } = require("tiny-json-http");
 
+const {
+	makeSessionRequest,
+	getLogoutResponse,
+} = require("@architect/shared/session-request");
 const { requestFactory } = require("@architect/shared/utils");
 const { addTrackAudio } = require("@architect/shared/audio");
 
-/** @type {TimeRange} */
+/** @type {Portify.TimeRange} */
 const TIME_RANGE = "short_term";
 const LIMIT = 48;
 
 /**
  * @param {SpotifyApi.TrackObjectFull} item
- * @returns {TrackItem}
+ * @returns {Portify.TrackItem}
  */
 function processTrackItem(item) {
 	const { artists: artistsRaw, id, name } = item;
@@ -40,7 +40,7 @@ async function getTracks({ session, params }) {
 	const trackRequest = getRequest("/me/top/tracks", params);
 	const topTrackRes = (await get(trackRequest)).body;
 
-	/** @type {Record<string, TrackItem>} */
+	/** @type {Record<string, Portify.TrackItem>} */
 	const trackItemDict = {};
 	for (const item of topTrackRes.items) {
 		trackItemDict[item.id] = processTrackItem(item);
@@ -62,26 +62,49 @@ function getTimeRange(range) {
 }
 
 /**
+ * @param {{
+ *   session?: SessionData,
+ *   queryStringParameters: {[key: string]: string}
+ * }} args
+ */
+async function respond({ session, queryStringParameters }) {
+	const time_range = getTimeRange(queryStringParameters.time_range);
+	const limit = Number(queryStringParameters.limit) || LIMIT;
+
+	const tracks = await getTracks({ session, params: { time_range, limit } });
+
+	return {
+		session,
+		status: 200,
+		body: JSON.stringify(tracks),
+	};
+}
+
+/**
  * @type {HttpHandler}
  */
 const getTop = async (req) => {
-	const time_range = getTimeRange(req.queryStringParameters.time_range);
-	const limit = Number(req.queryStringParameters.limit) || LIMIT;
-
-	async function respond() {
-		const tracks = await getTracks({
-			session: req.session,
-			params: { time_range, limit },
-		});
-		return {
-			status: 200,
-			body: JSON.stringify(tracks),
-		};
-	}
-
 	try {
-		return await respond();
+		return await respond(req);
 	} catch (error) {
+		if (!req.session) {
+			return getLogoutResponse();
+		}
+
+		if (error.statusCode === 401) {
+			try {
+				const refreshReq = makeSessionRequest(process.env, {
+					refresh_token: req.session.refresh_token,
+					grant_type: "refresh_token",
+				});
+				const { access_token } = (await post(refreshReq)).body;
+				req.session.access_token = access_token;
+				return await respond(req);
+			} catch (error) {
+				return getLogoutResponse();
+			}
+		}
+
 		return error;
 	}
 };
