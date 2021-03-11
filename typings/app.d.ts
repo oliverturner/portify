@@ -31,12 +31,27 @@ interface SessionRquestRefresh {
 	grant_type: "refresh_token";
 }
 
-export type SessionRequestData = SessionRquestAuthorise | SessionRquestRefresh
+export type SessionRequestData = SessionRquestAuthorise | SessionRquestRefresh;
 
 export interface Session {
 	access_token: string;
 	refresh_token: string;
 	user: Record<string, string>;
 }
+
+interface Dict {
+	[key: string]: unknown;
+}
+
+type MakeRequest = (
+	path: string,
+	params?: Dict | undefined
+) => {
+	url: string;
+	headers: {
+		"Content-Type": string;
+		Authorization: string;
+	};
+};
 
 export as namespace Portify;

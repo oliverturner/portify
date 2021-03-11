@@ -5,12 +5,9 @@
  */
 
 const { http } = require("@architect/functions");
-const { get, post } = require("tiny-json-http");
+const { get } = require("tiny-json-http");
 
-const {
-	makeSessionRequest,
-	getLogoutResponse,
-} = require("@architect/shared/session-request");
+const { makeResponse } = require("@architect/shared/make-response");
 const { requestFactory } = require("@architect/shared/utils");
 const { addTrackAudio } = require("@architect/shared/audio");
 
@@ -30,14 +27,11 @@ function processTrackItem(item) {
 }
 
 /**
- * @param {{
- *   session?: SessionData,
- *   params: { time_range: string, limit: number }
- * }} args
+ * @param {Portify.MakeRequest} makeRequest
+ * @param {Portify.Dict} params
  */
-async function getTracks({ session, params }) {
-	const getRequest = requestFactory(process.env, session);
-	const trackRequest = getRequest("/me/top/tracks", params);
+async function getTracks(makeRequest, params) {
+	const trackRequest = makeRequest("/me/top/tracks", params);
 	const topTrackRes = (await get(trackRequest)).body;
 
 	/** @type {Record<string, Portify.TrackItem>} */
@@ -47,7 +41,7 @@ async function getTracks({ session, params }) {
 	}
 
 	const trackItemIds = Object.keys(trackItemDict);
-	const audioRequest = getRequest("/audio-features", { ids: trackItemIds });
+	const audioRequest = makeRequest("/audio-features", { ids: trackItemIds });
 	const tracks = await addTrackAudio(trackItemDict, audioRequest);
 
 	return tracks;
@@ -62,16 +56,14 @@ function getTimeRange(range) {
 }
 
 /**
- * @param {{
- *   session?: SessionData,
- *   queryStringParameters: {[key: string]: string}
- * }} args
+ * @param {HttpRequest} req
  */
-async function respond({ session, queryStringParameters }) {
+async function getTop({ session, queryStringParameters }) {
 	const time_range = getTimeRange(queryStringParameters.time_range);
 	const limit = Number(queryStringParameters.limit) || LIMIT;
 
-	const tracks = await getTracks({ session, params: { time_range, limit } });
+	const makeRequest = requestFactory(process.env, session);
+	const tracks = await getTracks(makeRequest, { time_range, limit });
 
 	return {
 		session,
@@ -80,38 +72,9 @@ async function respond({ session, queryStringParameters }) {
 	};
 }
 
-/**
- * @type {HttpHandler}
- */
-const getTop = async (req) => {
-	try {
-		return await respond(req);
-	} catch (error) {
-		if (!req.session) {
-			return getLogoutResponse();
-		}
-
-		if (error.statusCode === 401) {
-			try {
-				const refreshReq = makeSessionRequest(process.env, {
-					refresh_token: req.session.refresh_token,
-					grant_type: "refresh_token",
-				});
-				const { access_token } = (await post(refreshReq)).body;
-				req.session.access_token = access_token;
-				return await respond(req);
-			} catch (error) {
-				return getLogoutResponse();
-			}
-		}
-
-		return error;
-	}
-};
-
 module.exports = {
 	TIME_RANGE,
 	LIMIT,
 	getTop,
-	handler: http.async(getTop),
+	handler: http.async(makeResponse(getTop)),
 };
