@@ -38,16 +38,17 @@ testEnv.up();
 test("makeResponse", async (t) => {
 	const scenarios = [
 		{
+			desc: "executes normally",
 			request: { session: { access_token: "f4k3-4cc355-t0k3n" } },
 			expected: successResponse,
-			desc: "executes handleReq normally",
 		},
 		{
+			desc: "handles errors with no session",
 			request: { value: "hello" },
 			expected: logoutResponse,
-			desc: "handles errors with no session",
 		},
 		{
+      desc: "retries successfully",
 			request: {
 				session: {
 					access_token: "expired",
@@ -55,14 +56,13 @@ test("makeResponse", async (t) => {
 				},
 			},
 			expected: successResponse,
-			desc: "retries successfully",
 		},
 		{
+      desc: "permanently rejects unsuccessful retries",
 			request: {
 				session: { access_token: "expired", refresh_token: "reject-me" },
 			},
 			expected: logoutResponse,
-			desc: "permanently rejects unsuccessful retries",
 		},
 	];
 
