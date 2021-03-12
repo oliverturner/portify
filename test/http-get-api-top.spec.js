@@ -1,5 +1,4 @@
 const test = require("tape");
-const sandbox = require("@architect/sandbox");
 const nock = require("nock");
 
 const { getTop } = require("../src/http/get-api-top");

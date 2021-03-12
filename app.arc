@@ -10,6 +10,7 @@ get /auth
 post /logout
 
 get /api/top
+get /api/playlists
 
 # @aws
 # profile default

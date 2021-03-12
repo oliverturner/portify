@@ -91,9 +91,40 @@ function filterProps(target, keys = []) {
 	return filtered;
 }
 
+/**
+ * @template {{id:string}} T
+ * @param {T[]} items
+ * @param {*} processorFn
+ * @returns {Record<string, T>}
+ */
+ function buildDict(items, processorFn) {
+	/** @type {Record<string, T>} */
+	const trackItemDict = {};
+	for (const item of items) {
+		trackItemDict[item.id] = processorFn ? processorFn(item) : item;
+	}
+
+	return trackItemDict;
+}
+
+/**
+ * @type {(endpoint: string) => (rawUrl: string|null) => string} fn
+ */
+ const getPrevNext = (endpoint) => (rawUrl) => {
+	if (!rawUrl) return "";
+
+	const url = new URL(rawUrl);
+	const offset = url.searchParams.get("offset");
+	const limit = url.searchParams.get("limit");
+
+	return `${endpoint}?offset=${offset}&limit=${limit}`;
+};
+
 module.exports = {
 	buildUrl,
 	getApiUrl,
 	requestFactory,
 	filterProps,
+	buildDict,
+	getPrevNext
 };

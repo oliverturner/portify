@@ -1,80 +1,42 @@
 /**
  * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- * @typedef {import("@architect/functions").HttpHandler} HttpHandler
- * @typedef {import("@architect/functions/http").SessionData} SessionData
  */
 
 const { http } = require("@architect/functions");
 const { get } = require("tiny-json-http");
 
 const { makeResponse } = require("@architect/shared/make-response");
-const { requestFactory } = require("@architect/shared/utils");
-const { addTrackAudio } = require("@architect/shared/audio");
+const { requestFactory, buildDict } = require("@architect/shared/utils");
 
-/** @type {Portify.TimeRange} */
-const TIME_RANGE = "short_term";
-const LIMIT = 48;
-
-/**
- * @param {SpotifyApi.TrackObjectFull} item
- * @returns {Portify.TrackItem}
- */
-function processTrackItem(item) {
-	const { artists: artistsRaw, id, name } = item;
-	const artists = artistsRaw.map(({ id, name }) => ({ id, name }));
-
-	return { id, artists, name };
-}
-
-/**
- * @param {Portify.MakeRequest} makeRequest
- * @param {Portify.Dict} params
- */
-async function getTracks(makeRequest, params) {
-	const trackRequest = makeRequest("/me/top/tracks", params);
-	const topTrackRes = (await get(trackRequest)).body;
-
-	/** @type {Record<string, Portify.TrackItem>} */
-	const trackItemDict = {};
-	for (const item of topTrackRes.items) {
-		trackItemDict[item.id] = processTrackItem(item);
-	}
-
-	const trackItemIds = Object.keys(trackItemDict);
-	const audioRequest = makeRequest("/audio-features", { ids: trackItemIds });
-	const tracks = await addTrackAudio(trackItemDict, audioRequest);
-
-	return tracks;
-}
-
-/**
- * @param {string} range
- */
-function getTimeRange(range) {
-	const ranges = ["short_term", "medium_term", "long_term"];
-	return ranges.includes(range) ? range : TIME_RANGE;
-}
+const { injectAudio } = require("@architect/shared/audio");
+const { convertTrackObject } = require("@architect/shared/spotify");
+const parseQuery = require("@architect/shared/parse-query-params");
 
 /**
  * @param {HttpRequest} req
  */
 async function getTop({ session, queryStringParameters }) {
-	const time_range = getTimeRange(queryStringParameters.time_range);
-	const limit = Number(queryStringParameters.limit) || LIMIT;
+	const params = {
+		time_range: parseQuery.getTimeRange(queryStringParameters),
+		limit: parseQuery.getLimit(queryStringParameters),
+	};
 
-	const makeRequest = requestFactory(process.env, session);
-	const tracks = await getTracks(makeRequest, { time_range, limit });
+	const buildRequest = requestFactory(process.env, session);
+	const reqConfig = buildRequest("/me/top/tracks", params);
+	const topTracks = (await get(reqConfig)).body;
+
+	/** @type {Record<string, Portify.TrackItem>} */
+	const topTrackDict = buildDict(topTracks.items, convertTrackObject);
+	const audioTrackDict = await injectAudio(topTrackDict, buildRequest);
 
 	return {
 		session,
 		status: 200,
-		body: JSON.stringify(tracks),
+		body: JSON.stringify(audioTrackDict),
 	};
 }
 
 module.exports = {
-	TIME_RANGE,
-	LIMIT,
 	getTop,
 	handler: http.async(makeResponse(getTop)),
 };

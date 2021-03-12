@@ -1,0 +1,36 @@
+{
+	"items": [
+		{
+      "id": "6UUXg0wM2gAlUQ2rcexeAa",
+			"name": "Anjunadeep 12-01 Compilation Series ",
+			"description": "Anjunadeep continuous mix opening with volume 12 closing with volume 01. ",
+			"href": "/playlists/6UUXg0wM2gAlUQ2rcexeAa",
+			"imageUrl": "https://i.scdn.co/image/ab67706c0000bebb33ebd268525abe190430320c",
+			"ownerId": "markdbower",
+      "tracks": 413
+		},
+		{
+      "id": "7HBT2FP8fPHT74iy217ame",
+			"name": "Balkan Connection Mixed, Vol. 11 (DJ Mix) – Milos Miladinovic, Balkan Connection",
+			"description": "",
+			"href": "/playlists/7HBT2FP8fPHT74iy217ame",
+			"imageUrl": "https://i.scdn.co/image/ab67616d0000b2735512617a03737d36d5e12ee4",
+			"ownerId": "oliver.turner",
+			"tracks": 63
+		},
+		{
+      "id": "6GltABPpK1laFBIWFZ1dgQ",
+			"name": "Balkan Connection Mixed, Vol. 10 (DJ Mix) – Milos Miladinovic, Balkan Connection",
+			"description": "",
+			"href": "/playlists/6GltABPpK1laFBIWFZ1dgQ",
+			"imageUrl":"https://i.scdn.co/image/ab67616d0000b273db7d9a261be47627d94144e4",
+			"ownerId": "oliver.turner",
+			"tracks": 40
+		}
+	],
+	"limit": 3,
+	"offset": 5,
+	"next": "/api/playlists?offset=8&limit=3",
+	"prev": "/api/playlists?offset=2&limit=3",
+	"total": 72
+}
