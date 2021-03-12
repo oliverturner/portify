@@ -7,30 +7,28 @@
 const { http } = require("@architect/functions");
 const { buildUrl } = require("@architect/shared/utils");
 
-const defaultSession = { user: undefined };
-
 /**
  * @param {NodeJS.ProcessEnv} envVars
  * @param {string[]} scopes
  * @returns {string}
  */
 function getLoginUrl(envVars, scopes) {
-  const {
-    SPOTIFY_CLIENT_ID: client_id = "",
-    SPOTIFY_LOGIN_URL: base = "",
-    SPOTIFY_LOGIN_REDIRECT: redirect_uri = "",
-  } = envVars;
+	const {
+		SPOTIFY_CLIENT_ID: client_id = "",
+		SPOTIFY_LOGIN_URL: base = "",
+		SPOTIFY_LOGIN_REDIRECT: redirect_uri = "",
+	} = envVars;
 
-  return buildUrl({
-    base,
-    path: "/authorize",
-    params: {
-      client_id,
-      redirect_uri,
-      response_type: "code",
-      scope: scopes.join(" "),
-    },
-  });
+	return buildUrl({
+		base,
+		path: "/authorize",
+		params: {
+			client_id,
+			redirect_uri,
+			response_type: "code",
+			scope: scopes.join(" "),
+		},
+	});
 }
 
 /**
@@ -40,28 +38,28 @@ function getLoginUrl(envVars, scopes) {
  */
 /** @type {HttpHandler} */
 const login = async (req) => {
-  const { user } = req.session || defaultSession;
-  
-  const scopes = [
-    "user-top-read",
-    "user-modify-playback-state",
-    "playlist-read-private",
-  ]
-  const loginURL = getLoginUrl(process.env, scopes);
+	const { user } = req.session || {};
 
-  return {
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control":
-        "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
-    },
-    statusCode: 200,
-    body: JSON.stringify({ user, loginURL }),
-  };
+	const scopes = [
+		"user-top-read",
+		"user-modify-playback-state",
+		"playlist-read-private",
+	];
+	const loginURL = getLoginUrl(process.env, scopes);
+
+	return {
+		headers: {
+			"content-type": "application/json; charset=utf-8",
+			"cache-control":
+				"no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
+		},
+		statusCode: 200,
+		body: JSON.stringify({ user, loginURL }),
+	};
 };
 
 module.exports = {
-  getLoginUrl,
-  login,
-  handler: http.async(login),
+	getLoginUrl,
+	login,
+	handler: http.async(login),
 };
