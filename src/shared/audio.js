@@ -5,7 +5,6 @@
 
 const { get } = require("tiny-json-http");
 
-const { getApiUrl } = require("./utils");
 const notation = require("./notation.json");
 
 /**
@@ -28,19 +27,12 @@ function processItemAudio(itemAudio) {
  * Inject audio_features into TrackItems
  *
  * @param {Record<string, TrackItem>} trackItemDict
- * @param {Record<string, unknown>} headers
+ * @param {{url:string, headers: any}} audioRequest
  *
  * @returns {Promise<Record<string, TrackItem>>}
  */
-async function addTrackAudio(trackItemDict, headers) {
-  const trackItemIds = Object.keys(trackItemDict);
-  const { audio_features } = (
-    await get({
-      url: getApiUrl("/audio-features", { ids: trackItemIds }),
-      headers,
-    })
-  ).body;
-
+async function addTrackAudio(trackItemDict, audioRequest) {
+  const { audio_features } = (await get(audioRequest)).body;
   for (const itemAudio of audio_features) {
     const trackItem = trackItemDict[itemAudio.id];
     trackItem.audio = processItemAudio(itemAudio);

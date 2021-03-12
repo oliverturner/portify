@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/architect__functions/http.d.ts b/node_modules/@types/architect__functions/http.d.ts
+index 2fd079a..b3ae78a 100644
+--- a/node_modules/@types/architect__functions/http.d.ts
++++ b/node_modules/@types/architect__functions/http.d.ts
+@@ -104,6 +104,8 @@ export interface HttpResponse {
+      * json sets the Content-Type header to application/json
+      */
+     html?: HtmlBody;
++
++    location?: string;
+ }
+ /**
+  * Defines an HttpHandler that works with architect.

@@ -3,7 +3,7 @@
  */
 
 /** @type {HttpHandler} */
-exports.handler = async function http (req) {
+exports.handler = async function http () {
   return {
     statusCode: 200,
     headers: {
