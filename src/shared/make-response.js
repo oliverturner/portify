@@ -28,6 +28,8 @@ const makeResponse = (handleReq) => async (req) => {
 					grant_type: "refresh_token",
 				});
 				const { access_token } = (await post(refreshReq)).body;
+
+				// Retain all other session props: only update access_token
 				req.session.access_token = access_token;
 				return await handleReq(req);
 			} catch (error) {

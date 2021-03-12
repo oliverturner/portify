@@ -1,4 +1,6 @@
 {
-  "loginUrl": "https://accounts.spotify.com/authorize?client_id=e07299b6a07a4f71b198054fc759b029&redirect_uri=http%3A%2F%2Flocalhost%3A3333%2Fauth%2F&response_type=code&scope=user-top-read+user-modify-playback-state+playlist-read-private",
-  "code": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "apiUrl": "https://api.spotify.com",
+  "loginUrl": "https://accounts.spotify.com",
+  "access_token": "f4k3-4cc355-t0k3n",
+  "refresh_token": "f4k3-r3fr35h-t0k3n"
 }
