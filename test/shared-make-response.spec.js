@@ -8,66 +8,69 @@ const fixtures = require("./fixtures/spotify.json");
 
 const testEnv = getTestEnv("makeResponse");
 
-testEnv.up();
+const successResponse = { value: "hello" };
 
 const logoutResponse = {
 	session: {},
 	location: "/",
 };
 
-test("makeResponse executes handleReq", async (t) => {
-	const handleReq = async ({ value }) => value;
-	const request = { value: "hello" };
-	const response = await makeResponse(handleReq)(request);
+nock(fixtures.loginUrl)
+	.post("/api/token")
+	.reply((_, req) => {
+		const params = new URLSearchParams(req);
 
-	const expected = "hello";
+		return params.get("refresh_token") === "f4k3-r3fr35h-t0k3n"
+			? [200, { access_token: "f4k3-4cc355-t0k3n" }]
+			: [401];
+	});
 
-	t.plan(1);
-	t.equal(response, expected);
-});
+const handleReq = async (req) => {
+	if (!req.session) return Promise.reject({ statusCode: 400 });
 
-test("makeResponse handles errors with no session", async (t) => {
-	const handleReq = async () => Promise.reject({ statusCode: 400 });
-	const request = { value: "hello" };
-	const response = await makeResponse(handleReq)(request);
+	return req.session.access_token === "f4k3-4cc355-t0k3n"
+		? successResponse
+		: Promise.reject({ statusCode: 401 });
+};
 
-	t.plan(1);
-	t.deepEqual(response, logoutResponse);
-});
+testEnv.up();
 
-test("makeResponse handles successful retries", async (t) => {
-	nock(fixtures.loginUrl)
-		.post("/api/token")
-		.reply(200, { access_token: "f4k3-4cc355-t0k3n" });
+test("makeResponse", async (t) => {
+	const scenarios = [
+		{
+			request: { session: { access_token: "f4k3-4cc355-t0k3n" } },
+			expected: successResponse,
+			desc: "executes handleReq normally",
+		},
+		{
+			request: { value: "hello" },
+			expected: logoutResponse,
+			desc: "handles errors with no session",
+		},
+		{
+			request: {
+				session: {
+					access_token: "expired",
+					refresh_token: "f4k3-r3fr35h-t0k3n",
+				},
+			},
+			expected: successResponse,
+			desc: "retries successfully",
+		},
+		{
+			request: {
+				session: { access_token: "expired", refresh_token: "reject-me" },
+			},
+			expected: logoutResponse,
+			desc: "permanently rejects unsuccessful retries",
+		},
+	];
 
-	const handleReq = async (req) => {
-		return req.session.access_token === "f4k3-4cc355-t0k3n"
-			? { value: "hello" }
-			: Promise.reject({ statusCode: 401 });
-	};
-
-	const request = { session: { access_token: "expired" } };
-	const expected = { value: "hello" };
-	const response = await makeResponse(handleReq)(request);
-
-	t.plan(1);
-	t.deepEqual(response, expected);
-});
-
-test("makeResponse permanently rejects unsuccessful retries", async (t) => {
-	nock(fixtures.loginUrl).post("/api/token").reply(401);
-
-	const handleReq = async (req) => {
-		return req.session.access_token === "f4k3-4cc355-t0k3n"
-			? { value: "hello" }
-			: Promise.reject({ statusCode: 401 });
-	};
-
-	const request = { session: { access_token: "expired" } };
-	const response = await makeResponse(handleReq)(request);
-
-	t.plan(1);
-	t.deepEqual(response, logoutResponse);
+	t.plan(scenarios.length);
+	for (const { request, expected, desc } of scenarios) {
+		const response = await makeResponse(handleReq)(request);
+		t.deepEqual(response, expected, desc);
+	}
 });
 
 testEnv.down();
