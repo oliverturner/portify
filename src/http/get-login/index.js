@@ -45,7 +45,7 @@ const login = async (req) => {
 		"user-modify-playback-state",
 		"playlist-read-private",
 	];
-	const loginURL = getLoginUrl(process.env, scopes);
+	const loginUrl = getLoginUrl(process.env, scopes);
 
 	return {
 		headers: {
@@ -54,7 +54,7 @@ const login = async (req) => {
 				"no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
 		},
 		statusCode: 200,
-		body: JSON.stringify({ user, loginURL }),
+		body: JSON.stringify({ user, loginUrl }),
 	};
 };
 

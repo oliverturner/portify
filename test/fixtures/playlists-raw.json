@@ -1,0 +1,118 @@
+{
+	"href": "https://api.spotify.com/v1/users/oliver.turner/playlists?offset=5&limit=3",
+	"items": [
+		{
+			"collaborative": false,
+			"description": "Anjunadeep continuous mix opening with volume 12 closing with volume 01. ",
+			"external_urls": {
+				"spotify": "https://open.spotify.com/playlist/6UUXg0wM2gAlUQ2rcexeAa"
+			},
+			"href": "https://api.spotify.com/v1/playlists/6UUXg0wM2gAlUQ2rcexeAa",
+			"id": "6UUXg0wM2gAlUQ2rcexeAa",
+			"images": [
+				{
+					"height": null,
+					"url": "https://i.scdn.co/image/ab67706c0000bebb33ebd268525abe190430320c",
+					"width": null
+				}
+			],
+			"name": "Anjunadeep 12-01 Compilation Series ",
+			"owner": {
+				"display_name": "Mark Bower",
+				"external_urls": {
+					"spotify": "https://open.spotify.com/user/markdbower"
+				},
+				"href": "https://api.spotify.com/v1/users/markdbower",
+				"id": "markdbower",
+				"type": "user",
+				"uri": "spotify:user:markdbower"
+			},
+			"primary_color": null,
+			"public": false,
+			"snapshot_id": "MTk2LDhhZGQ1ZmZjMmY1ZTY3YmViZDg3OTY2YjFiNWEyZWJiOTRjMjZmNGI=",
+			"tracks": {
+				"href": "https://api.spotify.com/v1/playlists/6UUXg0wM2gAlUQ2rcexeAa/tracks",
+				"total": 413
+			},
+			"type": "playlist",
+			"uri": "spotify:playlist:6UUXg0wM2gAlUQ2rcexeAa"
+		},
+		{
+			"collaborative": false,
+			"description": "",
+			"external_urls": {
+				"spotify": "https://open.spotify.com/playlist/7HBT2FP8fPHT74iy217ame"
+			},
+			"href": "https://api.spotify.com/v1/playlists/7HBT2FP8fPHT74iy217ame",
+			"id": "7HBT2FP8fPHT74iy217ame",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2735512617a03737d36d5e12ee4",
+					"width": 640
+				}
+			],
+			"name": "Balkan Connection Mixed, Vol. 11 (DJ Mix) – Milos Miladinovic, Balkan Connection",
+			"owner": {
+				"display_name": "oliver.turner",
+				"external_urls": {
+					"spotify": "https://open.spotify.com/user/oliver.turner"
+				},
+				"href": "https://api.spotify.com/v1/users/oliver.turner",
+				"id": "oliver.turner",
+				"type": "user",
+				"uri": "spotify:user:oliver.turner"
+			},
+			"primary_color": null,
+			"public": false,
+			"snapshot_id": "Miw2OTBiZDg5YWE3YTBiOGU5ZDc4YWE5MjIzYjU5YjcwMzFhY2Y5YThh",
+			"tracks": {
+				"href": "https://api.spotify.com/v1/playlists/7HBT2FP8fPHT74iy217ame/tracks",
+				"total": 63
+			},
+			"type": "playlist",
+			"uri": "spotify:playlist:7HBT2FP8fPHT74iy217ame"
+		},
+		{
+			"collaborative": false,
+			"description": "",
+			"external_urls": {
+				"spotify": "https://open.spotify.com/playlist/6GltABPpK1laFBIWFZ1dgQ"
+			},
+			"href": "https://api.spotify.com/v1/playlists/6GltABPpK1laFBIWFZ1dgQ",
+			"id": "6GltABPpK1laFBIWFZ1dgQ",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273db7d9a261be47627d94144e4",
+					"width": 640
+				}
+			],
+			"name": "Balkan Connection Mixed, Vol. 10 (DJ Mix) – Milos Miladinovic, Balkan Connection",
+			"owner": {
+				"display_name": "oliver.turner",
+				"external_urls": {
+					"spotify": "https://open.spotify.com/user/oliver.turner"
+				},
+				"href": "https://api.spotify.com/v1/users/oliver.turner",
+				"id": "oliver.turner",
+				"type": "user",
+				"uri": "spotify:user:oliver.turner"
+			},
+			"primary_color": null,
+			"public": false,
+			"snapshot_id": "MixiMmI4OTk1YWZmZjlmZWJjOTMxYmZhNDdhMTBiZDBkMGQ1YTc2ZWI1",
+			"tracks": {
+				"href": "https://api.spotify.com/v1/playlists/6GltABPpK1laFBIWFZ1dgQ/tracks",
+				"total": 40
+			},
+			"type": "playlist",
+			"uri": "spotify:playlist:6GltABPpK1laFBIWFZ1dgQ"
+		}
+	],
+	"limit": 3,
+	"next": "https://api.spotify.com/v1/users/oliver.turner/playlists?offset=8&limit=3",
+	"offset": 5,
+	"previous": "https://api.spotify.com/v1/users/oliver.turner/playlists?offset=2&limit=3",
+	"total": 72
+}
