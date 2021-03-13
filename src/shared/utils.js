@@ -108,10 +108,10 @@ function filterProps(target, keys = []) {
 }
 
 /**
- * @type {(endpoint: string) => (rawUrl: string|null) => string} fn
+ * @type {(endpoint: string) => (rawUrl: string|null) => string|null}
  */
  const getPrevNext = (endpoint) => (rawUrl) => {
-	if (!rawUrl) return "";
+	if (!rawUrl) return null;
 
 	const url = new URL(rawUrl);
 	const offset = url.searchParams.get("offset");

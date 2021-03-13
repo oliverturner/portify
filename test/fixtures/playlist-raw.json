@@ -1,0 +1,127 @@
+{
+	"id": "6qmun8EA2LO1d5QNApjX7u",
+	"name": "Purchase - 2021-03",
+	"tracks": {
+		"items": [
+			{
+				"track": {
+					"album": {
+						"id": "0oQZjGmpXzf8GWiFpQ7K0I",
+						"images": [
+							{
+								"height": 640,
+								"url": "https://i.scdn.co/image/ab67616d0000b273ae148f30db4013ffcef4ea58",
+								"width": 640
+							},
+							{
+								"height": 300,
+								"url": "https://i.scdn.co/image/ab67616d00001e02ae148f30db4013ffcef4ea58",
+								"width": 300
+							},
+							{
+								"height": 64,
+								"url": "https://i.scdn.co/image/ab67616d00004851ae148f30db4013ffcef4ea58",
+								"width": 64
+							}
+						]
+					},
+					"artists": [
+						{
+							"id": "762FYAqSeuqmgbL6qEAJr8",
+							"name": "Dmitry Molosh"
+						},
+						{
+							"id": "4pxD5GzbVCWSKywx98ejMu",
+							"name": "Supacooks"
+						}
+					],
+					"duration_ms": 456393,
+					"id": "0Eb4BUBLtqbVvLgFxubF1P",
+					"is_playable": true,
+					"name": "Distant Land (Supacooks Remix)"
+				}
+			},
+			{
+				"track": {
+					"album": {
+						"id": "79soMgFe8UfLMZCMrHsmQx",
+						"images": [
+							{
+								"height": 640,
+								"url": "https://i.scdn.co/image/ab67616d0000b27343f989598416f360e2ce3d85",
+								"width": 640
+							},
+							{
+								"height": 300,
+								"url": "https://i.scdn.co/image/ab67616d00001e0243f989598416f360e2ce3d85",
+								"width": 300
+							},
+							{
+								"height": 64,
+								"url": "https://i.scdn.co/image/ab67616d0000485143f989598416f360e2ce3d85",
+								"width": 64
+							}
+						]
+					},
+					"artists": [
+						{
+							"id": "3ikEi08G1s0jiIxBC9a9GE",
+							"name": "Mariano Mellino"
+						},
+						{
+							"id": "4O3otssy4Zu9Mfjr9cjuED",
+							"name": "Paula OS"
+						}
+					],
+					"duration_ms": 467107,
+					"id": "2qPKDc1CMqAOLFhEd8kpZ8",
+					"is_playable": true,
+					"name": "Misery"
+				}
+			},
+			{
+				"track": {
+					"album": {
+						"id": "12W0YsmZQhTQEXbQGZdNuX",
+						"images": [
+							{
+								"height": 640,
+								"url": "https://i.scdn.co/image/ab67616d0000b273e4e90dcc1b0cb29b296323ff",
+								"width": 640
+							},
+							{
+								"height": 300,
+								"url": "https://i.scdn.co/image/ab67616d00001e02e4e90dcc1b0cb29b296323ff",
+								"width": 300
+							},
+							{
+								"height": 64,
+								"url": "https://i.scdn.co/image/ab67616d00004851e4e90dcc1b0cb29b296323ff",
+								"width": 64
+							}
+						]
+					},
+					"artists": [
+						{
+							"id": "3cQA9WH8liZfeja1DxcDYE",
+							"name": "Armand Van Helden"
+						},
+						{
+							"id": "6n5ccknvteaKfN4WA2qf3C",
+							"name": "Illyus & Barrientos"
+						}
+					],
+					"duration_ms": 292200,
+					"id": "0ray30iYx16PHYgVi7WvhH",
+					"is_playable": true,
+					"name": "Witch Doktor - Illyus & Barrientos Remix"
+				}
+			}
+		],
+		"limit": 100,
+		"next": null,
+		"offset": 0,
+		"previous": null,
+		"total": 3
+	}
+}
