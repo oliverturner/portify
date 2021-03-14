@@ -12,10 +12,4 @@ post /logout
 get /api/top
 get /api/playlists
 get /api/playlists/:playlistId
-
-# @aws
-# profile default
-# region us-west-1
-
-@sandbox-startup
-echo "hello"
+get /api/albums/:albumId
