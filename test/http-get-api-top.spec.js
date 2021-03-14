@@ -5,12 +5,9 @@ const { getTop } = require("../src/http/get-api-top");
 const { getTestEnv } = require("./helpers");
 
 const apiUrl = "https://api.spotify.com/v1";
-const topTracksResponse = require(`./fixtures/top-tracks.json`);
+const topTracksResponse = require(`./fixtures/top-tracks-raw.json`);
 const topTracksAudioResponse = require(`./fixtures/top-tracks-audio.json`);
-const topTracksResult = require(`./fixtures/top-tracks-result.json`);
-const headers = {
-	"Content-Type": "application/json",
-};
+const topTracksResult = require(`./fixtures/top-tracks.json`);
 
 const testEnv = getTestEnv("get-api-top");
 
@@ -26,14 +23,11 @@ test("Mock request", async (t) => {
 
 	nock(apiUrl)
 		.get(`/me/top/tracks`)
-		// TODO fix test so that Nock reads parsed values
-		// .query(tracksQuery)
 		.query(true)
 		.reply(200, topTracksResponse);
 
 	nock(apiUrl)
 		.get(`/audio-features`)
-		// TODO fix test so that Nock reads parsed values
 		.query(true)
 		.reply(200, topTracksAudioResponse);
 
