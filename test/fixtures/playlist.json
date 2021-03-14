@@ -1,0 +1,72 @@
+{
+	"id": "6qmun8EA2LO1d5QNApjX7u",
+	"name": "Purchase - 2021-03",
+	"items": [
+		{
+			"id": "0Eb4BUBLtqbVvLgFxubF1P",
+			"name": "Distant Land (Supacooks Remix)",
+			"href": "/albums/0oQZjGmpXzf8GWiFpQ7K0I",
+			"is_playable": true,
+			"artists": [
+				{ "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
+				{ "id": "4pxD5GzbVCWSKywx98ejMu", "name": "Supacooks" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851ae148f30db4013ffcef4ea58",
+				"300": "https://i.scdn.co/image/ab67616d00001e02ae148f30db4013ffcef4ea58",
+				"640": "https://i.scdn.co/image/ab67616d0000b273ae148f30db4013ffcef4ea58"
+			},
+			"audio": {
+				"keys": { "camelot": "8A", "musical": "Am" },
+				"bpm": 122,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/0Eb4BUBLtqbVvLgFxubF1P"
+			}
+		},
+		{
+			"id": "2qPKDc1CMqAOLFhEd8kpZ8",
+			"name": "Misery",
+			"href": "/albums/79soMgFe8UfLMZCMrHsmQx",
+			"is_playable": true,
+			"artists": [
+				{ "id": "3ikEi08G1s0jiIxBC9a9GE", "name": "Mariano Mellino" },
+				{ "id": "4O3otssy4Zu9Mfjr9cjuED", "name": "Paula OS" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d0000485143f989598416f360e2ce3d85",
+				"300": "https://i.scdn.co/image/ab67616d00001e0243f989598416f360e2ce3d85",
+				"640": "https://i.scdn.co/image/ab67616d0000b27343f989598416f360e2ce3d85"
+			},
+			"audio": {
+				"keys": { "camelot": "9B", "musical": "G" },
+				"bpm": 121,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/2qPKDc1CMqAOLFhEd8kpZ8"
+			}
+		},
+		{
+			"id": "0ray30iYx16PHYgVi7WvhH",
+			"name": "Witch Doktor - Illyus & Barrientos Remix",
+			"href": "/albums/12W0YsmZQhTQEXbQGZdNuX",
+			"is_playable": true,
+			"artists": [
+				{ "id": "3cQA9WH8liZfeja1DxcDYE", "name": "Armand Van Helden" },
+				{ "id": "6n5ccknvteaKfN4WA2qf3C", "name": "Illyus & Barrientos" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851e4e90dcc1b0cb29b296323ff",
+				"300": "https://i.scdn.co/image/ab67616d00001e02e4e90dcc1b0cb29b296323ff",
+				"640": "https://i.scdn.co/image/ab67616d0000b273e4e90dcc1b0cb29b296323ff"
+			},
+			"audio": {
+				"keys": { "camelot": "4A", "musical": "Fm" },
+				"bpm": 125,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/0ray30iYx16PHYgVi7WvhH"
+			}
+		}
+	],
+	"total": 3,
+	"limit": 100,
+	"offset": 0,
+	"next": null,
+	"prev": null,
+	"isCollection": false
+}

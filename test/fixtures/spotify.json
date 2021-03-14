@@ -1,5 +1,5 @@
 {
-  "apiUrl": "https://api.spotify.com",
+  "apiUrl": "https://api.spotify.com/v1",
   "loginUrl": "https://accounts.spotify.com",
   "access_token": "f4k3-4cc355-t0k3n",
   "refresh_token": "f4k3-r3fr35h-t0k3n"

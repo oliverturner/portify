@@ -17,7 +17,10 @@ export interface TrackItemAudio {
 export interface TrackItem {
 	id: string;
 	name: string;
+	href: string;
+	is_playable: boolean;
 	artists: TrackItemArtist[];
+	images: Record<string, string>;
 	audio?: TrackItemAudio;
 }
 

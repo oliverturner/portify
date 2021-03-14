@@ -93,25 +93,25 @@ function filterProps(target, keys = []) {
 
 /**
  * @template {{id:string}} T
+ * @template {any} U
  * @param {T[]} items
- * @param {*} processorFn
- * @returns {Record<string, T>}
+ * @param {(item: T) => U} processorFn
  */
- function buildDict(items, processorFn) {
-	/** @type {Record<string, T>} */
-	const trackItemDict = {};
+function buildDict(items, processorFn) {
+	/** @type {Record<string, U>} */
+	const dict = {};
 	for (const item of items) {
-		trackItemDict[item.id] = processorFn ? processorFn(item) : item;
+		dict[item.id] = processorFn(item);
 	}
 
-	return trackItemDict;
+	return dict;
 }
 
 /**
- * @type {(endpoint: string) => (rawUrl: string|null) => string} fn
+ * @type {(endpoint: string) => (rawUrl: string|null) => string|null}
  */
- const getPrevNext = (endpoint) => (rawUrl) => {
-	if (!rawUrl) return "";
+const getPrevNext = (endpoint) => (rawUrl) => {
+	if (!rawUrl) return null;
 
 	const url = new URL(rawUrl);
 	const offset = url.searchParams.get("offset");
@@ -126,5 +126,5 @@ module.exports = {
 	requestFactory,
 	filterProps,
 	buildDict,
-	getPrevNext
+	getPrevNext,
 };
