@@ -117,11 +117,21 @@ function processArtists({ artists }) {
 async function processRequests(requests) {
 	const promises = [];
 	for (const [key, { req, fn }] of Object.entries(requests)) {
-		promises.push(get(req).then(({ body }) => ({ key, data: fn(body) })));
+		promises.push(
+			get(req)
+				.then(({ body }) => ({ key, data: fn(body) }))
+				.catch((err) => {
+					throw { key, code: err.statusCode, msg: err.message };
+				})
+		);
 	}
 
 	/** @type {Portify.Dict} */
 	const dict = {};
+	/** @type {Portify.Dict} */
+	const errors = {};
+
+	// TODO: use Promise.race and throw as soon as possible to allow token refresh cycle to kick in
 	const resolved = await Promise.allSettled(promises);
 	for (const response of resolved) {
 		if (response.status === "fulfilled") {
@@ -130,8 +140,13 @@ async function processRequests(requests) {
 			continue;
 		}
 
-		console.log({ error: response.reason });
+		if (response.reason) {
+			const { key, ...err } = response.reason;
+			errors[key] = err;
+		}
 	}
+
+	if (Object.keys(errors).length > 0) throw errors;
 
 	return dict;
 }
