@@ -1,0 +1,58 @@
+{
+	"id": "3I40cOimJncCiVQPX3Sm98",
+	"name": "Intro",
+	"label": "Vivrant",
+	"album_type": "single",
+	"external_ids": { "upc": "5060519688361" },
+	"genres": [],
+	"release_date": "2016-04-21",
+	"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+	"images": {
+		"64": "https://i.scdn.co/image/ab67616d00004851daf8d174a2c33394b5ac41d1",
+		"300": "https://i.scdn.co/image/ab67616d00001e02daf8d174a2c33394b5ac41d1",
+		"640": "https://i.scdn.co/image/ab67616d0000b273daf8d174a2c33394b5ac41d1"
+	},
+	"items": [
+		{
+			"id": "1Qd41PCvEmMorWnccHGw20",
+			"name": "Black Widoe - Original Mix",
+			"is_playable": true,
+			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"playLink": "/api/play/1Qd41PCvEmMorWnccHGw20",
+			"audio": {
+				"keys": { "camelot": "3A", "musical": "B♭m" },
+				"bpm": 125,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/1Qd41PCvEmMorWnccHGw20"
+			}
+		},
+		{
+			"id": "1bpbJmAnEArir4iZ0L7sYw",
+			"name": "Intro - Original Mix",
+			"is_playable": true,
+			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"playLink": "/api/play/1bpbJmAnEArir4iZ0L7sYw",
+			"audio": {
+				"keys": { "camelot": "10A", "musical": "Bm" },
+				"bpm": 122,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/1bpbJmAnEArir4iZ0L7sYw"
+			}
+		},
+		{
+			"id": "2gJrVJ0s1vy3a3qi8QAos9",
+			"name": "Umbra - Original Mix",
+			"is_playable": true,
+			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"playLink": "/api/play/2gJrVJ0s1vy3a3qi8QAos9",
+			"audio": {
+				"keys": { "camelot": "9B", "musical": "G" },
+				"bpm": 126,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/2gJrVJ0s1vy3a3qi8QAos9"
+			}
+		}
+	],
+	"total": 3,
+	"limit": 50,
+	"offset": 0,
+	"next": null,
+	"prev": null
+}

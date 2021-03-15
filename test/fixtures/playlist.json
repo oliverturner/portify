@@ -5,12 +5,13 @@
 		{
 			"id": "0Eb4BUBLtqbVvLgFxubF1P",
 			"name": "Distant Land (Supacooks Remix)",
-			"href": "/albums/0oQZjGmpXzf8GWiFpQ7K0I",
 			"is_playable": true,
 			"artists": [
 				{ "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
 				{ "id": "4pxD5GzbVCWSKywx98ejMu", "name": "Supacooks" }
 			],
+			"href": "/albums/0oQZjGmpXzf8GWiFpQ7K0I",
+			"playLink": "/api/play/0Eb4BUBLtqbVvLgFxubF1P",
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d00004851ae148f30db4013ffcef4ea58",
 				"300": "https://i.scdn.co/image/ab67616d00001e02ae148f30db4013ffcef4ea58",
@@ -25,12 +26,13 @@
 		{
 			"id": "2qPKDc1CMqAOLFhEd8kpZ8",
 			"name": "Misery",
-			"href": "/albums/79soMgFe8UfLMZCMrHsmQx",
 			"is_playable": true,
 			"artists": [
 				{ "id": "3ikEi08G1s0jiIxBC9a9GE", "name": "Mariano Mellino" },
 				{ "id": "4O3otssy4Zu9Mfjr9cjuED", "name": "Paula OS" }
 			],
+			"href": "/albums/79soMgFe8UfLMZCMrHsmQx",
+			"playLink": "/api/play/2qPKDc1CMqAOLFhEd8kpZ8",
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d0000485143f989598416f360e2ce3d85",
 				"300": "https://i.scdn.co/image/ab67616d00001e0243f989598416f360e2ce3d85",
@@ -45,12 +47,13 @@
 		{
 			"id": "0ray30iYx16PHYgVi7WvhH",
 			"name": "Witch Doktor - Illyus & Barrientos Remix",
-			"href": "/albums/12W0YsmZQhTQEXbQGZdNuX",
 			"is_playable": true,
 			"artists": [
 				{ "id": "3cQA9WH8liZfeja1DxcDYE", "name": "Armand Van Helden" },
 				{ "id": "6n5ccknvteaKfN4WA2qf3C", "name": "Illyus & Barrientos" }
 			],
+			"href": "/albums/12W0YsmZQhTQEXbQGZdNuX",
+			"playLink": "/api/play/0ray30iYx16PHYgVi7WvhH",
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d00004851e4e90dcc1b0cb29b296323ff",
 				"300": "https://i.scdn.co/image/ab67616d00001e02e4e90dcc1b0cb29b296323ff",
@@ -64,7 +67,7 @@
 		}
 	],
 	"total": 3,
-	"limit": 100,
+	"limit": 48,
 	"offset": 0,
 	"next": null,
 	"prev": null,

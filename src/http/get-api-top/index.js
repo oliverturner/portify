@@ -25,7 +25,7 @@ async function getTop({ session, queryStringParameters }) {
 	const reqConfig = buildRequest("/me/top/tracks", params);
 	const topTracks = (await get(reqConfig)).body;
 
-	/** @type {Record<string, Portify.TrackItem>} */
+	/** @type {Record<string, Portify.TrackItemBase>} */
 	const topTrackDict = buildDict(topTracks.items, convertTrackObject);
 	const audioTrackDict = await injectAudio(topTrackDict, buildRequest);
 
