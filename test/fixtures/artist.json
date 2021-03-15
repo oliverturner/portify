@@ -1,0 +1,644 @@
+{
+	"id": "762FYAqSeuqmgbL6qEAJr8",
+	"name": "Dmitry Molosh",
+	"href": "/artists/762FYAqSeuqmgbL6qEAJr8",
+	"genres": [
+		"belarusian electronic",
+		"deep progressive house",
+		"focus trance",
+		"organic house"
+	],
+	"images": {
+		"640": "https://i.scdn.co/image/6ab0d1271de09b483da2a8758f42639c8f54f62a",
+		"320": "https://i.scdn.co/image/e59b36693bf822777f279c233305097e6307e02d",
+		"160": "https://i.scdn.co/image/b201f6ae6b9ac524f560e52942b115346ed6709d"
+	},
+	"appearsOn": [
+		{
+			"id": "39o3j86mjINYx9V78LDU35",
+			"name": "This Is Beatfreak by D-Formation (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-03-12",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048510dde9d91e81f4b0aae3b74ec",
+				"300": "https://i.scdn.co/image/ab67616d00001e020dde9d91e81f4b0aae3b74ec",
+				"640": "https://i.scdn.co/image/ab67616d0000b2730dde9d91e81f4b0aae3b74ec"
+			},
+			"artists": [
+				{
+					"id": "5wt6ykFuNy0WtBpYVaG7OY",
+					"name": "D-Formation"
+				}
+			]
+		},
+		{
+			"id": "7vZbUX0NcGOMhXTETxGY7B",
+			"name": "Meanwhile 015 (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-02-26",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048512514a8c6ee097351bc155728",
+				"300": "https://i.scdn.co/image/ab67616d00001e022514a8c6ee097351bc155728",
+				"640": "https://i.scdn.co/image/ab67616d0000b2732514a8c6ee097351bc155728"
+			},
+			"artists": [
+				{
+					"id": "2jtEP3ZWQNoXeWQvjF86xU",
+					"name": "GMJ"
+				},
+				{
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio"
+				}
+			]
+		},
+		{
+			"id": "5MYTfFAb1s9r3k1KBMdld6",
+			"name": "Mind Over Matter - Winter 2021 (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-02-19",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851d7d73dfd4a3a95314f4ad234",
+				"300": "https://i.scdn.co/image/ab67616d00001e02d7d73dfd4a3a95314f4ad234",
+				"640": "https://i.scdn.co/image/ab67616d0000b273d7d73dfd4a3a95314f4ad234"
+			},
+			"artists": [
+				{
+					"id": "5MSK0EcJzGYAEgTCY7EIAa",
+					"name": "Embliss"
+				},
+				{
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio"
+				}
+			]
+		},
+		{
+			"id": "2CwYDZKS4Eoof57YtPRWDg",
+			"name": "Meanwhile 014 (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-02-05",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d0000485148027a915b9fe65b9687963e",
+				"300": "https://i.scdn.co/image/ab67616d00001e0248027a915b9fe65b9687963e",
+				"640": "https://i.scdn.co/image/ab67616d0000b27348027a915b9fe65b9687963e"
+			},
+			"artists": [
+				{
+					"id": "1rNyXukMA7XNVcVEvbNfWn",
+					"name": "Olga Misty"
+				},
+				{
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio"
+				}
+			]
+		},
+		{
+			"id": "3ICwf2o0nNcGqgIHvDVCLL",
+			"name": "Ambient Waves (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-02-04",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851ddf3338c39e53d537741fdcf",
+				"300": "https://i.scdn.co/image/ab67616d00001e02ddf3338c39e53d537741fdcf",
+				"640": "https://i.scdn.co/image/ab67616d0000b273ddf3338c39e53d537741fdcf"
+			},
+			"artists": [
+				{
+					"id": "4c2u8w0s3mo0iPZ67dGoTH",
+					"name": "Miss Nine"
+				}
+			]
+		},
+		{
+			"id": "14AgL9IlIVVpqThdQQb4Y3",
+			"name": "Elysium",
+			"is_playable": true,
+			"release_date": "2021-02-01",
+			"album_type": "single",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d0000485114e0d7c4b04ae3675062e4b7",
+				"300": "https://i.scdn.co/image/ab67616d00001e0214e0d7c4b04ae3675062e4b7",
+				"640": "https://i.scdn.co/image/ab67616d0000b27314e0d7c4b04ae3675062e4b7"
+			},
+			"artists": [
+				{
+					"id": "1lGIcfGU3JLw24GyPb4gDD",
+					"name": "The Cobb"
+				}
+			]
+		},
+		{
+			"id": "11YNuKyVtegn0wufmOurGk",
+			"name": "Amathusia",
+			"is_playable": true,
+			"release_date": "2021-01-12",
+			"album_type": "single",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851aaad60faef977cfdec9f3e87",
+				"300": "https://i.scdn.co/image/ab67616d00001e02aaad60faef977cfdec9f3e87",
+				"640": "https://i.scdn.co/image/ab67616d0000b273aaad60faef977cfdec9f3e87"
+			},
+			"artists": [
+				{
+					"id": "6QG4IyYbbJHZWnwilysNJy",
+					"name": "QDream"
+				},
+				{
+					"id": "3JeSThHneYmzj1785rx0fV",
+					"name": "Bondarev"
+				}
+			]
+		},
+		{
+			"id": "3CduQ9uK454KEhQqQFME3R",
+			"name": "Best of Clubsonica Records 2020",
+			"is_playable": true,
+			"release_date": "2021-01-11",
+			"album_type": "compilation",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851bb78265b27d51f6486e3deef",
+				"300": "https://i.scdn.co/image/ab67616d00001e02bb78265b27d51f6486e3deef",
+				"640": "https://i.scdn.co/image/ab67616d0000b273bb78265b27d51f6486e3deef"
+			},
+			"artists": [
+				{
+					"id": "0LyfQWJT6nXafLPZqxe9Of",
+					"name": "Various Artists"
+				}
+			]
+		},
+		{
+			"id": "3f7ORNMWFMk6CwM5jzL6rM",
+			"name": "Meanwhile 013 (DJ Mix)",
+			"is_playable": true,
+			"release_date": "2021-01-08",
+			"album_type": "album",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048518bb548a0cd79ba403840daf9",
+				"300": "https://i.scdn.co/image/ab67616d00001e028bb548a0cd79ba403840daf9",
+				"640": "https://i.scdn.co/image/ab67616d0000b2738bb548a0cd79ba403840daf9"
+			},
+			"artists": [
+				{
+					"id": "477uzVK10OHa3NS2KXbnTh",
+					"name": "Matter"
+				},
+				{
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio"
+				}
+			]
+		},
+		{
+			"id": "0lLGhPrp0NwjtBxvfECHIe",
+			"name": "Demon Drive",
+			"is_playable": true,
+			"release_date": "2021-01-08",
+			"album_type": "single",
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048517d64d191615bfe84af361f3e",
+				"300": "https://i.scdn.co/image/ab67616d00001e027d64d191615bfe84af361f3e",
+				"640": "https://i.scdn.co/image/ab67616d0000b2737d64d191615bfe84af361f3e"
+			},
+			"artists": [
+				{
+					"id": "6m8aVAlgzJo8fI553yZRCN",
+					"name": "Sidewalker & Stylez"
+				}
+			]
+		}
+	],
+	"relatedArtists": [
+		{
+			"id": "1tFqikZkYwDqAfJzDS4Qpn",
+			"name": "Ewan Rill",
+			"genres": ["deep progressive house", "focus trance"],
+			"images": {
+				"160": "https://i.scdn.co/image/d42ada95b6ca5212179e2eb8bf3d4f509188d251",
+				"320": "https://i.scdn.co/image/eeddd4f144d2a2b73765c2517833bffe91b71751",
+				"640": "https://i.scdn.co/image/a8b63c82783cbae0545347c631c82516947c5401"
+			}
+		},
+		{
+			"id": "06rJyZq9VPcbMXkSEI916H",
+			"name": "Homegroove Project",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851ad922bd60b7ee3032dac8c6d",
+				"300": "https://i.scdn.co/image/ab67616d00001e02ad922bd60b7ee3032dac8c6d",
+				"640": "https://i.scdn.co/image/ab67616d0000b273ad922bd60b7ee3032dac8c6d"
+			}
+		},
+		{
+			"id": "33L8FupX5olugmSnrRpYUQ",
+			"name": "Ziger",
+			"genres": ["deep progressive house", "focus trance"],
+			"images": {
+				"160": "https://i.scdn.co/image/bfb8827c5a632529cdd3bb89d03afc49867442a3",
+				"320": "https://i.scdn.co/image/29ca8682c61f406b34505484f2c9427b21ebff77",
+				"640": "https://i.scdn.co/image/1c70e3f6f41704ad7b82cb991c28ed8e3df51a55"
+			}
+		},
+		{
+			"id": "6PyysTRyOhuNeF84JEPuB8",
+			"name": "Mr.Raf",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851a3c0a161c51ffb49c84274e2",
+				"300": "https://i.scdn.co/image/ab67616d00001e02a3c0a161c51ffb49c84274e2",
+				"640": "https://i.scdn.co/image/ab67616d0000b273a3c0a161c51ffb49c84274e2"
+			}
+		},
+		{
+			"id": "3ZMsoHTVpvBdODNNDoLRrd",
+			"name": "Sharkstar",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d0000485153b3191e3fa065d3c0d97106",
+				"300": "https://i.scdn.co/image/ab67616d00001e0253b3191e3fa065d3c0d97106",
+				"640": "https://i.scdn.co/image/ab67616d0000b27353b3191e3fa065d3c0d97106"
+			}
+		},
+		{
+			"id": "7GLVeELhVwtSmorIEutDAB",
+			"name": "Redraft Memories",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/cd60c7ee85a02153ee9d6d5065696c020a329a80",
+				"320": "https://i.scdn.co/image/90bfa2832bb74832eb615b1647ed3a8b0215c685",
+				"640": "https://i.scdn.co/image/725dd6aa4cef4755db19db42fbec8514ebfa6bd7"
+			}
+		},
+		{
+			"id": "04ULEmrDC00KzWQwh6QFSx",
+			"name": "ProMax",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851bd4a8129b70b66eca11b4b51",
+				"300": "https://i.scdn.co/image/ab67616d00001e02bd4a8129b70b66eca11b4b51",
+				"640": "https://i.scdn.co/image/ab67616d0000b273bd4a8129b70b66eca11b4b51"
+			}
+		},
+		{
+			"id": "4vOltwEV2x8yw4UxrRuKea",
+			"name": "Ran Salman",
+			"genres": ["deep progressive house", "israeli techno"],
+			"images": {
+				"160": "https://i.scdn.co/image/de4199f6675562e29e1d7dfff3d4a09a9890c1f0",
+				"320": "https://i.scdn.co/image/32a6204481e8f7cad99d54ee8a11f49ecb9bed05",
+				"640": "https://i.scdn.co/image/10bf0534d323432072e55196156f6287ad8ad3dc"
+			}
+		},
+		{
+			"id": "5PgCMzcH9yvoiS5DHNU2Cz",
+			"name": "Oliver Petkovski",
+			"genres": ["macedonian electronic"],
+			"images": {
+				"160": "https://i.scdn.co/image/0314184e975a8233e80128cdb9e5df3ffff6d276",
+				"320": "https://i.scdn.co/image/936f161a6eafc075be2643fa9f5fa751ed02725b",
+				"640": "https://i.scdn.co/image/1d5396263a71475a7f9a22a8bc073ef96f44d45d"
+			}
+		},
+		{
+			"id": "5hmE0D1hVJosKdRGxYFXNo",
+			"name": "Ivan Zharov",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/c45834c69ac0225ba096c7e4a479e2a1637c8ac2",
+				"320": "https://i.scdn.co/image/e544474a8340fe8265dc2dfeaaeab854dbc00d50",
+				"640": "https://i.scdn.co/image/5f72c5bec42fbce557df3c1b1c26a800abca0570"
+			}
+		},
+		{
+			"id": "2wxCWN0Nc1mCCC9PoKYAvB",
+			"name": "Dino Mileta",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/3faf9eff5f23dd4bee545a6e14d6205520498e10",
+				"320": "https://i.scdn.co/image/c90227249ff028f3e4abeaf7b607a0e2d7b48a6d",
+				"640": "https://i.scdn.co/image/31fc74eccd50bc9264245214397171db92bd3050"
+			}
+		},
+		{
+			"id": "1DtZsZJDxRBejcZh7s1LqW",
+			"name": "Meyerson",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048510767276c4cc0dc15522af714",
+				"300": "https://i.scdn.co/image/ab67616d00001e020767276c4cc0dc15522af714",
+				"640": "https://i.scdn.co/image/ab67616d0000b2730767276c4cc0dc15522af714"
+			}
+		},
+		{
+			"id": "4yLaaiM1Upgf59TRaBZBFM",
+			"name": "Oovation",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/b28209751c5f079f2180c420d7f17f6a55cdf410",
+				"320": "https://i.scdn.co/image/8152f6e10982564adf4ef6bb6dd3249aa9247e85",
+				"640": "https://i.scdn.co/image/6b1944a7a567b6ba57d91f8cd525879f5ba23bdc"
+			}
+		},
+		{
+			"id": "1F1ZqE9mKP6kiGVCCQ85sd",
+			"name": "Lucas S.",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/b57683cb2f3e905dbbaa281a7113ba78b049e6f8",
+				"320": "https://i.scdn.co/image/8f5043f70dc7d0d338c5a66b3b4da87921f5f8a4",
+				"640": "https://i.scdn.co/image/4efaaa04730680d05b188b793d20baf09ce19e06"
+			}
+		},
+		{
+			"id": "3PZZLlkC5B2yDSf6DhravT",
+			"name": "Kingoff",
+			"genres": [],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851f27a1876397afab9d7d7312a",
+				"300": "https://i.scdn.co/image/ab67616d00001e02f27a1876397afab9d7d7312a",
+				"640": "https://i.scdn.co/image/ab67616d0000b273f27a1876397afab9d7d7312a"
+			}
+		},
+		{
+			"id": "2DiyBMHGaOD0ALe2k7BolB",
+			"name": "Thanos Kous",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/2ac22c9b1b6fe1413d67a7c91080750de6851be6",
+				"320": "https://i.scdn.co/image/7cecdc3b0afbe41126bad402eb99b7e69333bbc7",
+				"640": "https://i.scdn.co/image/40e7b6d12a597fe719242e5e9621b586904270c5"
+			}
+		},
+		{
+			"id": "5ZojnoQWgWAW7AF36xu0u4",
+			"name": "Gux Jimenez",
+			"genres": ["deep progressive house", "focus trance"],
+			"images": {
+				"160": "https://i.scdn.co/image/6ad93cfd85186badf2343208c9e681b400aa6dce",
+				"320": "https://i.scdn.co/image/88b305f49ca0e93fe03fa406559f8f350ba14135",
+				"640": "https://i.scdn.co/image/a612ec9d594835de53ebc99a495bc26ead8df7ec"
+			}
+		},
+		{
+			"id": "4wWx4g4GUDe73otY8gAPUg",
+			"name": "Shaddike",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048515e3674bae561602e0b476753",
+				"300": "https://i.scdn.co/image/ab67616d00001e025e3674bae561602e0b476753",
+				"640": "https://i.scdn.co/image/ab67616d0000b2735e3674bae561602e0b476753"
+			}
+		},
+		{
+			"id": "2Ina7nZqxI44e3eZE9NS5x",
+			"name": "Discknocked",
+			"genres": ["deep progressive house"],
+			"images": {
+				"160": "https://i.scdn.co/image/418568c0325155e1e5a73eaad2617734467e5fbe",
+				"320": "https://i.scdn.co/image/e64a6d41776eee4f0d10feac24435a03c3d51776",
+				"640": "https://i.scdn.co/image/fa1199efba1c5237e5301422444f7a07671cfd91"
+			}
+		},
+		{
+			"id": "0zie1LHQqS8VgIeSi2A1tY",
+			"name": "Mick Elsa",
+			"genres": ["deep progressive house"],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048514326be96017d99ca3ef748f1",
+				"300": "https://i.scdn.co/image/ab67616d00001e024326be96017d99ca3ef748f1",
+				"640": "https://i.scdn.co/image/ab67616d0000b2734326be96017d99ca3ef748f1"
+			}
+		}
+	],
+	"topTracks": [
+		{
+			"id": "1rWmUQ5HVtoswLviuK0OwH",
+			"name": "Consciousness Switch",
+			"href": "/albums/0peSOCjN2ayFd5MdRfCYnZ",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048518263351afd0136c46ad71cc4",
+				"300": "https://i.scdn.co/image/ab67616d00001e028263351afd0136c46ad71cc4",
+				"640": "https://i.scdn.co/image/ab67616d0000b2738263351afd0136c46ad71cc4"
+			},
+			"release_date": "2020-11-13",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"id": "7sMOGsm8T0YZ230abl9TcP",
+					"name": "Nōpi"
+				}
+			]
+		},
+		{
+			"id": "7w0zDS0XDhhSUM70c91WwG",
+			"name": "Tempelhof - Dmitry Molosh Remix",
+			"href": "/albums/5RrRufp3tL09HjSkijIcBp",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851ec66d601b5c0086628ef5617",
+				"300": "https://i.scdn.co/image/ab67616d00001e02ec66d601b5c0086628ef5617",
+				"640": "https://i.scdn.co/image/ab67616d0000b273ec66d601b5c0086628ef5617"
+			},
+			"release_date": "2018-03-19",
+			"artists": [
+				{
+					"id": "0Nc5Tlq6KSlVL6Dv0mmsc5",
+					"name": "Nicolas Rada"
+				},
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				}
+			]
+		},
+		{
+			"id": "0BBldEZVMGgOZ8uhEhAAcW",
+			"name": "Brain Jumble - Dmitry Molosh Remix",
+			"href": "/albums/77Pv2pPuQgXtU9fXFAlfH5",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851b4f983c3d6a57f93b8694866",
+				"300": "https://i.scdn.co/image/ab67616d00001e02b4f983c3d6a57f93b8694866",
+				"640": "https://i.scdn.co/image/ab67616d0000b273b4f983c3d6a57f93b8694866"
+			},
+			"release_date": "2016-12-20",
+			"artists": [
+				{
+					"id": "0Dscw724eRECqdZV6A2cI1",
+					"name": "Zakir"
+				},
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				}
+			]
+		},
+		{
+			"id": "6ndyEKvOnMxLPux7mnX2S9",
+			"name": "Integral",
+			"href": "/albums/510z5FgvWQWUtRvBdoSYqb",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048510b5e2c90a977610bb451223a",
+				"300": "https://i.scdn.co/image/ab67616d00001e020b5e2c90a977610bb451223a",
+				"640": "https://i.scdn.co/image/ab67616d0000b2730b5e2c90a977610bb451223a"
+			},
+			"release_date": "2020-04-20",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"id": "3EHolmMj8aPKVOd3tXnCjb",
+					"name": "Michael A"
+				}
+			]
+		},
+		{
+			"id": "0lGGMWbbpCsLQnDdEslobZ",
+			"name": "Twelve Days",
+			"href": "/albums/510z5FgvWQWUtRvBdoSYqb",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048510b5e2c90a977610bb451223a",
+				"300": "https://i.scdn.co/image/ab67616d00001e020b5e2c90a977610bb451223a",
+				"640": "https://i.scdn.co/image/ab67616d0000b2730b5e2c90a977610bb451223a"
+			},
+			"release_date": "2020-04-20",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"id": "3EHolmMj8aPKVOd3tXnCjb",
+					"name": "Michael A"
+				}
+			]
+		},
+		{
+			"id": "5NGphAfqgXege4NVQsj3AZ",
+			"name": "Ambition - Original Mix",
+			"href": "/albums/34uR0RkpnDj6AVsL2nYtbD",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851a0ac5d92b50d406b4e462bde",
+				"300": "https://i.scdn.co/image/ab67616d00001e02a0ac5d92b50d406b4e462bde",
+				"640": "https://i.scdn.co/image/ab67616d0000b273a0ac5d92b50d406b4e462bde"
+			},
+			"release_date": "2019-04-22",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				}
+			]
+		},
+		{
+			"id": "6D7zN6AyCPktLh8w4WqHRu",
+			"name": "Elision - Original Mix",
+			"href": "/albums/7s6uUUKXcIIX64cI2bK32T",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048519f2640ee0b17c82ee1bc6db8",
+				"300": "https://i.scdn.co/image/ab67616d00001e029f2640ee0b17c82ee1bc6db8",
+				"640": "https://i.scdn.co/image/ab67616d0000b2739f2640ee0b17c82ee1bc6db8"
+			},
+			"release_date": "2020-08-17",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				}
+			]
+		},
+		{
+			"id": "1A1wymDghK5TfCcV3azVie",
+			"name": "Step by Step - Original Dub Mix",
+			"href": "/albums/2e1YgkPtJ0PhDFGzTPSlcE",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048511bc8fae979c28a6daf11ef7e",
+				"300": "https://i.scdn.co/image/ab67616d00001e021bc8fae979c28a6daf11ef7e",
+				"640": "https://i.scdn.co/image/ab67616d0000b2731bc8fae979c28a6daf11ef7e"
+			},
+			"release_date": "2019-12-30",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"id": "2BYG50F96fcqP73OLfqdFE",
+					"name": "Sasha Bartashevich"
+				}
+			]
+		},
+		{
+			"id": "3tgy44ggW4T552fDKa7KMx",
+			"name": "Orchard - Kasper Koman Remix",
+			"href": "/albums/471Me2d0agZBU70gR43KL2",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d00004851f6de04c3a1659a94b740e63e",
+				"300": "https://i.scdn.co/image/ab67616d00001e02f6de04c3a1659a94b740e63e",
+				"640": "https://i.scdn.co/image/ab67616d0000b273f6de04c3a1659a94b740e63e"
+			},
+			"release_date": "2021-01-25",
+			"artists": [
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"id": "2fjKKBOOCTqkDTRC7wH6dO",
+					"name": "Kasper Koman"
+				}
+			]
+		},
+		{
+			"id": "5YcVoE88eBNLKego5S731o",
+			"name": "Elysium - Dmitry Molosh Remix",
+			"href": "/albums/14AgL9IlIVVpqThdQQb4Y3",
+			"is_local": false,
+			"is_playable": true,
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d0000485114e0d7c4b04ae3675062e4b7",
+				"300": "https://i.scdn.co/image/ab67616d00001e0214e0d7c4b04ae3675062e4b7",
+				"640": "https://i.scdn.co/image/ab67616d0000b27314e0d7c4b04ae3675062e4b7"
+			},
+			"release_date": "2021-02-01",
+			"artists": [
+				{
+					"id": "1lGIcfGU3JLw24GyPb4gDD",
+					"name": "The Cobb"
+				},
+				{
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				}
+			]
+		}
+	]
+}
