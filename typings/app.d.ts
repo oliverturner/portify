@@ -21,6 +21,8 @@ export interface TrackItemBase {
 	artists: TrackItemArtist[];
 	audio?: TrackItemAudio;
 	playLink?: string;
+	href?: string;
+	images?: Record<string, string>;
 }
 
 export interface TrackItem extends TrackItemBase {

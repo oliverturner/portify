@@ -1,4 +1,8 @@
 /**
+ * @typedef {SpotifyApi.TrackObjectSimplified|SpotifyApi.TrackObjectFull} TrackObject
+ */
+
+/**
  * @param {SpotifyApi.ImageObject[]} rawImages
  */
 function processImages(rawImages) {
@@ -30,15 +34,20 @@ function convertArtists(artists) {
 	return artists.map(({ id, name }) => ({ id, name }));
 }
 
+/** @type {(item: any) => item is SpotifyApi.TrackObjectFull} */
+function isTrackObjectFull(item) {
+	return item.album !== undefined;
+}
+
 /**
  * Translate the full object into a lighter representation
  *
- * @typedef {SpotifyApi.TrackObjectSimplified|SpotifyApi.TrackObjectFull} TrackObject
  * @param {TrackObject} item
  */
 function convertTrackObject(item) {
 	const { id, name, artists, is_playable } = item;
 
+	/** @type {Portify.TrackItemBase} */
 	const trackItem = {
 		id,
 		name,
@@ -47,8 +56,8 @@ function convertTrackObject(item) {
 		playLink: `/api/play/${id}`,
 	};
 
-	if (item.album) {
-		trackItem.href = `/albums/${item.album.id}`,
+	if (isTrackObjectFull(item)) {
+		trackItem.href = `/albums/${item.album.id}`;
 		trackItem.images = processImages(item.album.images);
 	}
 
