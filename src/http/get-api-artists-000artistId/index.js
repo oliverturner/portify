@@ -17,6 +17,8 @@ function getArtist(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}`);
 }
 
+function processArtist() {}
+
 /**
  * @param {Portify.BuildRequest} buildRequest
  * @param {string} artistId
@@ -31,6 +33,8 @@ function getAlbums(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/albums`, params);
 }
 
+function processAlbums() {}
+
 /**
  * @param {Portify.BuildRequest} buildRequest
  * @param {string} artistId
@@ -44,6 +48,8 @@ function getTopTracks(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/top-tracks`, params);
 }
 
+function processTracks() {}
+
 /**
  * @param {Portify.BuildRequest} buildRequest
  * @param {string} artistId
@@ -52,6 +58,8 @@ function getRelatedArtists(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/related-artists`);
 }
 
+function processArtists() {}
+
 /**
  * @param {HttpRequest} req
  */
@@ -59,11 +67,15 @@ async function getData({ session, pathParameters }) {
 	const { artistId } = pathParameters;
 	const buildRequest = requestFactory(process.env, session);
 
-	const artistReq = getArtist(buildRequest, artistId);
-	const relatedReq = getRelatedArtists(buildRequest, artistId);
-	const albumReq = getAlbums(buildRequest, artistId);
-	const tracksReq = getTopTracks(buildRequest, artistId);
-	
+	const requests = {
+		artist: { url: getArtist(buildRequest, artistId), fn: processArtist },
+		appearsOn: { url: getAlbums(buildRequest, artistId), fn: processAlbums },
+		topTracks: { url: getTopTracks(buildRequest, artistId), fn: processTracks },
+		relatedArtists: {
+			url: getRelatedArtists(buildRequest, artistId),
+			fn: processArtists,
+		},
+	};
 }
 
 module.exports = {
