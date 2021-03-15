@@ -12,7 +12,7 @@ const {
 	buildDict,
 } = require("@architect/shared/utils");
 const {
-	processImages,
+	convertImages,
 	convertArtists,
 	convertTrackObject,
 } = require("@architect/shared/spotify");
@@ -75,7 +75,7 @@ async function getAlbum({ session, pathParameters, queryStringParameters }) {
 		genres,
 		release_date,
 		artists: convertArtists(artists),
-		images: processImages(images),
+		images: convertImages(images),
 		items: Object.values(audioTrackDict),
 		...pagingObject,
 	};

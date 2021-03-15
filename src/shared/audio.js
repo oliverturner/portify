@@ -41,11 +41,11 @@ async function addTrackAudio(trackItemDict, audioRequest) {
 
 /**
  * @param {Record<string, Portify.TrackItemBase>} trackItemDict
- * @param {Portify.MakeRequest} makeRequest
+ * @param {Portify.BuildRequest} buildRequest
  */
-async function injectAudio(trackItemDict, makeRequest) {
+async function injectAudio(trackItemDict, buildRequest) {
 	const trackItemIds = Object.keys(trackItemDict);
-	const audioRequest = makeRequest("/audio-features", { ids: trackItemIds });
+	const audioRequest = buildRequest("/audio-features", { ids: trackItemIds });
 	const tracks = await addTrackAudio(trackItemDict, audioRequest);
 
 	return tracks;
