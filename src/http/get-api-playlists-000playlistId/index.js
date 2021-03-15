@@ -52,10 +52,10 @@ async function getPlaylist({ session, pathParameters, queryStringParameters }) {
 		offset,
 	};
 	const buildRequest = requestFactory(process.env, session);
-	const playlistReq = buildRequest(`/playlists/${playlistId}`, params);
+	const apiReq = buildRequest(`/playlists/${playlistId}`, params);
 
 	/** @type {SpotifyApi.PlaylistObjectFull} */
-	const { name, tracks } = (await get(playlistReq)).body;
+	const { name, tracks } = (await get(apiReq)).body;
 	const pagingObject = processResponse(playlistId, name, tracks);
 
 	const itemTracks = tracks.items.map(({ track }) => track);

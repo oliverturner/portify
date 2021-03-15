@@ -22,17 +22,15 @@ async function getTop({ session, queryStringParameters }) {
 	};
 
 	const buildRequest = requestFactory(process.env, session);
-	const reqConfig = buildRequest("/me/top/tracks", params);
-	const topTracks = (await get(reqConfig)).body;
+	const apiReq = buildRequest("/me/top/tracks", params);
+	const apiRes = (await get(apiReq)).body;
 
-	/** @type {Record<string, Portify.TrackItem>} */
-	const topTrackDict = buildDict(topTracks.items, convertTrackObject);
-	const audioTrackDict = await injectAudio(topTrackDict, buildRequest);
+	/** @type {Record<string, Portify.TrackItemBase>} */
+	const itemDict = buildDict(apiRes.items, convertTrackObject);
+	const enhancedDict = await injectAudio(itemDict, buildRequest);
 
 	return {
-		session,
-		status: 200,
-		body: JSON.stringify(audioTrackDict),
+		items: Object.values(enhancedDict),
 	};
 }
 

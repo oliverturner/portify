@@ -1,4 +1,8 @@
 /**
+ * @typedef {SpotifyApi.TrackObjectSimplified|SpotifyApi.TrackObjectFull} TrackObject
+ */
+
+/**
  * @param {SpotifyApi.ImageObject[]} rawImages
  */
 function processImages(rawImages) {
@@ -23,22 +27,41 @@ function isPlayable(is_playable, is_local) {
 }
 
 /**
+ * @param {SpotifyApi.ArtistObjectSimplified[]} artists
+ * @returns
+ */
+function convertArtists(artists) {
+	return artists.map(({ id, name }) => ({ id, name }));
+}
+
+/** @type {(item: any) => item is SpotifyApi.TrackObjectFull} */
+function isTrackObjectFull(item) {
+	return item.album !== undefined;
+}
+
+/**
  * Translate the full object into a lighter representation
  *
- * @param {SpotifyApi.TrackObjectFull} item
- * @returns {Portify.TrackItem}
+ * @param {TrackObject} item
  */
 function convertTrackObject(item) {
-	const { id, name, album, artists, is_playable, is_local } = item;
+	const { id, name, artists, is_playable } = item;
 
-	return {
+	/** @type {Portify.TrackItemBase} */
+	const trackItem = {
 		id,
 		name,
-		href: `/albums/${album.id}`,
-		is_playable: isPlayable(is_playable, is_local),
-		artists: artists.map(({ id, name }) => ({ id, name })),
-		images: processImages(album.images),
+		is_playable: isPlayable(is_playable),
+		artists: convertArtists(artists),
+		playLink: `/api/play/${id}`,
 	};
+
+	if (isTrackObjectFull(item)) {
+		trackItem.href = `/albums/${item.album.id}`;
+		trackItem.images = processImages(item.album.images);
+	}
+
+	return trackItem;
 }
 
 /**
@@ -51,6 +74,8 @@ function isCollection(items) {
 }
 
 module.exports = {
+	processImages,
+	convertArtists,
 	convertTrackObject,
 	isCollection,
 };

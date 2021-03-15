@@ -14,14 +14,20 @@ export interface TrackItemAudio {
 	analysis_url: string;
 }
 
-export interface TrackItem {
+export interface TrackItemBase {
 	id: string;
 	name: string;
-	href: string;
 	is_playable: boolean;
 	artists: TrackItemArtist[];
-	images: Record<string, string>;
 	audio?: TrackItemAudio;
+	playLink?: string;
+	href?: string;
+	images?: Record<string, string>;
+}
+
+export interface TrackItem extends TrackItemBase {
+	href: string;
+	images: Record<string, string>;
 }
 
 interface SessionRquestAuthorise {

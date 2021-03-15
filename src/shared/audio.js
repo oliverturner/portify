@@ -26,7 +26,7 @@ function processItemAudio(itemAudio) {
 /**
  * Inject audio_features into TrackItems
  * 
- * @param {Record<string, Portify.TrackItem>} trackItemDict
+ * @param {Record<string, Portify.TrackItemBase>} trackItemDict
  * @param {{url:string, headers: any}} audioRequest
  */
 async function addTrackAudio(trackItemDict, audioRequest) {
@@ -40,7 +40,7 @@ async function addTrackAudio(trackItemDict, audioRequest) {
 }
 
 /**
- * @param {Record<string, Portify.TrackItem>} trackItemDict
+ * @param {Record<string, Portify.TrackItemBase>} trackItemDict
  * @param {Portify.MakeRequest} makeRequest
  */
 async function injectAudio(trackItemDict, makeRequest) {
