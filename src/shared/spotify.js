@@ -5,7 +5,7 @@
 /**
  * @param {SpotifyApi.ImageObject[]} rawImages
  */
-function processImages(rawImages) {
+function convertImages(rawImages) {
 	/** @type Record<string, string> */
 	const images = {};
 	for (const { width, url } of rawImages) {
@@ -58,7 +58,7 @@ function convertTrackObject(item) {
 
 	if (isTrackObjectFull(item)) {
 		trackItem.href = `/albums/${item.album.id}`;
-		trackItem.images = processImages(item.album.images);
+		trackItem.images = convertImages(item.album.images);
 	}
 
 	return trackItem;
@@ -74,7 +74,7 @@ function isCollection(items) {
 }
 
 module.exports = {
-	processImages,
+	convertImages,
 	convertArtists,
 	convertTrackObject,
 	isCollection,

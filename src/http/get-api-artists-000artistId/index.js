@@ -1,6 +1,9 @@
 /**
  * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- * @typedef {SpotifyApi.PagingObject<SpotifyApi.PlaylistObjectSimplified>} Page
+ *
+ * @typedef {SpotifyApi.ArtistObjectFull} ArtistObjectFull
+ * @typedef {SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>} AlbumPage
+ * @typedef {SpotifyApi.TrackObjectFull} TrackObjectFull
  */
 
 const { http } = require("@architect/functions");
@@ -8,6 +11,7 @@ const { get } = require("tiny-json-http");
 
 const { makeResponse } = require("@architect/shared/make-response");
 const { requestFactory } = require("@architect/shared/utils");
+const { convertImages, convertArtists } = require("@architect/shared/spotify");
 
 /**
  * @param {Portify.BuildRequest} buildRequest
@@ -17,7 +21,18 @@ function getArtist(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}`);
 }
 
-function processArtist() {}
+/**
+ * @param {ArtistObjectFull} body
+ */
+function processArtist({ id, name, images, genres }) {
+	return {
+		id,
+		name,
+		genres,
+		href: `/artists/${id}`,
+		images: convertImages(images),
+	};
+}
 
 /**
  * @param {Portify.BuildRequest} buildRequest
@@ -33,7 +48,21 @@ function getAlbums(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/albums`, params);
 }
 
-function processAlbums() {}
+/**
+ * @param {AlbumPage} body
+ */
+function processAlbums({ items }) {
+	return items.map(
+		({ id, name, release_date, album_type, images, artists }) => ({
+			id,
+			name,
+			release_date,
+			album_type,
+			images: convertImages(images),
+			artists: convertArtists(artists),
+		})
+	);
+}
 
 /**
  * @param {Portify.BuildRequest} buildRequest
@@ -48,7 +77,19 @@ function getTopTracks(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/top-tracks`, params);
 }
 
-function processTracks() {}
+/**
+ * @param {{tracks: TrackObjectFull[]}} params
+ */
+function processTracks({ tracks }) {
+	return tracks.map(({ id, name, album, artists }) => ({
+		id,
+		name,
+		href: `/albums/${album.id}`,
+		release_date: album.release_date,
+		images: convertImages(album.images),
+		artists: convertArtists(artists),
+	}));
+}
 
 /**
  * @param {Portify.BuildRequest} buildRequest
@@ -58,7 +99,42 @@ function getRelatedArtists(buildRequest, artistId) {
 	return buildRequest(`/artists/${artistId}/related-artists`);
 }
 
-function processArtists() {}
+/**
+ * @param {{ artists: ArtistObjectFull[] }} body
+ */
+function processArtists({ artists }) {
+	return artists.map(({ id, name, genres, images }) => ({
+		id,
+		name,
+		genres,
+		images: convertImages(images),
+	}));
+}
+
+/**
+ * @param {Record<string, {req:Portify.RequestConfig, fn: Function}>} requests
+ */
+async function processRequests(requests) {
+	const promises = [];
+	for (const [key, { req, fn }] of Object.entries(requests)) {
+		promises.push(get(req).then(({ body }) => ({ key, data: fn(body) })));
+	}
+
+	/** @type {Portify.Dict} */
+	const dict = {};
+	const resolved = await Promise.allSettled(promises);
+	for (const response of resolved) {
+		if (response.status === "fulfilled") {
+			const { key, data } = response.value;
+			dict[key] = data;
+			continue;
+		}
+
+		console.log({ error: response.reason });
+	}
+
+	return dict;
+}
 
 /**
  * @param {HttpRequest} req
@@ -68,14 +144,16 @@ async function getData({ session, pathParameters }) {
 	const buildRequest = requestFactory(process.env, session);
 
 	const requests = {
-		artist: { url: getArtist(buildRequest, artistId), fn: processArtist },
-		appearsOn: { url: getAlbums(buildRequest, artistId), fn: processAlbums },
-		topTracks: { url: getTopTracks(buildRequest, artistId), fn: processTracks },
+		artist: { req: getArtist(buildRequest, artistId), fn: processArtist },
+		appearsOn: { req: getAlbums(buildRequest, artistId), fn: processAlbums },
+		topTracks: { req: getTopTracks(buildRequest, artistId), fn: processTracks },
 		relatedArtists: {
-			url: getRelatedArtists(buildRequest, artistId),
+			req: getRelatedArtists(buildRequest, artistId),
 			fn: processArtists,
 		},
 	};
+
+	return processRequests(requests);
 }
 
 module.exports = {

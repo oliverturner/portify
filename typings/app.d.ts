@@ -52,15 +52,14 @@ interface Dict {
 	[key: string]: unknown;
 }
 
-type BuildRequest = (
-	path: string,
-	params?: Dict | undefined
-) => {
+interface RequestConfig {
 	url: string;
 	headers: {
 		"Content-Type": string;
 		Authorization: string;
 	};
-};
+}
+
+type BuildRequest = (path: string, params?: Dict | undefined) => RequestConfig;
 
 export as namespace Portify;
