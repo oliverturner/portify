@@ -1,0 +1,894 @@
+{
+	"tracks": [
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					},
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/7sMOGsm8T0YZ230abl9TcP"
+						},
+						"href": "https://api.spotify.com/v1/artists/7sMOGsm8T0YZ230abl9TcP",
+						"id": "7sMOGsm8T0YZ230abl9TcP",
+						"name": "Nōpi",
+						"type": "artist",
+						"uri": "spotify:artist:7sMOGsm8T0YZ230abl9TcP"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/0peSOCjN2ayFd5MdRfCYnZ"
+				},
+				"href": "https://api.spotify.com/v1/albums/0peSOCjN2ayFd5MdRfCYnZ",
+				"id": "0peSOCjN2ayFd5MdRfCYnZ",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b2738263351afd0136c46ad71cc4",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e028263351afd0136c46ad71cc4",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d000048518263351afd0136c46ad71cc4",
+						"width": 64
+					}
+				],
+				"name": "Consciousness Switch",
+				"release_date": "2020-11-13",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:0peSOCjN2ayFd5MdRfCYnZ"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/7sMOGsm8T0YZ230abl9TcP"
+					},
+					"href": "https://api.spotify.com/v1/artists/7sMOGsm8T0YZ230abl9TcP",
+					"id": "7sMOGsm8T0YZ230abl9TcP",
+					"name": "Nōpi",
+					"type": "artist",
+					"uri": "spotify:artist:7sMOGsm8T0YZ230abl9TcP"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 539016,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z2037518"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/1rWmUQ5HVtoswLviuK0OwH"
+			},
+			"href": "https://api.spotify.com/v1/tracks/1rWmUQ5HVtoswLviuK0OwH",
+			"id": "1rWmUQ5HVtoswLviuK0OwH",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Consciousness Switch",
+			"popularity": 29,
+			"preview_url": "https://p.scdn.co/mp3-preview/90b14f8d139a3ab0b867e887c8676354f689dfb3?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 1,
+			"type": "track",
+			"uri": "spotify:track:1rWmUQ5HVtoswLviuK0OwH"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					},
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/5GiCK1PDfbgG6GBCbq9Nn0"
+						},
+						"href": "https://api.spotify.com/v1/artists/5GiCK1PDfbgG6GBCbq9Nn0",
+						"id": "5GiCK1PDfbgG6GBCbq9Nn0",
+						"name": "Hot Tuneik",
+						"type": "artist",
+						"uri": "spotify:artist:5GiCK1PDfbgG6GBCbq9Nn0"
+					},
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/0Nc5Tlq6KSlVL6Dv0mmsc5"
+						},
+						"href": "https://api.spotify.com/v1/artists/0Nc5Tlq6KSlVL6Dv0mmsc5",
+						"id": "0Nc5Tlq6KSlVL6Dv0mmsc5",
+						"name": "Nicolas Rada",
+						"type": "artist",
+						"uri": "spotify:artist:0Nc5Tlq6KSlVL6Dv0mmsc5"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/5RrRufp3tL09HjSkijIcBp"
+				},
+				"href": "https://api.spotify.com/v1/albums/5RrRufp3tL09HjSkijIcBp",
+				"id": "5RrRufp3tL09HjSkijIcBp",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b273ec66d601b5c0086628ef5617",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e02ec66d601b5c0086628ef5617",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d00004851ec66d601b5c0086628ef5617",
+						"width": 64
+					}
+				],
+				"name": "Schiphol (Remixes)",
+				"release_date": "2018-03-19",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:5RrRufp3tL09HjSkijIcBp"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/0Nc5Tlq6KSlVL6Dv0mmsc5"
+					},
+					"href": "https://api.spotify.com/v1/artists/0Nc5Tlq6KSlVL6Dv0mmsc5",
+					"id": "0Nc5Tlq6KSlVL6Dv0mmsc5",
+					"name": "Nicolas Rada",
+					"type": "artist",
+					"uri": "spotify:artist:0Nc5Tlq6KSlVL6Dv0mmsc5"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 480000,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z1804223"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/7w0zDS0XDhhSUM70c91WwG"
+			},
+			"href": "https://api.spotify.com/v1/tracks/7w0zDS0XDhhSUM70c91WwG",
+			"id": "7w0zDS0XDhhSUM70c91WwG",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Tempelhof - Dmitry Molosh Remix",
+			"popularity": 25,
+			"preview_url": "https://p.scdn.co/mp3-preview/5d390664c9720c88db0b6eef6cfc4204636c394c?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 1,
+			"type": "track",
+			"uri": "spotify:track:7w0zDS0XDhhSUM70c91WwG"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/0Dscw724eRECqdZV6A2cI1"
+						},
+						"href": "https://api.spotify.com/v1/artists/0Dscw724eRECqdZV6A2cI1",
+						"id": "0Dscw724eRECqdZV6A2cI1",
+						"name": "Zakir",
+						"type": "artist",
+						"uri": "spotify:artist:0Dscw724eRECqdZV6A2cI1"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/77Pv2pPuQgXtU9fXFAlfH5"
+				},
+				"href": "https://api.spotify.com/v1/albums/77Pv2pPuQgXtU9fXFAlfH5",
+				"id": "77Pv2pPuQgXtU9fXFAlfH5",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b273b4f983c3d6a57f93b8694866",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e02b4f983c3d6a57f93b8694866",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d00004851b4f983c3d6a57f93b8694866",
+						"width": 64
+					}
+				],
+				"name": "Brain Jumble",
+				"release_date": "2016-12-20",
+				"release_date_precision": "day",
+				"total_tracks": 4,
+				"type": "album",
+				"uri": "spotify:album:77Pv2pPuQgXtU9fXFAlfH5"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/0Dscw724eRECqdZV6A2cI1"
+					},
+					"href": "https://api.spotify.com/v1/artists/0Dscw724eRECqdZV6A2cI1",
+					"id": "0Dscw724eRECqdZV6A2cI1",
+					"name": "Zakir",
+					"type": "artist",
+					"uri": "spotify:artist:0Dscw724eRECqdZV6A2cI1"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 386557,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "GBLV61630503"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/0BBldEZVMGgOZ8uhEhAAcW"
+			},
+			"href": "https://api.spotify.com/v1/tracks/0BBldEZVMGgOZ8uhEhAAcW",
+			"id": "0BBldEZVMGgOZ8uhEhAAcW",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Brain Jumble - Dmitry Molosh Remix",
+			"popularity": 16,
+			"preview_url": "https://p.scdn.co/mp3-preview/8de4deb3b75047b8ad7aa8aa4e638c84283b30c9?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 3,
+			"type": "track",
+			"uri": "spotify:track:0BBldEZVMGgOZ8uhEhAAcW"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					},
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/3EHolmMj8aPKVOd3tXnCjb"
+						},
+						"href": "https://api.spotify.com/v1/artists/3EHolmMj8aPKVOd3tXnCjb",
+						"id": "3EHolmMj8aPKVOd3tXnCjb",
+						"name": "Michael A",
+						"type": "artist",
+						"uri": "spotify:artist:3EHolmMj8aPKVOd3tXnCjb"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/510z5FgvWQWUtRvBdoSYqb"
+				},
+				"href": "https://api.spotify.com/v1/albums/510z5FgvWQWUtRvBdoSYqb",
+				"id": "510z5FgvWQWUtRvBdoSYqb",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b2730b5e2c90a977610bb451223a",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e020b5e2c90a977610bb451223a",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d000048510b5e2c90a977610bb451223a",
+						"width": 64
+					}
+				],
+				"name": "Integral",
+				"release_date": "2020-04-20",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:510z5FgvWQWUtRvBdoSYqb"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/3EHolmMj8aPKVOd3tXnCjb"
+					},
+					"href": "https://api.spotify.com/v1/artists/3EHolmMj8aPKVOd3tXnCjb",
+					"id": "3EHolmMj8aPKVOd3tXnCjb",
+					"name": "Michael A",
+					"type": "artist",
+					"uri": "spotify:artist:3EHolmMj8aPKVOd3tXnCjb"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 442622,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z2010035"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/6ndyEKvOnMxLPux7mnX2S9"
+			},
+			"href": "https://api.spotify.com/v1/tracks/6ndyEKvOnMxLPux7mnX2S9",
+			"id": "6ndyEKvOnMxLPux7mnX2S9",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Integral",
+			"popularity": 25,
+			"preview_url": "https://p.scdn.co/mp3-preview/5cf88a0b1c4f981bcc3676e548ac2b2f7744af3b?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 1,
+			"type": "track",
+			"uri": "spotify:track:6ndyEKvOnMxLPux7mnX2S9"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					},
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/3EHolmMj8aPKVOd3tXnCjb"
+						},
+						"href": "https://api.spotify.com/v1/artists/3EHolmMj8aPKVOd3tXnCjb",
+						"id": "3EHolmMj8aPKVOd3tXnCjb",
+						"name": "Michael A",
+						"type": "artist",
+						"uri": "spotify:artist:3EHolmMj8aPKVOd3tXnCjb"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/510z5FgvWQWUtRvBdoSYqb"
+				},
+				"href": "https://api.spotify.com/v1/albums/510z5FgvWQWUtRvBdoSYqb",
+				"id": "510z5FgvWQWUtRvBdoSYqb",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b2730b5e2c90a977610bb451223a",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e020b5e2c90a977610bb451223a",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d000048510b5e2c90a977610bb451223a",
+						"width": 64
+					}
+				],
+				"name": "Integral",
+				"release_date": "2020-04-20",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:510z5FgvWQWUtRvBdoSYqb"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/3EHolmMj8aPKVOd3tXnCjb"
+					},
+					"href": "https://api.spotify.com/v1/artists/3EHolmMj8aPKVOd3tXnCjb",
+					"id": "3EHolmMj8aPKVOd3tXnCjb",
+					"name": "Michael A",
+					"type": "artist",
+					"uri": "spotify:artist:3EHolmMj8aPKVOd3tXnCjb"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 444590,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z2010034"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/0lGGMWbbpCsLQnDdEslobZ"
+			},
+			"href": "https://api.spotify.com/v1/tracks/0lGGMWbbpCsLQnDdEslobZ",
+			"id": "0lGGMWbbpCsLQnDdEslobZ",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Twelve Days",
+			"popularity": 24,
+			"preview_url": "https://p.scdn.co/mp3-preview/87f3f1412b7d9ad2e393fe74578953b033fda5e1?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 2,
+			"type": "track",
+			"uri": "spotify:track:0lGGMWbbpCsLQnDdEslobZ"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/34uR0RkpnDj6AVsL2nYtbD"
+				},
+				"href": "https://api.spotify.com/v1/albums/34uR0RkpnDj6AVsL2nYtbD",
+				"id": "34uR0RkpnDj6AVsL2nYtbD",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b273a0ac5d92b50d406b4e462bde",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e02a0ac5d92b50d406b4e462bde",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d00004851a0ac5d92b50d406b4e462bde",
+						"width": 64
+					}
+				],
+				"name": "Ambition",
+				"release_date": "2019-04-22",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:34uR0RkpnDj6AVsL2nYtbD"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 511781,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "UKACT1911422"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/5NGphAfqgXege4NVQsj3AZ"
+			},
+			"href": "https://api.spotify.com/v1/tracks/5NGphAfqgXege4NVQsj3AZ",
+			"id": "5NGphAfqgXege4NVQsj3AZ",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Ambition - Original Mix",
+			"popularity": 22,
+			"preview_url": "https://p.scdn.co/mp3-preview/03357dfafeca1d9ac4ed7fbb29c2080da5309d27?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 1,
+			"type": "track",
+			"uri": "spotify:track:5NGphAfqgXege4NVQsj3AZ"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/7s6uUUKXcIIX64cI2bK32T"
+				},
+				"href": "https://api.spotify.com/v1/albums/7s6uUUKXcIIX64cI2bK32T",
+				"id": "7s6uUUKXcIIX64cI2bK32T",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b2739f2640ee0b17c82ee1bc6db8",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e029f2640ee0b17c82ee1bc6db8",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d000048519f2640ee0b17c82ee1bc6db8",
+						"width": 64
+					}
+				],
+				"name": "Elision",
+				"release_date": "2020-08-17",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:7s6uUUKXcIIX64cI2bK32T"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 464000,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "UKACT2011125"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/6D7zN6AyCPktLh8w4WqHRu"
+			},
+			"href": "https://api.spotify.com/v1/tracks/6D7zN6AyCPktLh8w4WqHRu",
+			"id": "6D7zN6AyCPktLh8w4WqHRu",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Elision - Original Mix",
+			"popularity": 22,
+			"preview_url": "https://p.scdn.co/mp3-preview/9eb9ddde5a7637ef9b7555b5c16de29a5d6ad33c?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 1,
+			"type": "track",
+			"uri": "spotify:track:6D7zN6AyCPktLh8w4WqHRu"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/2e1YgkPtJ0PhDFGzTPSlcE"
+				},
+				"href": "https://api.spotify.com/v1/albums/2e1YgkPtJ0PhDFGzTPSlcE",
+				"id": "2e1YgkPtJ0PhDFGzTPSlcE",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b2731bc8fae979c28a6daf11ef7e",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e021bc8fae979c28a6daf11ef7e",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d000048511bc8fae979c28a6daf11ef7e",
+						"width": 64
+					}
+				],
+				"name": "Cascade",
+				"release_date": "2019-12-30",
+				"release_date_precision": "day",
+				"total_tracks": 2,
+				"type": "album",
+				"uri": "spotify:album:2e1YgkPtJ0PhDFGzTPSlcE"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/2BYG50F96fcqP73OLfqdFE"
+					},
+					"href": "https://api.spotify.com/v1/artists/2BYG50F96fcqP73OLfqdFE",
+					"id": "2BYG50F96fcqP73OLfqdFE",
+					"name": "Sasha Bartashevich",
+					"type": "artist",
+					"uri": "spotify:artist:2BYG50F96fcqP73OLfqdFE"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 444297,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z1933697"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/1A1wymDghK5TfCcV3azVie"
+			},
+			"href": "https://api.spotify.com/v1/tracks/1A1wymDghK5TfCcV3azVie",
+			"id": "1A1wymDghK5TfCcV3azVie",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Step by Step - Original Dub Mix",
+			"popularity": 22,
+			"preview_url": "https://p.scdn.co/mp3-preview/360a1eee225e0b4fe95d402d6e26a0122185de51?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 2,
+			"type": "track",
+			"uri": "spotify:track:1A1wymDghK5TfCcV3azVie"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+						},
+						"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+						"id": "762FYAqSeuqmgbL6qEAJr8",
+						"name": "Dmitry Molosh",
+						"type": "artist",
+						"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/471Me2d0agZBU70gR43KL2"
+				},
+				"href": "https://api.spotify.com/v1/albums/471Me2d0agZBU70gR43KL2",
+				"id": "471Me2d0agZBU70gR43KL2",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b273f6de04c3a1659a94b740e63e",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e02f6de04c3a1659a94b740e63e",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d00004851f6de04c3a1659a94b740e63e",
+						"width": 64
+					}
+				],
+				"name": "Orchard",
+				"release_date": "2021-01-25",
+				"release_date_precision": "day",
+				"total_tracks": 4,
+				"type": "album",
+				"uri": "spotify:album:471Me2d0agZBU70gR43KL2"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/2fjKKBOOCTqkDTRC7wH6dO"
+					},
+					"href": "https://api.spotify.com/v1/artists/2fjKKBOOCTqkDTRC7wH6dO",
+					"id": "2fjKKBOOCTqkDTRC7wH6dO",
+					"name": "Kasper Koman",
+					"type": "artist",
+					"uri": "spotify:artist:2fjKKBOOCTqkDTRC7wH6dO"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 473189,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "US83Z2048859"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/3tgy44ggW4T552fDKa7KMx"
+			},
+			"href": "https://api.spotify.com/v1/tracks/3tgy44ggW4T552fDKa7KMx",
+			"id": "3tgy44ggW4T552fDKa7KMx",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Orchard - Kasper Koman Remix",
+			"popularity": 20,
+			"preview_url": "https://p.scdn.co/mp3-preview/71cce7c4440c0ada98f81611843f7ab35a75a32a?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 2,
+			"type": "track",
+			"uri": "spotify:track:3tgy44ggW4T552fDKa7KMx"
+		},
+		{
+			"album": {
+				"album_type": "single",
+				"artists": [
+					{
+						"external_urls": {
+							"spotify": "https://open.spotify.com/artist/1lGIcfGU3JLw24GyPb4gDD"
+						},
+						"href": "https://api.spotify.com/v1/artists/1lGIcfGU3JLw24GyPb4gDD",
+						"id": "1lGIcfGU3JLw24GyPb4gDD",
+						"name": "The Cobb",
+						"type": "artist",
+						"uri": "spotify:artist:1lGIcfGU3JLw24GyPb4gDD"
+					}
+				],
+				"external_urls": {
+					"spotify": "https://open.spotify.com/album/14AgL9IlIVVpqThdQQb4Y3"
+				},
+				"href": "https://api.spotify.com/v1/albums/14AgL9IlIVVpqThdQQb4Y3",
+				"id": "14AgL9IlIVVpqThdQQb4Y3",
+				"images": [
+					{
+						"height": 640,
+						"url": "https://i.scdn.co/image/ab67616d0000b27314e0d7c4b04ae3675062e4b7",
+						"width": 640
+					},
+					{
+						"height": 300,
+						"url": "https://i.scdn.co/image/ab67616d00001e0214e0d7c4b04ae3675062e4b7",
+						"width": 300
+					},
+					{
+						"height": 64,
+						"url": "https://i.scdn.co/image/ab67616d0000485114e0d7c4b04ae3675062e4b7",
+						"width": 64
+					}
+				],
+				"name": "Elysium",
+				"release_date": "2021-02-01",
+				"release_date_precision": "day",
+				"total_tracks": 4,
+				"type": "album",
+				"uri": "spotify:album:14AgL9IlIVVpqThdQQb4Y3"
+			},
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/1lGIcfGU3JLw24GyPb4gDD"
+					},
+					"href": "https://api.spotify.com/v1/artists/1lGIcfGU3JLw24GyPb4gDD",
+					"id": "1lGIcfGU3JLw24GyPb4gDD",
+					"name": "The Cobb",
+					"type": "artist",
+					"uri": "spotify:artist:1lGIcfGU3JLw24GyPb4gDD"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/762FYAqSeuqmgbL6qEAJr8"
+					},
+					"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh",
+					"type": "artist",
+					"uri": "spotify:artist:762FYAqSeuqmgbL6qEAJr8"
+				}
+			],
+			"disc_number": 1,
+			"duration_ms": 485432,
+			"explicit": false,
+			"external_ids": {
+				"isrc": "UKACT2110011"
+			},
+			"external_urls": {
+				"spotify": "https://open.spotify.com/track/5YcVoE88eBNLKego5S731o"
+			},
+			"href": "https://api.spotify.com/v1/tracks/5YcVoE88eBNLKego5S731o",
+			"id": "5YcVoE88eBNLKego5S731o",
+			"is_local": false,
+			"is_playable": true,
+			"name": "Elysium - Dmitry Molosh Remix",
+			"popularity": 20,
+			"preview_url": "https://p.scdn.co/mp3-preview/92d3c9e5d9b3bfc90626460ae99ba38a5b44ef0a?cid=774b29d4f13844c495f206cafdad9c86",
+			"track_number": 2,
+			"type": "track",
+			"uri": "spotify:track:5YcVoE88eBNLKego5S731o"
+		}
+	]
+}

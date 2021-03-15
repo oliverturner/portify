@@ -52,7 +52,7 @@ interface Dict {
 	[key: string]: unknown;
 }
 
-type MakeRequest = (
+type BuildRequest = (
 	path: string,
 	params?: Dict | undefined
 ) => {
