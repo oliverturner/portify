@@ -7,15 +7,16 @@ const { post } = require("tiny-json-http");
 const { makeSessionRequest, getLogoutResponse } = require("./session-request");
 
 /**
- * Execute the `handleReq` callback and return response 
+ * Execute the `handleReq` callback and return response
  * Handle retries where auth has expired
  * Logout on failed retry
- * 
+ *
  * @type {(fn: Function) => HttpHandler}
  */
 const makeResponse = (handleReq) => async (req) => {
 	try {
-		return await handleReq(req);
+		const json = await handleReq(req);
+		return { json };
 	} catch (error) {
 		if (!req.session) {
 			return getLogoutResponse();

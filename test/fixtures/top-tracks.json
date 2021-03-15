@@ -1,66 +1,68 @@
 {
-	"1rWmUQ5HVtoswLviuK0OwH": {
-		"id": "1rWmUQ5HVtoswLviuK0OwH",
-		"name": "Consciousness Switch",
-		"href": "/albums/0peSOCjN2ayFd5MdRfCYnZ",
-		"is_playable": true,
-		"playLink": "/api/play/1rWmUQ5HVtoswLviuK0OwH",
-		"artists": [
-			{ "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
-			{ "id": "7sMOGsm8T0YZ230abl9TcP", "name": "Nōpi" }
-		],
-		"images": {
-			"64": "https://i.scdn.co/image/ab67616d000048518263351afd0136c46ad71cc4",
-			"300": "https://i.scdn.co/image/ab67616d00001e028263351afd0136c46ad71cc4",
-			"640": "https://i.scdn.co/image/ab67616d0000b2738263351afd0136c46ad71cc4"
+	"items": [
+		{
+			"id": "1rWmUQ5HVtoswLviuK0OwH",
+			"name": "Consciousness Switch",
+			"href": "/albums/0peSOCjN2ayFd5MdRfCYnZ",
+			"is_playable": true,
+			"playLink": "/api/play/1rWmUQ5HVtoswLviuK0OwH",
+			"artists": [
+				{ "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
+				{ "id": "7sMOGsm8T0YZ230abl9TcP", "name": "Nōpi" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048518263351afd0136c46ad71cc4",
+				"300": "https://i.scdn.co/image/ab67616d00001e028263351afd0136c46ad71cc4",
+				"640": "https://i.scdn.co/image/ab67616d0000b2738263351afd0136c46ad71cc4"
+			},
+			"audio": {
+				"keys": { "camelot": "7B", "musical": "F" },
+				"bpm": 122,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/1rWmUQ5HVtoswLviuK0OwH"
+			}
 		},
-		"audio": {
-			"keys": { "camelot": "7B", "musical": "F" },
-			"bpm": 122,
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1rWmUQ5HVtoswLviuK0OwH"
-		}
-	},
-	"1bVNOAzR9giwIivkcshTpP": {
-		"id": "1bVNOAzR9giwIivkcshTpP",
-		"name": "Passion - Original Mix",
-		"href": "/albums/2KfKcY4HGlFVA56CD0yVLZ",
-		"is_playable": true,
-		"playLink": "/api/play/1bVNOAzR9giwIivkcshTpP",
-		"artists": [
-			{ "id": "1TqcQwnBqloJrKkGs4l4LT", "name": "D-Nox" },
-			{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" }
-		],
-		"images": {
-			"64": "https://i.scdn.co/image/ab67616d000048519cf73da12f8e68b2354aad11",
-			"300": "https://i.scdn.co/image/ab67616d00001e029cf73da12f8e68b2354aad11",
-			"640": "https://i.scdn.co/image/ab67616d0000b2739cf73da12f8e68b2354aad11"
+		{
+			"id": "1bVNOAzR9giwIivkcshTpP",
+			"name": "Passion - Original Mix",
+			"href": "/albums/2KfKcY4HGlFVA56CD0yVLZ",
+			"is_playable": true,
+			"playLink": "/api/play/1bVNOAzR9giwIivkcshTpP",
+			"artists": [
+				{ "id": "1TqcQwnBqloJrKkGs4l4LT", "name": "D-Nox" },
+				{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048519cf73da12f8e68b2354aad11",
+				"300": "https://i.scdn.co/image/ab67616d00001e029cf73da12f8e68b2354aad11",
+				"640": "https://i.scdn.co/image/ab67616d0000b2739cf73da12f8e68b2354aad11"
+			},
+			"audio": {
+				"keys": { "camelot": "9B", "musical": "G" },
+				"bpm": 123,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/1bVNOAzR9giwIivkcshTpP"
+			}
 		},
-		"audio": {
-			"keys": { "camelot": "9B", "musical": "G" },
-			"bpm": 123,
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1bVNOAzR9giwIivkcshTpP"
+		{
+			"id": "5iE3PyNL1BxMBTLkq5iLIM",
+			"name": "Listen - Max Freegrant & Slow Fish Remix",
+			"href": "/albums/2khLaEBxaaisEWt7lGTPg3",
+			"is_playable": true,
+			"playLink": "/api/play/5iE3PyNL1BxMBTLkq5iLIM",
+			"artists": [
+				{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" },
+				{ "id": "2q4QQApDOk5PUdFGWfHmJR", "name": "Max Freegrant" },
+				{ "id": "3m91RDu6WNtDGSHblWjZ7w", "name": "Slow Fish" }
+			],
+			"images": {
+				"64": "https://i.scdn.co/image/ab67616d000048518b05417aa4ea0f85903c81ac",
+				"300": "https://i.scdn.co/image/ab67616d00001e028b05417aa4ea0f85903c81ac",
+				"640": "https://i.scdn.co/image/ab67616d0000b2738b05417aa4ea0f85903c81ac"
+			},
+			"audio": {
+				"keys": { "camelot": "3B", "musical": "C♯, D♭" },
+				"bpm": 123,
+				"analysis_url": "https://api.spotify.com/v1/audio-analysis/5iE3PyNL1BxMBTLkq5iLIM"
+			}
 		}
-	},
-	"5iE3PyNL1BxMBTLkq5iLIM": {
-		"id": "5iE3PyNL1BxMBTLkq5iLIM",
-		"name": "Listen - Max Freegrant & Slow Fish Remix",
-		"href": "/albums/2khLaEBxaaisEWt7lGTPg3",
-		"is_playable": true,
-		"playLink": "/api/play/5iE3PyNL1BxMBTLkq5iLIM",
-		"artists": [
-			{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" },
-			{ "id": "2q4QQApDOk5PUdFGWfHmJR", "name": "Max Freegrant" },
-			{ "id": "3m91RDu6WNtDGSHblWjZ7w", "name": "Slow Fish" }
-		],
-		"images": {
-			"64": "https://i.scdn.co/image/ab67616d000048518b05417aa4ea0f85903c81ac",
-			"300": "https://i.scdn.co/image/ab67616d00001e028b05417aa4ea0f85903c81ac",
-			"640": "https://i.scdn.co/image/ab67616d0000b2738b05417aa4ea0f85903c81ac"
-		},
-		"audio": {
-			"keys": { "camelot": "3B", "musical": "C♯, D♭" },
-			"bpm": 123,
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5iE3PyNL1BxMBTLkq5iLIM"
-		}
-	}
+	]
 }

@@ -40,7 +40,7 @@ test("makeResponse", async (t) => {
 		{
 			desc: "executes normally",
 			request: { session: { access_token: "f4k3-4cc355-t0k3n" } },
-			expected: successResponse,
+			expected: { json: successResponse },
 		},
 		{
 			desc: "handles errors with no session",
@@ -48,7 +48,7 @@ test("makeResponse", async (t) => {
 			expected: logoutResponse,
 		},
 		{
-      desc: "retries successfully",
+			desc: "retries successfully",
 			request: {
 				session: {
 					access_token: "expired",
@@ -58,7 +58,7 @@ test("makeResponse", async (t) => {
 			expected: successResponse,
 		},
 		{
-      desc: "permanently rejects unsuccessful retries",
+			desc: "permanently rejects unsuccessful retries",
 			request: {
 				session: { access_token: "expired", refresh_token: "reject-me" },
 			},

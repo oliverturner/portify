@@ -5,7 +5,7 @@ const nock = require("nock");
 
 const { getPlaylists } = require("../src/http/get-api-playlists");
 const { getTestEnv } = require("./helpers");
-const playlistsJson = require("./fixtures/playlists.json");
+const expected = require("./fixtures/playlists.json");
 
 const testEnv = getTestEnv("getPlaylists");
 
@@ -22,10 +22,10 @@ test("getPlaylists", async (t) => {
 			"Content-Type": "application/json",
 		});
 
-	const playlists = await getPlaylists({ session, queryStringParameters });
+	const input = await getPlaylists({ session, queryStringParameters });
 
 	t.plan(1);
-	t.deepEquals(playlists, playlistsJson, "Parsed output matches");
+	t.deepEquals(input, expected, "Parsed output matches");
 });
 
 testEnv.down();
