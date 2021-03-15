@@ -1,0 +1,510 @@
+{
+	"href": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8/albums?offset=0&limit=10&include_groups=appears_on&market=GB",
+	"items": [
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/5wt6ykFuNy0WtBpYVaG7OY"
+					},
+					"href": "https://api.spotify.com/v1/artists/5wt6ykFuNy0WtBpYVaG7OY",
+					"id": "5wt6ykFuNy0WtBpYVaG7OY",
+					"name": "D-Formation",
+					"type": "artist",
+					"uri": "spotify:artist:5wt6ykFuNy0WtBpYVaG7OY"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/39o3j86mjINYx9V78LDU35"
+			},
+			"href": "https://api.spotify.com/v1/albums/39o3j86mjINYx9V78LDU35",
+			"id": "39o3j86mjINYx9V78LDU35",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2730dde9d91e81f4b0aae3b74ec",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e020dde9d91e81f4b0aae3b74ec",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048510dde9d91e81f4b0aae3b74ec",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "This Is Beatfreak by D-Formation (DJ Mix)",
+			"release_date": "2021-03-12",
+			"release_date_precision": "day",
+			"total_tracks": 28,
+			"type": "album",
+			"uri": "spotify:album:39o3j86mjINYx9V78LDU35"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/2jtEP3ZWQNoXeWQvjF86xU"
+					},
+					"href": "https://api.spotify.com/v1/artists/2jtEP3ZWQNoXeWQvjF86xU",
+					"id": "2jtEP3ZWQNoXeWQvjF86xU",
+					"name": "GMJ",
+					"type": "artist",
+					"uri": "spotify:artist:2jtEP3ZWQNoXeWQvjF86xU"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/06G320XM6NWeEBGOb11ir3"
+					},
+					"href": "https://api.spotify.com/v1/artists/06G320XM6NWeEBGOb11ir3",
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio",
+					"type": "artist",
+					"uri": "spotify:artist:06G320XM6NWeEBGOb11ir3"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/7vZbUX0NcGOMhXTETxGY7B"
+			},
+			"href": "https://api.spotify.com/v1/albums/7vZbUX0NcGOMhXTETxGY7B",
+			"id": "7vZbUX0NcGOMhXTETxGY7B",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2732514a8c6ee097351bc155728",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e022514a8c6ee097351bc155728",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048512514a8c6ee097351bc155728",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Meanwhile 015 (DJ Mix)",
+			"release_date": "2021-02-26",
+			"release_date_precision": "day",
+			"total_tracks": 12,
+			"type": "album",
+			"uri": "spotify:album:7vZbUX0NcGOMhXTETxGY7B"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/5MSK0EcJzGYAEgTCY7EIAa"
+					},
+					"href": "https://api.spotify.com/v1/artists/5MSK0EcJzGYAEgTCY7EIAa",
+					"id": "5MSK0EcJzGYAEgTCY7EIAa",
+					"name": "Embliss",
+					"type": "artist",
+					"uri": "spotify:artist:5MSK0EcJzGYAEgTCY7EIAa"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/06G320XM6NWeEBGOb11ir3"
+					},
+					"href": "https://api.spotify.com/v1/artists/06G320XM6NWeEBGOb11ir3",
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio",
+					"type": "artist",
+					"uri": "spotify:artist:06G320XM6NWeEBGOb11ir3"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/5MYTfFAb1s9r3k1KBMdld6"
+			},
+			"href": "https://api.spotify.com/v1/albums/5MYTfFAb1s9r3k1KBMdld6",
+			"id": "5MYTfFAb1s9r3k1KBMdld6",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273d7d73dfd4a3a95314f4ad234",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02d7d73dfd4a3a95314f4ad234",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851d7d73dfd4a3a95314f4ad234",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Mind Over Matter - Winter 2021 (DJ Mix)",
+			"release_date": "2021-02-19",
+			"release_date_precision": "day",
+			"total_tracks": 10,
+			"type": "album",
+			"uri": "spotify:album:5MYTfFAb1s9r3k1KBMdld6"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/1rNyXukMA7XNVcVEvbNfWn"
+					},
+					"href": "https://api.spotify.com/v1/artists/1rNyXukMA7XNVcVEvbNfWn",
+					"id": "1rNyXukMA7XNVcVEvbNfWn",
+					"name": "Olga Misty",
+					"type": "artist",
+					"uri": "spotify:artist:1rNyXukMA7XNVcVEvbNfWn"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/06G320XM6NWeEBGOb11ir3"
+					},
+					"href": "https://api.spotify.com/v1/artists/06G320XM6NWeEBGOb11ir3",
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio",
+					"type": "artist",
+					"uri": "spotify:artist:06G320XM6NWeEBGOb11ir3"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/2CwYDZKS4Eoof57YtPRWDg"
+			},
+			"href": "https://api.spotify.com/v1/albums/2CwYDZKS4Eoof57YtPRWDg",
+			"id": "2CwYDZKS4Eoof57YtPRWDg",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b27348027a915b9fe65b9687963e",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e0248027a915b9fe65b9687963e",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d0000485148027a915b9fe65b9687963e",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Meanwhile 014 (DJ Mix)",
+			"release_date": "2021-02-05",
+			"release_date_precision": "day",
+			"total_tracks": 13,
+			"type": "album",
+			"uri": "spotify:album:2CwYDZKS4Eoof57YtPRWDg"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/4c2u8w0s3mo0iPZ67dGoTH"
+					},
+					"href": "https://api.spotify.com/v1/artists/4c2u8w0s3mo0iPZ67dGoTH",
+					"id": "4c2u8w0s3mo0iPZ67dGoTH",
+					"name": "Miss Nine",
+					"type": "artist",
+					"uri": "spotify:artist:4c2u8w0s3mo0iPZ67dGoTH"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/3ICwf2o0nNcGqgIHvDVCLL"
+			},
+			"href": "https://api.spotify.com/v1/albums/3ICwf2o0nNcGqgIHvDVCLL",
+			"id": "3ICwf2o0nNcGqgIHvDVCLL",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273ddf3338c39e53d537741fdcf",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02ddf3338c39e53d537741fdcf",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851ddf3338c39e53d537741fdcf",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Ambient Waves (DJ Mix)",
+			"release_date": "2021-02-04",
+			"release_date_precision": "day",
+			"total_tracks": 11,
+			"type": "album",
+			"uri": "spotify:album:3ICwf2o0nNcGqgIHvDVCLL"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "single",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/1lGIcfGU3JLw24GyPb4gDD"
+					},
+					"href": "https://api.spotify.com/v1/artists/1lGIcfGU3JLw24GyPb4gDD",
+					"id": "1lGIcfGU3JLw24GyPb4gDD",
+					"name": "The Cobb",
+					"type": "artist",
+					"uri": "spotify:artist:1lGIcfGU3JLw24GyPb4gDD"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/14AgL9IlIVVpqThdQQb4Y3"
+			},
+			"href": "https://api.spotify.com/v1/albums/14AgL9IlIVVpqThdQQb4Y3",
+			"id": "14AgL9IlIVVpqThdQQb4Y3",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b27314e0d7c4b04ae3675062e4b7",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e0214e0d7c4b04ae3675062e4b7",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d0000485114e0d7c4b04ae3675062e4b7",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Elysium",
+			"release_date": "2021-02-01",
+			"release_date_precision": "day",
+			"total_tracks": 4,
+			"type": "album",
+			"uri": "spotify:album:14AgL9IlIVVpqThdQQb4Y3"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "single",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/6QG4IyYbbJHZWnwilysNJy"
+					},
+					"href": "https://api.spotify.com/v1/artists/6QG4IyYbbJHZWnwilysNJy",
+					"id": "6QG4IyYbbJHZWnwilysNJy",
+					"name": "QDream",
+					"type": "artist",
+					"uri": "spotify:artist:6QG4IyYbbJHZWnwilysNJy"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/3JeSThHneYmzj1785rx0fV"
+					},
+					"href": "https://api.spotify.com/v1/artists/3JeSThHneYmzj1785rx0fV",
+					"id": "3JeSThHneYmzj1785rx0fV",
+					"name": "Bondarev",
+					"type": "artist",
+					"uri": "spotify:artist:3JeSThHneYmzj1785rx0fV"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/11YNuKyVtegn0wufmOurGk"
+			},
+			"href": "https://api.spotify.com/v1/albums/11YNuKyVtegn0wufmOurGk",
+			"id": "11YNuKyVtegn0wufmOurGk",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273aaad60faef977cfdec9f3e87",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02aaad60faef977cfdec9f3e87",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851aaad60faef977cfdec9f3e87",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Amathusia",
+			"release_date": "2021-01-12",
+			"release_date_precision": "day",
+			"total_tracks": 3,
+			"type": "album",
+			"uri": "spotify:album:11YNuKyVtegn0wufmOurGk"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "compilation",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+					},
+					"href": "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+					"id": "0LyfQWJT6nXafLPZqxe9Of",
+					"name": "Various Artists",
+					"type": "artist",
+					"uri": "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/3CduQ9uK454KEhQqQFME3R"
+			},
+			"href": "https://api.spotify.com/v1/albums/3CduQ9uK454KEhQqQFME3R",
+			"id": "3CduQ9uK454KEhQqQFME3R",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273bb78265b27d51f6486e3deef",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02bb78265b27d51f6486e3deef",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851bb78265b27d51f6486e3deef",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Best of Clubsonica Records 2020",
+			"release_date": "2021-01-11",
+			"release_date_precision": "day",
+			"total_tracks": 20,
+			"type": "album",
+			"uri": "spotify:album:3CduQ9uK454KEhQqQFME3R"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "album",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/477uzVK10OHa3NS2KXbnTh"
+					},
+					"href": "https://api.spotify.com/v1/artists/477uzVK10OHa3NS2KXbnTh",
+					"id": "477uzVK10OHa3NS2KXbnTh",
+					"name": "Matter",
+					"type": "artist",
+					"uri": "spotify:artist:477uzVK10OHa3NS2KXbnTh"
+				},
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/06G320XM6NWeEBGOb11ir3"
+					},
+					"href": "https://api.spotify.com/v1/artists/06G320XM6NWeEBGOb11ir3",
+					"id": "06G320XM6NWeEBGOb11ir3",
+					"name": "Proton Radio",
+					"type": "artist",
+					"uri": "spotify:artist:06G320XM6NWeEBGOb11ir3"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/3f7ORNMWFMk6CwM5jzL6rM"
+			},
+			"href": "https://api.spotify.com/v1/albums/3f7ORNMWFMk6CwM5jzL6rM",
+			"id": "3f7ORNMWFMk6CwM5jzL6rM",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2738bb548a0cd79ba403840daf9",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e028bb548a0cd79ba403840daf9",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048518bb548a0cd79ba403840daf9",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Meanwhile 013 (DJ Mix)",
+			"release_date": "2021-01-08",
+			"release_date_precision": "day",
+			"total_tracks": 21,
+			"type": "album",
+			"uri": "spotify:album:3f7ORNMWFMk6CwM5jzL6rM"
+		},
+		{
+			"album_group": "appears_on",
+			"album_type": "single",
+			"artists": [
+				{
+					"external_urls": {
+						"spotify": "https://open.spotify.com/artist/6m8aVAlgzJo8fI553yZRCN"
+					},
+					"href": "https://api.spotify.com/v1/artists/6m8aVAlgzJo8fI553yZRCN",
+					"id": "6m8aVAlgzJo8fI553yZRCN",
+					"name": "Sidewalker & Stylez",
+					"type": "artist",
+					"uri": "spotify:artist:6m8aVAlgzJo8fI553yZRCN"
+				}
+			],
+			"external_urls": {
+				"spotify": "https://open.spotify.com/album/0lLGhPrp0NwjtBxvfECHIe"
+			},
+			"href": "https://api.spotify.com/v1/albums/0lLGhPrp0NwjtBxvfECHIe",
+			"id": "0lLGhPrp0NwjtBxvfECHIe",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2737d64d191615bfe84af361f3e",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e027d64d191615bfe84af361f3e",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048517d64d191615bfe84af361f3e",
+					"width": 64
+				}
+			],
+			"is_playable": true,
+			"name": "Demon Drive",
+			"release_date": "2021-01-08",
+			"release_date_precision": "day",
+			"total_tracks": 3,
+			"type": "album",
+			"uri": "spotify:album:0lLGhPrp0NwjtBxvfECHIe"
+		}
+	],
+	"limit": 10,
+	"next": "https://api.spotify.com/v1/artists/762FYAqSeuqmgbL6qEAJr8/albums?offset=10&limit=10&include_groups=appears_on&market=GB",
+	"offset": 0,
+	"previous": null,
+	"total": 294
+}

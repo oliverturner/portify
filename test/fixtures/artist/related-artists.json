@@ -1,0 +1,664 @@
+{
+	"artists": [
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/1tFqikZkYwDqAfJzDS4Qpn"
+			},
+			"followers": {
+				"href": null,
+				"total": 2026
+			},
+			"genres": ["deep progressive house", "focus trance"],
+			"href": "https://api.spotify.com/v1/artists/1tFqikZkYwDqAfJzDS4Qpn",
+			"id": "1tFqikZkYwDqAfJzDS4Qpn",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/a8b63c82783cbae0545347c631c82516947c5401",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/eeddd4f144d2a2b73765c2517833bffe91b71751",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/d42ada95b6ca5212179e2eb8bf3d4f509188d251",
+					"width": 160
+				}
+			],
+			"name": "Ewan Rill",
+			"popularity": 32,
+			"type": "artist",
+			"uri": "spotify:artist:1tFqikZkYwDqAfJzDS4Qpn"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/06rJyZq9VPcbMXkSEI916H"
+			},
+			"followers": {
+				"href": null,
+				"total": 179
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/06rJyZq9VPcbMXkSEI916H",
+			"id": "06rJyZq9VPcbMXkSEI916H",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273ad922bd60b7ee3032dac8c6d",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02ad922bd60b7ee3032dac8c6d",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851ad922bd60b7ee3032dac8c6d",
+					"width": 64
+				}
+			],
+			"name": "Homegroove Project",
+			"popularity": 0,
+			"type": "artist",
+			"uri": "spotify:artist:06rJyZq9VPcbMXkSEI916H"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/33L8FupX5olugmSnrRpYUQ"
+			},
+			"followers": {
+				"href": null,
+				"total": 2242
+			},
+			"genres": ["deep progressive house", "focus trance"],
+			"href": "https://api.spotify.com/v1/artists/33L8FupX5olugmSnrRpYUQ",
+			"id": "33L8FupX5olugmSnrRpYUQ",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/1c70e3f6f41704ad7b82cb991c28ed8e3df51a55",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/29ca8682c61f406b34505484f2c9427b21ebff77",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/bfb8827c5a632529cdd3bb89d03afc49867442a3",
+					"width": 160
+				}
+			],
+			"name": "Ziger",
+			"popularity": 26,
+			"type": "artist",
+			"uri": "spotify:artist:33L8FupX5olugmSnrRpYUQ"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/6PyysTRyOhuNeF84JEPuB8"
+			},
+			"followers": {
+				"href": null,
+				"total": 149
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/6PyysTRyOhuNeF84JEPuB8",
+			"id": "6PyysTRyOhuNeF84JEPuB8",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273a3c0a161c51ffb49c84274e2",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02a3c0a161c51ffb49c84274e2",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851a3c0a161c51ffb49c84274e2",
+					"width": 64
+				}
+			],
+			"name": "Mr.Raf",
+			"popularity": 20,
+			"type": "artist",
+			"uri": "spotify:artist:6PyysTRyOhuNeF84JEPuB8"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/3ZMsoHTVpvBdODNNDoLRrd"
+			},
+			"followers": {
+				"href": null,
+				"total": 124
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/3ZMsoHTVpvBdODNNDoLRrd",
+			"id": "3ZMsoHTVpvBdODNNDoLRrd",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b27353b3191e3fa065d3c0d97106",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e0253b3191e3fa065d3c0d97106",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d0000485153b3191e3fa065d3c0d97106",
+					"width": 64
+				}
+			],
+			"name": "Sharkstar",
+			"popularity": 0,
+			"type": "artist",
+			"uri": "spotify:artist:3ZMsoHTVpvBdODNNDoLRrd"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/7GLVeELhVwtSmorIEutDAB"
+			},
+			"followers": {
+				"href": null,
+				"total": 240
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/7GLVeELhVwtSmorIEutDAB",
+			"id": "7GLVeELhVwtSmorIEutDAB",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/725dd6aa4cef4755db19db42fbec8514ebfa6bd7",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/90bfa2832bb74832eb615b1647ed3a8b0215c685",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/cd60c7ee85a02153ee9d6d5065696c020a329a80",
+					"width": 160
+				}
+			],
+			"name": "Redraft Memories",
+			"popularity": 7,
+			"type": "artist",
+			"uri": "spotify:artist:7GLVeELhVwtSmorIEutDAB"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/04ULEmrDC00KzWQwh6QFSx"
+			},
+			"followers": {
+				"href": null,
+				"total": 80
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/04ULEmrDC00KzWQwh6QFSx",
+			"id": "04ULEmrDC00KzWQwh6QFSx",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273bd4a8129b70b66eca11b4b51",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02bd4a8129b70b66eca11b4b51",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851bd4a8129b70b66eca11b4b51",
+					"width": 64
+				}
+			],
+			"name": "ProMax",
+			"popularity": 0,
+			"type": "artist",
+			"uri": "spotify:artist:04ULEmrDC00KzWQwh6QFSx"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/4vOltwEV2x8yw4UxrRuKea"
+			},
+			"followers": {
+				"href": null,
+				"total": 2291
+			},
+			"genres": ["deep progressive house", "israeli techno"],
+			"href": "https://api.spotify.com/v1/artists/4vOltwEV2x8yw4UxrRuKea",
+			"id": "4vOltwEV2x8yw4UxrRuKea",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/10bf0534d323432072e55196156f6287ad8ad3dc",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/32a6204481e8f7cad99d54ee8a11f49ecb9bed05",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/de4199f6675562e29e1d7dfff3d4a09a9890c1f0",
+					"width": 160
+				}
+			],
+			"name": "Ran Salman",
+			"popularity": 21,
+			"type": "artist",
+			"uri": "spotify:artist:4vOltwEV2x8yw4UxrRuKea"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/5PgCMzcH9yvoiS5DHNU2Cz"
+			},
+			"followers": {
+				"href": null,
+				"total": 170
+			},
+			"genres": ["macedonian electronic"],
+			"href": "https://api.spotify.com/v1/artists/5PgCMzcH9yvoiS5DHNU2Cz",
+			"id": "5PgCMzcH9yvoiS5DHNU2Cz",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/1d5396263a71475a7f9a22a8bc073ef96f44d45d",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/936f161a6eafc075be2643fa9f5fa751ed02725b",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/0314184e975a8233e80128cdb9e5df3ffff6d276",
+					"width": 160
+				}
+			],
+			"name": "Oliver Petkovski",
+			"popularity": 13,
+			"type": "artist",
+			"uri": "spotify:artist:5PgCMzcH9yvoiS5DHNU2Cz"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/5hmE0D1hVJosKdRGxYFXNo"
+			},
+			"followers": {
+				"href": null,
+				"total": 59
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/5hmE0D1hVJosKdRGxYFXNo",
+			"id": "5hmE0D1hVJosKdRGxYFXNo",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/5f72c5bec42fbce557df3c1b1c26a800abca0570",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/e544474a8340fe8265dc2dfeaaeab854dbc00d50",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/c45834c69ac0225ba096c7e4a479e2a1637c8ac2",
+					"width": 160
+				}
+			],
+			"name": "Ivan Zharov",
+			"popularity": 20,
+			"type": "artist",
+			"uri": "spotify:artist:5hmE0D1hVJosKdRGxYFXNo"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/2wxCWN0Nc1mCCC9PoKYAvB"
+			},
+			"followers": {
+				"href": null,
+				"total": 3665
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/2wxCWN0Nc1mCCC9PoKYAvB",
+			"id": "2wxCWN0Nc1mCCC9PoKYAvB",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/31fc74eccd50bc9264245214397171db92bd3050",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/c90227249ff028f3e4abeaf7b607a0e2d7b48a6d",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/3faf9eff5f23dd4bee545a6e14d6205520498e10",
+					"width": 160
+				}
+			],
+			"name": "Dino Mileta",
+			"popularity": 36,
+			"type": "artist",
+			"uri": "spotify:artist:2wxCWN0Nc1mCCC9PoKYAvB"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/1DtZsZJDxRBejcZh7s1LqW"
+			},
+			"followers": {
+				"href": null,
+				"total": 55
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/1DtZsZJDxRBejcZh7s1LqW",
+			"id": "1DtZsZJDxRBejcZh7s1LqW",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2730767276c4cc0dc15522af714",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e020767276c4cc0dc15522af714",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048510767276c4cc0dc15522af714",
+					"width": 64
+				}
+			],
+			"name": "Meyerson",
+			"popularity": 3,
+			"type": "artist",
+			"uri": "spotify:artist:1DtZsZJDxRBejcZh7s1LqW"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/4yLaaiM1Upgf59TRaBZBFM"
+			},
+			"followers": {
+				"href": null,
+				"total": 649
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/4yLaaiM1Upgf59TRaBZBFM",
+			"id": "4yLaaiM1Upgf59TRaBZBFM",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/6b1944a7a567b6ba57d91f8cd525879f5ba23bdc",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/8152f6e10982564adf4ef6bb6dd3249aa9247e85",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/b28209751c5f079f2180c420d7f17f6a55cdf410",
+					"width": 160
+				}
+			],
+			"name": "Oovation",
+			"popularity": 12,
+			"type": "artist",
+			"uri": "spotify:artist:4yLaaiM1Upgf59TRaBZBFM"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/1F1ZqE9mKP6kiGVCCQ85sd"
+			},
+			"followers": {
+				"href": null,
+				"total": 193
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/1F1ZqE9mKP6kiGVCCQ85sd",
+			"id": "1F1ZqE9mKP6kiGVCCQ85sd",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/4efaaa04730680d05b188b793d20baf09ce19e06",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/8f5043f70dc7d0d338c5a66b3b4da87921f5f8a4",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/b57683cb2f3e905dbbaa281a7113ba78b049e6f8",
+					"width": 160
+				}
+			],
+			"name": "Lucas S.",
+			"popularity": 13,
+			"type": "artist",
+			"uri": "spotify:artist:1F1ZqE9mKP6kiGVCCQ85sd"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/3PZZLlkC5B2yDSf6DhravT"
+			},
+			"followers": {
+				"href": null,
+				"total": 63
+			},
+			"genres": [],
+			"href": "https://api.spotify.com/v1/artists/3PZZLlkC5B2yDSf6DhravT",
+			"id": "3PZZLlkC5B2yDSf6DhravT",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b273f27a1876397afab9d7d7312a",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e02f27a1876397afab9d7d7312a",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d00004851f27a1876397afab9d7d7312a",
+					"width": 64
+				}
+			],
+			"name": "Kingoff",
+			"popularity": 7,
+			"type": "artist",
+			"uri": "spotify:artist:3PZZLlkC5B2yDSf6DhravT"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/2DiyBMHGaOD0ALe2k7BolB"
+			},
+			"followers": {
+				"href": null,
+				"total": 74
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/2DiyBMHGaOD0ALe2k7BolB",
+			"id": "2DiyBMHGaOD0ALe2k7BolB",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/40e7b6d12a597fe719242e5e9621b586904270c5",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/7cecdc3b0afbe41126bad402eb99b7e69333bbc7",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/2ac22c9b1b6fe1413d67a7c91080750de6851be6",
+					"width": 160
+				}
+			],
+			"name": "Thanos Kous",
+			"popularity": 11,
+			"type": "artist",
+			"uri": "spotify:artist:2DiyBMHGaOD0ALe2k7BolB"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/5ZojnoQWgWAW7AF36xu0u4"
+			},
+			"followers": {
+				"href": null,
+				"total": 511
+			},
+			"genres": ["deep progressive house", "focus trance"],
+			"href": "https://api.spotify.com/v1/artists/5ZojnoQWgWAW7AF36xu0u4",
+			"id": "5ZojnoQWgWAW7AF36xu0u4",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/a612ec9d594835de53ebc99a495bc26ead8df7ec",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/88b305f49ca0e93fe03fa406559f8f350ba14135",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/6ad93cfd85186badf2343208c9e681b400aa6dce",
+					"width": 160
+				}
+			],
+			"name": "Gux Jimenez",
+			"popularity": 20,
+			"type": "artist",
+			"uri": "spotify:artist:5ZojnoQWgWAW7AF36xu0u4"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/4wWx4g4GUDe73otY8gAPUg"
+			},
+			"followers": {
+				"href": null,
+				"total": 41
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/4wWx4g4GUDe73otY8gAPUg",
+			"id": "4wWx4g4GUDe73otY8gAPUg",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2735e3674bae561602e0b476753",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e025e3674bae561602e0b476753",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048515e3674bae561602e0b476753",
+					"width": 64
+				}
+			],
+			"name": "Shaddike",
+			"popularity": 6,
+			"type": "artist",
+			"uri": "spotify:artist:4wWx4g4GUDe73otY8gAPUg"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/2Ina7nZqxI44e3eZE9NS5x"
+			},
+			"followers": {
+				"href": null,
+				"total": 140
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/2Ina7nZqxI44e3eZE9NS5x",
+			"id": "2Ina7nZqxI44e3eZE9NS5x",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/fa1199efba1c5237e5301422444f7a07671cfd91",
+					"width": 640
+				},
+				{
+					"height": 320,
+					"url": "https://i.scdn.co/image/e64a6d41776eee4f0d10feac24435a03c3d51776",
+					"width": 320
+				},
+				{
+					"height": 160,
+					"url": "https://i.scdn.co/image/418568c0325155e1e5a73eaad2617734467e5fbe",
+					"width": 160
+				}
+			],
+			"name": "Discknocked",
+			"popularity": 0,
+			"type": "artist",
+			"uri": "spotify:artist:2Ina7nZqxI44e3eZE9NS5x"
+		},
+		{
+			"external_urls": {
+				"spotify": "https://open.spotify.com/artist/0zie1LHQqS8VgIeSi2A1tY"
+			},
+			"followers": {
+				"href": null,
+				"total": 49
+			},
+			"genres": ["deep progressive house"],
+			"href": "https://api.spotify.com/v1/artists/0zie1LHQqS8VgIeSi2A1tY",
+			"id": "0zie1LHQqS8VgIeSi2A1tY",
+			"images": [
+				{
+					"height": 640,
+					"url": "https://i.scdn.co/image/ab67616d0000b2734326be96017d99ca3ef748f1",
+					"width": 640
+				},
+				{
+					"height": 300,
+					"url": "https://i.scdn.co/image/ab67616d00001e024326be96017d99ca3ef748f1",
+					"width": 300
+				},
+				{
+					"height": 64,
+					"url": "https://i.scdn.co/image/ab67616d000048514326be96017d99ca3ef748f1",
+					"width": 64
+				}
+			],
+			"name": "Mick Elsa",
+			"popularity": 0,
+			"type": "artist",
+			"uri": "spotify:artist:0zie1LHQqS8VgIeSi2A1tY"
+		}
+	]
+}

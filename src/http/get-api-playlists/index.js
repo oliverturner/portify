@@ -51,19 +51,19 @@ function processResponse({ items, next, previous, limit, offset, total }) {
 /**
  * @param {HttpRequest} req
  */
-async function getPlaylists({ session, queryStringParameters }) {
+async function getData({ session, queryStringParameters }) {
 	const params = getPagingParams(queryStringParameters);
 	const buildRequest = requestFactory(process.env, session);
-	const playlistReq = buildRequest("/me/playlists", params);
+	const apiReq = buildRequest("/me/playlists", params);
 
 	/** @type {Page} */
-	const playlistRes = (await get(playlistReq)).body;
-	const pagingObject = processResponse(playlistRes);
+	const apiRes = (await get(apiReq)).body;
+	const pagingObject = processResponse(apiRes);
 
 	return pagingObject;
 }
 
 module.exports = {
-	getPlaylists,
-	handler: http.async(makeResponse(getPlaylists)),
+	getPlaylists: getData,
+	handler: http.async(makeResponse(getData)),
 };
