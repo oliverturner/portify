@@ -29,6 +29,7 @@ async function getTop({ session, queryStringParameters }) {
 	const itemDict = buildDict(apiRes.items, convertTrackObject);
 	const enhancedDict = await injectAudio(itemDict, buildRequest);
 
+	// TODO: paginate response
 	return {
 		items: Object.values(enhancedDict),
 	};

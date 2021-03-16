@@ -115,39 +115,14 @@ function processArtists({ artists }) {
  * @param {Record<string, {req:Portify.RequestConfig, fn: Function}>} requests
  */
 async function processRequests(requests) {
-	const promises = [];
-	for (const [key, { req, fn }] of Object.entries(requests)) {
-		promises.push(
-			get(req)
-				.then(({ body }) => ({ key, data: fn(body) }))
-				.catch((err) => {
-					throw { key, code: err.statusCode, msg: err.message };
-				})
-		);
-	}
-
 	/** @type {Portify.Dict} */
 	const dict = {};
-	/** @type {Portify.Dict} */
-	const errors = {};
-
-	// TODO: use Promise.race and throw as soon as possible to allow token refresh cycle to kick in
-	const resolved = await Promise.allSettled(promises);
-	for (const response of resolved) {
-		if (response.status === "fulfilled") {
-			const { key, data } = response.value;
-			dict[key] = data;
-			continue;
-		}
-
-		if (response.reason) {
-			const { key, ...err } = response.reason;
-			errors[key] = err;
-		}
+	const promises = [];
+	for (const [key, { req, fn }] of Object.entries(requests)) {
+		promises.push(get(req).then(({ body }) => (dict[key] = fn(body))));
 	}
 
-	if (Object.keys(errors).length > 0) throw errors;
-
+	await Promise.all(promises);
 	return dict;
 }
 
