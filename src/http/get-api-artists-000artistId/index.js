@@ -11,26 +11,16 @@ const { get } = require("tiny-json-http");
 
 const { makeResponse } = require("@architect/shared/make-response");
 const { requestFactory } = require("@architect/shared/utils");
-const { convertImages, convertArtists } = require("@architect/shared/spotify");
+const parsers = require("./parsers");
 
 /**
  * @param {Portify.BuildRequest} buildRequest
  * @param {string} artistId
  */
 function getArtist(buildRequest, artistId) {
-	return buildRequest(`/artists/${artistId}`);
-}
-
-/**
- * @param {ArtistObjectFull} body
- */
-function processArtist({ id, name, images, genres }) {
 	return {
-		id,
-		name,
-		genres,
-		href: `/artists/${id}`,
-		images: convertImages(images),
+		req: buildRequest(`/artists/${artistId}`),
+		fn: parsers.processArtist,
 	};
 }
 
@@ -39,29 +29,14 @@ function processArtist({ id, name, images, genres }) {
  * @param {string} artistId
  */
 function getAlbums(buildRequest, artistId) {
-	const params = {
-		include_groups: "appears_on",
-		market: "from_token",
-		limit: 10,
+	return {
+		req: buildRequest(`/artists/${artistId}/albums`, {
+			include_groups: "appears_on",
+			market: "from_token",
+			limit: 10,
+		}),
+		fn: parsers.processAlbums,
 	};
-
-	return buildRequest(`/artists/${artistId}/albums`, params);
-}
-
-/**
- * @param {AlbumPage} body
- */
-function processAlbums({ items }) {
-	return items.map(
-		({ id, name, release_date, album_type, images, artists }) => ({
-			id,
-			name,
-			release_date,
-			album_type,
-			images: convertImages(images),
-			artists: convertArtists(artists),
-		})
-	);
 }
 
 /**
@@ -69,26 +44,13 @@ function processAlbums({ items }) {
  * @param {string} artistId
  */
 function getTopTracks(buildRequest, artistId) {
-	const params = {
-		market: "from_token",
-		limit: 10,
+	return {
+		req: buildRequest(`/artists/${artistId}/top-tracks`, {
+			market: "from_token",
+			limit: 10,
+		}),
+		fn: parsers.processTopTracks,
 	};
-
-	return buildRequest(`/artists/${artistId}/top-tracks`, params);
-}
-
-/**
- * @param {{tracks: TrackObjectFull[]}} params
- */
-function processTracks({ tracks }) {
-	return tracks.map(({ id, name, album, artists }) => ({
-		id,
-		name,
-		href: `/albums/${album.id}`,
-		release_date: album.release_date,
-		images: convertImages(album.images),
-		artists: convertArtists(artists),
-	}));
 }
 
 /**
@@ -96,19 +58,10 @@ function processTracks({ tracks }) {
  * @param {string} artistId
  */
 function getRelatedArtists(buildRequest, artistId) {
-	return buildRequest(`/artists/${artistId}/related-artists`);
-}
-
-/**
- * @param {{ artists: ArtistObjectFull[] }} body
- */
-function processArtists({ artists }) {
-	return artists.map(({ id, name, genres, images }) => ({
-		id,
-		name,
-		genres,
-		images: convertImages(images),
-	}));
+	return {
+		req: buildRequest(`/artists/${artistId}/related-artists`),
+		fn: parsers.processRelatedArtists,
+	};
 }
 
 /**
@@ -133,13 +86,10 @@ async function getData({ session, pathParameters }) {
 	const buildRequest = requestFactory(process.env, session);
 
 	const requests = {
-		artist: { req: getArtist(buildRequest, artistId), fn: processArtist },
-		appearsOn: { req: getAlbums(buildRequest, artistId), fn: processAlbums },
-		topTracks: { req: getTopTracks(buildRequest, artistId), fn: processTracks },
-		relatedArtists: {
-			req: getRelatedArtists(buildRequest, artistId),
-			fn: processArtists,
-		},
+		artist: getArtist(buildRequest, artistId),
+		appearsOn: getAlbums(buildRequest, artistId),
+		topTracks: getTopTracks(buildRequest, artistId),
+		relatedArtists: getRelatedArtists(buildRequest, artistId),
 	};
 
 	return processRequests(requests);
