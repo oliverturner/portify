@@ -112,18 +112,17 @@ function processArtists({ artists }) {
 }
 
 /**
+ * Produce an object that matches the shape of requests
+ *
  * @param {Record<string, {req:Portify.RequestConfig, fn: Function}>} requests
  */
 async function processRequests(requests) {
-	/** @type {Portify.Dict} */
-	const dict = {};
-	const promises = [];
-	for (const [key, { req, fn }] of Object.entries(requests)) {
-		promises.push(get(req).then(({ body }) => (dict[key] = fn(body))));
-	}
+	const promises = Object.entries(requests).map(async ([key, { req, fn }]) => {
+		const { body } = await get(req);
+		return [key, fn(body)];
+	});
 
-	await Promise.all(promises);
-	return dict;
+	return Object.fromEntries(await Promise.all(promises));
 }
 
 /**
