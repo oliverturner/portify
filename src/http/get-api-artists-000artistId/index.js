@@ -14,7 +14,7 @@ const { requestFactory } = require("@architect/shared/utils");
 const parsers = require("./parsers");
 
 /**
- * @param {Portify.BuildRequest} buildRequest
+ * @param {PortifyApp.BuildRequest} buildRequest
  * @param {string} artistId
  */
 function getArtist(buildRequest, artistId) {
@@ -25,7 +25,7 @@ function getArtist(buildRequest, artistId) {
 }
 
 /**
- * @param {Portify.BuildRequest} buildRequest
+ * @param {PortifyApp.BuildRequest} buildRequest
  * @param {string} artistId
  */
 function getAlbums(buildRequest, artistId) {
@@ -40,7 +40,7 @@ function getAlbums(buildRequest, artistId) {
 }
 
 /**
- * @param {Portify.BuildRequest} buildRequest
+ * @param {PortifyApp.BuildRequest} buildRequest
  * @param {string} artistId
  */
 function getTopTracks(buildRequest, artistId) {
@@ -54,7 +54,7 @@ function getTopTracks(buildRequest, artistId) {
 }
 
 /**
- * @param {Portify.BuildRequest} buildRequest
+ * @param {PortifyApp.BuildRequest} buildRequest
  * @param {string} artistId
  */
 function getRelatedArtists(buildRequest, artistId) {
@@ -67,7 +67,7 @@ function getRelatedArtists(buildRequest, artistId) {
 /**
  * Produce an object that matches the shape of requests
  *
- * @param {Record<string, {req:Portify.RequestConfig, fn: Function}>} requests
+ * @param {Record<string, {req:PortifyApp.RequestConfig, fn: Function}>} requests
  */
 async function processRequests(requests) {
 	const promises = Object.entries(requests).map(async ([key, { req, fn }]) => {

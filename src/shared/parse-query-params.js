@@ -1,10 +1,10 @@
-/** @type {Portify.TimeRange} */
+/** @type {PortifyApi.TimeRange} */
 const parseQuery = "short_term";
 const PAGE_LIMIT = 48;
 
 /**
  * @param {Record<string, string>} queryStringParameters
- * @param {Portify.TimeRange} [defaultRange]
+ * @param {PortifyApi.TimeRange} [defaultRange]
  */
 function getTimeRange({ time_range }, defaultRange) {
 	const ranges = ["short_term", "medium_term", "long_term"];
@@ -12,7 +12,7 @@ function getTimeRange({ time_range }, defaultRange) {
 }
 
 /**
- * @param {Portify.Dict} queryStringParameters
+ * @param {PortifyApp.Dict} queryStringParameters
  * @param {number} [defaultLimit]
  */
 function getLimit({ limit }, defaultLimit) {
@@ -20,16 +20,16 @@ function getLimit({ limit }, defaultLimit) {
 }
 
 /**
- * @param {Portify.Dict} queryStringParameters
+ * @param {PortifyApp.Dict} queryStringParameters
  */
 function getOffset({ offset }) {
 	return offset ? Number(offset) : 0;
 }
 
 /**
- * @param {Portify.Dict} queryStringParameters
+ * @param {PortifyApp.Dict} queryStringParameters
  */
- function getPagingParams(queryStringParameters) {
+function getPagingParams(queryStringParameters) {
 	return {
 		limit: getLimit(queryStringParameters),
 		offset: getOffset(queryStringParameters),
@@ -40,5 +40,5 @@ module.exports = {
 	getTimeRange,
 	getLimit,
 	getOffset,
-	getPagingParams
+	getPagingParams,
 };

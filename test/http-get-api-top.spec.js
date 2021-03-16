@@ -13,7 +13,7 @@ const testEnv = getTestEnv("get-api-top");
 
 testEnv.up();
 
-test("Mock request", async (t) => {
+test("get-api-top", async (t) => {
 	t.plan(1);
 
 	// TODO: return a paged object
@@ -31,9 +31,9 @@ test("Mock request", async (t) => {
 
 	const session = { access_token: "f4k3-4cc355-t0k3n" };
 	const req = { session, queryStringParameters: tracksQuery };
-	const input = await getTop(req);
+	const actual = await getTop(req);
 
-	t.deepEquals(input, expected, "Parsed output matches");
+	t.deepEquals(actual, expected, "Parsed output matches");
 });
 
 testEnv.down();

@@ -7,11 +7,11 @@ const { getPlaylists } = require("../src/http/get-api-playlists");
 const { getTestEnv } = require("./helpers");
 const expected = require("./fixtures/playlists.json");
 
-const testEnv = getTestEnv("getPlaylists");
+const testEnv = getTestEnv("get-api-playlists");
 
 testEnv.up();
 
-test("getPlaylists", async (t) => {
+test("get-api-playlists", async (t) => {
 	const session = {};
 	const queryStringParameters = { limit: 3, offset: 5 };
 
@@ -22,10 +22,10 @@ test("getPlaylists", async (t) => {
 			"Content-Type": "application/json",
 		});
 
-	const input = await getPlaylists({ session, queryStringParameters });
+	const actual = await getPlaylists({ session, queryStringParameters });
 
 	t.plan(1);
-	t.deepEquals(input, expected, "Parsed output matches");
+	t.deepEquals(actual, expected, "Parsed output matches");
 });
 
 testEnv.down();

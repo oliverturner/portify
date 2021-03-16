@@ -17,7 +17,7 @@ function getTokenHeaders(clientId, clientSecret) {
  * Create a request config for auth or refresh
  *
  * @param {NodeJS.ProcessEnv} envVars
- * @param {Portify.SessionRequestData} data
+ * @param {PortifyApp.SessionRequestData} data
  */
 function makeSessionRequest(envVars, data) {
 	const {
