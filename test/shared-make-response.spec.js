@@ -6,7 +6,8 @@ const { makeResponse } = require("../src/shared/make-response");
 const { getTestEnv } = require("./helpers");
 const fixtures = require("./fixtures/spotify.json");
 
-const testEnv = getTestEnv("makeResponse");
+const testTitle = "shared/makeResponse"
+const testEnv = getTestEnv(testTitle);
 
 const successResponse = { value: "hello" };
 
@@ -35,7 +36,7 @@ const handleReq = async (req) => {
 
 testEnv.up();
 
-test("makeResponse", async (t) => {
+test(testTitle, async (t) => {
 	const scenarios = [
 		{
 			desc: "executes normally",

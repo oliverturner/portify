@@ -6,7 +6,7 @@ const {
 	filterProps,
 } = require("../src/shared/utils");
 
-test("Build request", (t) => {
+test("shared/utils.buildUrl", (t) => {
 	const base = "https://local.portify.test";
 	const prefix = "v0";
 
@@ -34,7 +34,7 @@ test("Build request", (t) => {
 	}
 });
 
-test("getApiUrl", (t) => {
+test("shared/utils.getApiUrl", (t) => {
 	const url = getApiUrl(process.env, "/me/top/tracks", { a: 1, b: 2 });
 	const expected = "https://api.spotify.com/v1/me/top/tracks?a=1&b=2";
 	const desc = "getApiUrl matches";
@@ -43,7 +43,7 @@ test("getApiUrl", (t) => {
 	t.equals(url, expected, desc);
 });
 
-test("requestFactory", (t) => {
+test("shared/utils.requestFactory", (t) => {
 	const access_token = "f4k3-4cc355-t0k3n";
 	const session = { access_token };
 	const getRequest = requestFactory(process.env, session);

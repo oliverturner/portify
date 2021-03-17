@@ -40,7 +40,7 @@ function processResponse(albumId, { next, previous, limit, offset, total }) {
 /**
  * @param {HttpRequest} req
  */
-async function getAlbum({ session, pathParameters, queryStringParameters }) {
+async function getData({ session, pathParameters, queryStringParameters }) {
 	const { albumId } = pathParameters;
 	const { limit, offset } = getPagingParams(queryStringParameters);
 
@@ -82,6 +82,6 @@ async function getAlbum({ session, pathParameters, queryStringParameters }) {
 }
 
 module.exports = {
-	getAlbum,
-	handler: http.async(makeResponse(getAlbum)),
+	getData,
+	handler: http.async(makeResponse(getData)),
 };

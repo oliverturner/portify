@@ -4,11 +4,12 @@ const test = require("tape");
 const { getTestEnv } = require("./helpers");
 const { login, getLoginUrl } = require("../src/http/get-login");
 
-const testEnv = getTestEnv("login");
+const testTitle = "get-login"
+const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
 
-test("login", async (t) => {
+test(`${testTitle}.login`, async (t) => {
 	const testUser = { name: "Oliver Turner" };
 	const { body } = await login({ session: { user: testUser } });
 	const { loginUrl, user } = JSON.parse(body);
@@ -23,7 +24,7 @@ test("login", async (t) => {
 	t.deepEqual(user, testUser, "User is returned");
 });
 
-test("getLoginUrl", (t) => {
+test(`${testTitle}.getLoginUrl`, (t) => {
 	const envVars = {
 		SPOTIFY_LOGIN_URL: "https://a.b.com",
 		SPOTIFY_CLIENT_ID: "a",

@@ -1,10 +1,10 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getTop } = require("../src/http/get-api-top");
+const { getData } = require("../src/http/get-api-top");
 const { getTestEnv } = require("./helpers");
 
-const apiUrl = "https://api.spotify.com/v1";
+const { apiUrl } = require("./fixtures/spotify.json");
 const topTracksResponse = require(`./fixtures/top-tracks-raw.json`);
 const topTracksAudioResponse = require(`./fixtures/top-tracks-audio.json`);
 const expected = require(`./fixtures/top-tracks.json`);
@@ -31,7 +31,7 @@ test("get-api-top", async (t) => {
 
 	const session = { access_token: "f4k3-4cc355-t0k3n" };
 	const req = { session, queryStringParameters: tracksQuery };
-	const actual = await getTop(req);
+	const actual = await getData(req);
 
 	t.deepEquals(actual, expected, "Parsed output matches");
 });

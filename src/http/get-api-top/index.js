@@ -15,7 +15,7 @@ const parseQuery = require("@architect/shared/parse-query-params");
 /**
  * @param {HttpRequest} req
  */
-async function getTop({ session, queryStringParameters }) {
+async function getData({ session, queryStringParameters }) {
 	const params = {
 		time_range: parseQuery.getTimeRange(queryStringParameters),
 		limit: parseQuery.getLimit(queryStringParameters),
@@ -36,6 +36,6 @@ async function getTop({ session, queryStringParameters }) {
 }
 
 module.exports = {
-	getTop,
-	handler: http.async(makeResponse(getTop)),
+	getData,
+	handler: http.async(makeResponse(getData)),
 };

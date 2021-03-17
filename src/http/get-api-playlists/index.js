@@ -64,6 +64,6 @@ async function getData({ session, queryStringParameters }) {
 }
 
 module.exports = {
-	getPlaylists: getData,
+	getData,
 	handler: http.async(makeResponse(getData)),
 };

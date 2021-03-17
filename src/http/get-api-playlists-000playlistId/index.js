@@ -40,7 +40,7 @@ function processResponse(playlistId, name, tracks) {
 /**
  * @param {HttpRequest} req
  */
-async function getPlaylist({ session, pathParameters, queryStringParameters }) {
+async function getData({ session, pathParameters, queryStringParameters }) {
 	const { playlistId } = pathParameters;
 	const { limit, offset } = getPagingParams(queryStringParameters);
 
@@ -70,6 +70,6 @@ async function getPlaylist({ session, pathParameters, queryStringParameters }) {
 }
 
 module.exports = {
-	getPlaylist,
-	handler: http.async(makeResponse(getPlaylist)),
+	getData,
+	handler: http.async(makeResponse(getData)),
 };
