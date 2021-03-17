@@ -1,10 +1,14 @@
 const test = require("tape");
+
 const {
 	buildUrl,
 	getApiUrl,
 	requestFactory,
 	filterProps,
+	buildDict,
+	getPrevNext,
 } = require("../src/shared/utils");
+const { apiUrl } = require("./fixtures/spotify.json");
 
 test("shared/utils.buildUrl", (t) => {
 	const base = "https://local.portify.test";
@@ -59,7 +63,7 @@ test("shared/utils.requestFactory", (t) => {
 				Authorization: `Bearer ${access_token}`,
 			},
 		},
-    {
+		{
 			url: "https://api.spotify.com/v1/three/four?a=3&b=4",
 			headers: {
 				"Content-Type": "application/json",
@@ -72,7 +76,7 @@ test("shared/utils.requestFactory", (t) => {
 	t.deepEquals(inputs, expected, "url configs are successfully generated");
 });
 
-test("filterProps", (t) => {
+test("shared/utils.filterProps", (t) => {
 	const target = { a: 1, b: 2, "c-0": undefined };
 	const scenarios = [
 		{
@@ -98,7 +102,38 @@ test("filterProps", (t) => {
 
 	t.plan(scenarios.length);
 	for (const { desc, filters, expected } of scenarios) {
-		const input = filterProps(target, filters);
-		t.deepEqual(input, expected, desc);
+		const actual = filterProps(target, filters);
+		t.deepEqual(actual, expected, desc);
 	}
+});
+
+test("shared/utils.buildDict", (t) => {
+	const multiplyByThree = ({ value }) => value * 3;
+
+	const items = [
+		{ id: "a", value: 5 },
+		{ id: "b", value: 100 },
+		{ id: "c", value: "bad" },
+	];
+
+	const expected = {
+		a: 15,
+		b: 300,
+		c: NaN,
+	};
+
+	const actual = buildDict(items, multiplyByThree);
+
+	t.plan(1);
+	t.deepEquals(actual, expected, "buildDict creates a keyed object");
+});
+
+// TODO: fix this so that original parameters are preserved
+test("shared/utils.getPrevNext", (t) => {
+	const rawUrl = `${apiUrl}/five/six?a=5&b=6&limit=100&offset=10`;
+	const actual = getPrevNext(apiUrl)(rawUrl);
+	const expected = "https://api.spotify.com/v1?offset=10&limit=100";
+
+	t.plan(1);
+	t.equals(actual, expected, "Extracts and appends limit & offset");
 });

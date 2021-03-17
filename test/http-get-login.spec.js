@@ -1,13 +1,9 @@
 // @ts-nocheck
 const test = require("tape");
 
-const { getTestEnv } = require("./helpers");
 const { login, getLoginUrl } = require("../src/http/get-login");
 
 const testTitle = "get-login"
-const testEnv = getTestEnv(testTitle);
-
-testEnv.up();
 
 test(`${testTitle}.login`, async (t) => {
 	const testUser = { name: "Oliver Turner" };
@@ -31,13 +27,11 @@ test(`${testTitle}.getLoginUrl`, (t) => {
 		SPOTIFY_LOGIN_REDIRECT: "b",
 	};
 	const scopes = ["alpha", "beta", "gamma"];
-	const input = getLoginUrl(envVars, scopes);
+	const actual = getLoginUrl(envVars, scopes);
 	const expected =
 		"https://a.b.com/authorize?client_id=a&redirect_uri=b&response_type=code&scope=alpha+beta+gamma";
 	const desc = "getLoginUrl matches";
 
 	t.plan(1);
-	t.equals(input, expected, desc);
+	t.equals(actual, expected, desc);
 });
-
-testEnv.down();
