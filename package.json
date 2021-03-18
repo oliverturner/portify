@@ -8,7 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "@architect/functions": "3.13.9",
-    "@architect/sandbox": "3.3.7",
+    "@architect/sandbox": "3.3.8",
     "patch-package": "6.4.7",
     "tiny-json-http": "7.3.0"
   },
