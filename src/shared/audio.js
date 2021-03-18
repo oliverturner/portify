@@ -1,15 +1,10 @@
-/**
- * @typedef {import("@typings/app").TrackItem} TrackItem
- * @typedef {import("@typings/app").TrackItemAudio} TrackItemAudio
- */
-
 const { get } = require("tiny-json-http");
 
 const notation = require("./notation.json");
 
 /**
  * @param {SpotifyApi.AudioFeaturesObject} itemAudio
- * @returns {TrackItemAudio}
+ * @returns {PortifyApi.TrackItemAudio}
  */
 function processItemAudio(itemAudio) {
 	const { key, mode, tempo, analysis_url } = itemAudio;
@@ -26,7 +21,7 @@ function processItemAudio(itemAudio) {
 /**
  * Inject audio_features into TrackItems
  * 
- * @param {Record<string, Portify.TrackItemBase>} trackItemDict
+ * @param {Record<string, PortifyApi.TrackItemBase>} trackItemDict
  * @param {{url:string, headers: any}} audioRequest
  */
 async function addTrackAudio(trackItemDict, audioRequest) {
@@ -40,12 +35,12 @@ async function addTrackAudio(trackItemDict, audioRequest) {
 }
 
 /**
- * @param {Record<string, Portify.TrackItemBase>} trackItemDict
- * @param {Portify.MakeRequest} makeRequest
+ * @param {Record<string, PortifyApi.TrackItemBase>} trackItemDict
+ * @param {PortifyApp.BuildRequest} buildRequest
  */
-async function injectAudio(trackItemDict, makeRequest) {
+async function injectAudio(trackItemDict, buildRequest) {
 	const trackItemIds = Object.keys(trackItemDict);
-	const audioRequest = makeRequest("/audio-features", { ids: trackItemIds });
+	const audioRequest = buildRequest("/audio-features", { ids: trackItemIds });
 	const tracks = await addTrackAudio(trackItemDict, audioRequest);
 
 	return tracks;

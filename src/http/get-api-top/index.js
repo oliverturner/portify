@@ -15,7 +15,7 @@ const parseQuery = require("@architect/shared/parse-query-params");
 /**
  * @param {HttpRequest} req
  */
-async function getTop({ session, queryStringParameters }) {
+async function getData({ session, queryStringParameters }) {
 	const params = {
 		time_range: parseQuery.getTimeRange(queryStringParameters),
 		limit: parseQuery.getLimit(queryStringParameters),
@@ -25,16 +25,17 @@ async function getTop({ session, queryStringParameters }) {
 	const apiReq = buildRequest("/me/top/tracks", params);
 	const apiRes = (await get(apiReq)).body;
 
-	/** @type {Record<string, Portify.TrackItemBase>} */
+	/** @type {Record<string, PortifyApi.TrackItemBase>} */
 	const itemDict = buildDict(apiRes.items, convertTrackObject);
 	const enhancedDict = await injectAudio(itemDict, buildRequest);
 
+	// TODO: paginate response
 	return {
 		items: Object.values(enhancedDict),
 	};
 }
 
 module.exports = {
-	getTop,
-	handler: http.async(makeResponse(getTop)),
+	getData,
+	handler: http.async(makeResponse(getData)),
 };

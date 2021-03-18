@@ -6,7 +6,13 @@
 	"external_ids": { "upc": "5060519688361" },
 	"genres": [],
 	"release_date": "2016-04-21",
-	"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+	"artists": [
+		{
+			"href": "/artists/0uz2ob916mOA6c21tw0b28",
+			"id": "0uz2ob916mOA6c21tw0b28",
+			"name": "Dhillon"
+		}
+	],
 	"images": {
 		"64": "https://i.scdn.co/image/ab67616d00004851daf8d174a2c33394b5ac41d1",
 		"300": "https://i.scdn.co/image/ab67616d00001e02daf8d174a2c33394b5ac41d1",
@@ -16,8 +22,13 @@
 		{
 			"id": "1Qd41PCvEmMorWnccHGw20",
 			"name": "Black Widoe - Original Mix",
-			"is_playable": true,
-			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"artists": [
+				{
+					"href": "/artists/0uz2ob916mOA6c21tw0b28",
+					"id": "0uz2ob916mOA6c21tw0b28",
+					"name": "Dhillon"
+				}
+			],
 			"playLink": "/api/play/1Qd41PCvEmMorWnccHGw20",
 			"audio": {
 				"keys": { "camelot": "3A", "musical": "B♭m" },
@@ -28,8 +39,13 @@
 		{
 			"id": "1bpbJmAnEArir4iZ0L7sYw",
 			"name": "Intro - Original Mix",
-			"is_playable": true,
-			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"artists": [
+				{
+					"href": "/artists/0uz2ob916mOA6c21tw0b28",
+					"id": "0uz2ob916mOA6c21tw0b28",
+					"name": "Dhillon"
+				}
+			],
 			"playLink": "/api/play/1bpbJmAnEArir4iZ0L7sYw",
 			"audio": {
 				"keys": { "camelot": "10A", "musical": "Bm" },
@@ -40,8 +56,13 @@
 		{
 			"id": "2gJrVJ0s1vy3a3qi8QAos9",
 			"name": "Umbra - Original Mix",
-			"is_playable": true,
-			"artists": [{ "id": "0uz2ob916mOA6c21tw0b28", "name": "Dhillon" }],
+			"artists": [
+				{
+					"href": "/artists/0uz2ob916mOA6c21tw0b28",
+					"id": "0uz2ob916mOA6c21tw0b28",
+					"name": "Dhillon"
+				}
+			],
 			"playLink": "/api/play/2gJrVJ0s1vy3a3qi8QAos9",
 			"audio": {
 				"keys": { "camelot": "9B", "musical": "G" },

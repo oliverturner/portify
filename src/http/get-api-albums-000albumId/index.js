@@ -12,7 +12,7 @@ const {
 	buildDict,
 } = require("@architect/shared/utils");
 const {
-	processImages,
+	convertImages,
 	convertArtists,
 	convertTrackObject,
 } = require("@architect/shared/spotify");
@@ -40,7 +40,7 @@ function processResponse(albumId, { next, previous, limit, offset, total }) {
 /**
  * @param {HttpRequest} req
  */
-async function getAlbum({ session, pathParameters, queryStringParameters }) {
+async function getData({ session, pathParameters, queryStringParameters }) {
 	const { albumId } = pathParameters;
 	const { limit, offset } = getPagingParams(queryStringParameters);
 
@@ -75,13 +75,13 @@ async function getAlbum({ session, pathParameters, queryStringParameters }) {
 		genres,
 		release_date,
 		artists: convertArtists(artists),
-		images: processImages(images),
+		images: convertImages(images),
 		items: Object.values(audioTrackDict),
 		...pagingObject,
 	};
 }
 
 module.exports = {
-	getAlbum,
-	handler: http.async(makeResponse(getAlbum)),
+	getData,
+	handler: http.async(makeResponse(getData)),
 };

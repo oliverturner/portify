@@ -1,46 +1,14 @@
-export type TimeRange = "short_term" | "medium_term" | "long_term";
-
-export interface TrackItemArtist {
-	id: string;
-	name: string;
-}
-
-export interface TrackItemAudio {
-	keys: {
-		camelot: string;
-		musical: string;
-	};
-	bpm: number;
-	analysis_url: string;
-}
-
-export interface TrackItemBase {
-	id: string;
-	name: string;
-	is_playable: boolean;
-	artists: TrackItemArtist[];
-	audio?: TrackItemAudio;
-	playLink?: string;
-	href?: string;
-	images?: Record<string, string>;
-}
-
-export interface TrackItem extends TrackItemBase {
-	href: string;
-	images: Record<string, string>;
-}
-
-interface SessionRquestAuthorise {
+interface SessionRequestAuthorise {
 	code: string;
 	grant_type: "authorization_code";
 }
 
-interface SessionRquestRefresh {
+interface SessionRequestRefresh {
 	refresh_token: string;
 	grant_type: "refresh_token";
 }
 
-export type SessionRequestData = SessionRquestAuthorise | SessionRquestRefresh;
+export type SessionRequestData = SessionRequestAuthorise | SessionRequestRefresh;
 
 export interface Session {
 	access_token: string;
@@ -52,15 +20,14 @@ interface Dict {
 	[key: string]: unknown;
 }
 
-type MakeRequest = (
-	path: string,
-	params?: Dict | undefined
-) => {
+interface RequestConfig {
 	url: string;
 	headers: {
 		"Content-Type": string;
 		Authorization: string;
 	};
-};
+}
 
-export as namespace Portify;
+type BuildRequest = (path: string, params?: Dict | undefined) => RequestConfig;
+
+export as namespace PortifyApp;

@@ -1,10 +1,10 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getTop } = require("../src/http/get-api-top");
+const { getData } = require("../src/http/get-api-top");
 const { getTestEnv } = require("./helpers");
 
-const apiUrl = "https://api.spotify.com/v1";
+const { apiUrl } = require("./fixtures/spotify.json");
 const topTracksResponse = require(`./fixtures/top-tracks-raw.json`);
 const topTracksAudioResponse = require(`./fixtures/top-tracks-audio.json`);
 const expected = require(`./fixtures/top-tracks.json`);
@@ -13,7 +13,7 @@ const testEnv = getTestEnv("get-api-top");
 
 testEnv.up();
 
-test("Mock request", async (t) => {
+test("get-api-top", async (t) => {
 	t.plan(1);
 
 	// TODO: return a paged object
@@ -31,9 +31,9 @@ test("Mock request", async (t) => {
 
 	const session = { access_token: "f4k3-4cc355-t0k3n" };
 	const req = { session, queryStringParameters: tracksQuery };
-	const input = await getTop(req);
+	const actual = await getData(req);
 
-	t.deepEquals(input, expected, "Parsed output matches");
+	t.deepEquals(actual, expected, "Parsed output matches");
 });
 
 testEnv.down();

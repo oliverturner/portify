@@ -5,7 +5,7 @@
 /**
  * @param {SpotifyApi.ImageObject[]} rawImages
  */
-function processImages(rawImages) {
+function convertImages(rawImages) {
 	/** @type Record<string, string> */
 	const images = {};
 	for (const { width, url } of rawImages) {
@@ -31,7 +31,7 @@ function isPlayable(is_playable, is_local) {
  * @returns
  */
 function convertArtists(artists) {
-	return artists.map(({ id, name }) => ({ id, name }));
+	return artists.map(({ id, name }) => ({ id, name, href: `/artists/${id}` }));
 }
 
 /** @type {(item: any) => item is SpotifyApi.TrackObjectFull} */
@@ -47,18 +47,20 @@ function isTrackObjectFull(item) {
 function convertTrackObject(item) {
 	const { id, name, artists, is_playable } = item;
 
-	/** @type {Portify.TrackItemBase} */
+	/** @type {PortifyApi.TrackItemBase} */
 	const trackItem = {
 		id,
 		name,
-		is_playable: isPlayable(is_playable),
 		artists: convertArtists(artists),
-		playLink: `/api/play/${id}`,
 	};
+
+	if (isPlayable(is_playable)) {
+		trackItem.playLink = `/api/play/${id}`;
+	}
 
 	if (isTrackObjectFull(item)) {
 		trackItem.href = `/albums/${item.album.id}`;
-		trackItem.images = processImages(item.album.images);
+		trackItem.images = convertImages(item.album.images);
 	}
 
 	return trackItem;
@@ -74,7 +76,7 @@ function isCollection(items) {
 }
 
 module.exports = {
-	processImages,
+	convertImages,
 	convertArtists,
 	convertTrackObject,
 	isCollection,

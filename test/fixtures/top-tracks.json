@@ -4,11 +4,18 @@
 			"id": "1rWmUQ5HVtoswLviuK0OwH",
 			"name": "Consciousness Switch",
 			"href": "/albums/0peSOCjN2ayFd5MdRfCYnZ",
-			"is_playable": true,
 			"playLink": "/api/play/1rWmUQ5HVtoswLviuK0OwH",
 			"artists": [
-				{ "id": "762FYAqSeuqmgbL6qEAJr8", "name": "Dmitry Molosh" },
-				{ "id": "7sMOGsm8T0YZ230abl9TcP", "name": "Nōpi" }
+				{
+					"href": "/artists/762FYAqSeuqmgbL6qEAJr8",
+					"id": "762FYAqSeuqmgbL6qEAJr8",
+					"name": "Dmitry Molosh"
+				},
+				{
+					"href": "/artists/7sMOGsm8T0YZ230abl9TcP",
+					"id": "7sMOGsm8T0YZ230abl9TcP",
+					"name": "Nōpi"
+				}
 			],
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d000048518263351afd0136c46ad71cc4",
@@ -25,11 +32,18 @@
 			"id": "1bVNOAzR9giwIivkcshTpP",
 			"name": "Passion - Original Mix",
 			"href": "/albums/2KfKcY4HGlFVA56CD0yVLZ",
-			"is_playable": true,
 			"playLink": "/api/play/1bVNOAzR9giwIivkcshTpP",
 			"artists": [
-				{ "id": "1TqcQwnBqloJrKkGs4l4LT", "name": "D-Nox" },
-				{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" }
+				{
+					"href": "/artists/1TqcQwnBqloJrKkGs4l4LT",
+					"id": "1TqcQwnBqloJrKkGs4l4LT",
+					"name": "D-Nox"
+				},
+				{
+					"href": "/artists/6MzHMxgYcbj6ue5w9pbNp9",
+					"id": "6MzHMxgYcbj6ue5w9pbNp9",
+					"name": "Stan Kolev"
+				}
 			],
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d000048519cf73da12f8e68b2354aad11",
@@ -46,12 +60,23 @@
 			"id": "5iE3PyNL1BxMBTLkq5iLIM",
 			"name": "Listen - Max Freegrant & Slow Fish Remix",
 			"href": "/albums/2khLaEBxaaisEWt7lGTPg3",
-			"is_playable": true,
 			"playLink": "/api/play/5iE3PyNL1BxMBTLkq5iLIM",
 			"artists": [
-				{ "id": "6MzHMxgYcbj6ue5w9pbNp9", "name": "Stan Kolev" },
-				{ "id": "2q4QQApDOk5PUdFGWfHmJR", "name": "Max Freegrant" },
-				{ "id": "3m91RDu6WNtDGSHblWjZ7w", "name": "Slow Fish" }
+				{
+					"href": "/artists/6MzHMxgYcbj6ue5w9pbNp9",
+					"id": "6MzHMxgYcbj6ue5w9pbNp9",
+					"name": "Stan Kolev"
+				},
+				{
+					"href": "/artists/2q4QQApDOk5PUdFGWfHmJR",
+					"id": "2q4QQApDOk5PUdFGWfHmJR",
+					"name": "Max Freegrant"
+				},
+				{
+					"href": "/artists/3m91RDu6WNtDGSHblWjZ7w",
+					"id": "3m91RDu6WNtDGSHblWjZ7w",
+					"name": "Slow Fish"
+				}
 			],
 			"images": {
 				"64": "https://i.scdn.co/image/ab67616d000048518b05417aa4ea0f85903c81ac",
