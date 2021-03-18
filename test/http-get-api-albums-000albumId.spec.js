@@ -8,11 +8,12 @@ const { getTestEnv } = require("./helpers");
 const { apiUrl, albumId } = require("./fixtures/spotify.json");
 const expected = require("./fixtures/album.json");
 
-const testEnv = getTestEnv("api-albums-000albumId");
+const testTitle = "api-albums-000albumId";
+const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
 
-test("api-albums-000albumId", async (t) => {
+test(testTitle, async (t) => {
 	const session = {};
 	const pathParameters = { albumId };
 	const queryStringParameters = {};

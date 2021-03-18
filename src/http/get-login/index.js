@@ -37,7 +37,7 @@ function getLoginUrl(envVars, scopes) {
  * @returns {Promise<HttpResponse>}
  */
 /** @type {HttpHandler} */
-const login = async (req) => {
+const getData = async (req) => {
 	const { user } = req.session || {};
 
 	const scopes = [
@@ -60,6 +60,6 @@ const login = async (req) => {
 
 module.exports = {
 	getLoginUrl,
-	login,
-	handler: http.async(login),
+	getData: getData,
+	handler: http.async(getData),
 };
