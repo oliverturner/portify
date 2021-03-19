@@ -33,11 +33,7 @@ Finally...
 ---
 
 ## Coming soon...
-- A login button and some links to sample endpoints 😬
-- An explanation of some of the conventions around typing JS
+- A login button and some links to sample endpoints (full app will follow SvelteKit's release)
+- An explanation of some of the conventions around typing pure JS
 
 In the meantime please dig into the code and take a look!
-
-(While Svelte Kit is in its infancy the UI will remain non-existent)
-
-[![Wallaby.js](https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=for-the-badge&logo=github)](https://wallabyjs.com/oss/)
