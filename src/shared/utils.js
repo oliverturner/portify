@@ -38,13 +38,13 @@ function getApiUrl(envVars, path, params) {
 }
 
 /**
- * Return an object containing a built url and authorised headers
- * Once instantiated can be used by subsequent requests in the same Lambda
+ * `requestFactory` produces a reusable function that returns an object that 
+ * tiny-json-http can use to make an authenticated request
  *
  * Usage:
- *  const getRequest = requestFactory(process.env, session);
- *  const trackRequest = getRequest("/me/top/tracks", { time_range, limit });
- *  const topTrackRes = (await get(trackRequest)).body;
+ *  const buildRequest = requestFactory(process.env, session);
+ *  const apiReq = buildRequest("/me/top/tracks", { time_range, limit });
+ *  const apiRes = (await get(apiReq)).body;
  *
  * @param {NodeJS.ProcessEnv} envVars
  * @param {SessionData} session
