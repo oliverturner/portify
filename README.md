@@ -1,7 +1,7 @@
 # Portify v2.0
 
 ## What is this?
-[Portify v1](https://www.portify.rocks) is an app that adds links to your Spotify playlists to help you buy the music you love.
+[Portify v1.0](https://www.portify.rocks) is an app that adds links to your Spotify playlists to help you buy the music you love.
 Portify v2.0 is a pure JS rewrite of the app's back-end. The background to and reasons for its migration from TypeScript can be read [here](docs/background.md).
 
 The front end will be redeveloped in Svelte Kit as soon as it's officially released 😀
