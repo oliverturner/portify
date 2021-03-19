@@ -20,7 +20,7 @@ To build and run locally, first
 Then
 1. Rename `demo.env` to `.env`
 1. Log in to [Spotify's developer portal](https://developer.spotify.com/dashboard/login)
-1. Create a new application and copy the resulting `Client ID` and `Client Secret` values.
+1. Create a new application and make a note of the resulting `Client ID` and `Client Secret` values.
 1. In your renamed `.env` file replace the dummy `xxx...xxx` values for `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` with the values you copied in the previous step
 
 Next
