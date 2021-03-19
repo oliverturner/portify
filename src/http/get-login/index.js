@@ -32,7 +32,6 @@ function getLoginUrl(envVars, scopes) {
 }
 
 /**
- *
  * @param {HttpRequest} req
  * @returns {Promise<HttpResponse>}
  */
