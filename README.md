@@ -11,22 +11,23 @@ The front end will be redeveloped in Svelte Kit as soon as it's officially relea
 
 ## Development
 
-To build and run locally, first
+To build and run locally
 
+### First
 1. `git clone git@github.com:oliverturner/portify.git`
 1. `cd ./portify`
 1. `npm install`
 
-Then
+### Then
 1. Rename `demo.env` to `.env`
 1. Log in to [Spotify's developer portal](https://developer.spotify.com/dashboard/login)
 1. Create a new application and make a note of the resulting `Client ID` and `Client Secret` values.
 1. In your renamed `.env` file replace the dummy `xxx...xxx` values for `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` with the values you copied in the previous step
 
-Next
-1. Run `npm start`: this step will bootstrap the Lambdas
+### Next
+1. Run `npm start` to have Architect bootstrap the application
 
-Finally...
+### Finally...
 1. Run `npm run coverage` to get an idea of what's under test
 1. Run `npm run test:types` to trigger type checking on `./src` - no output means everything's working!
 
