@@ -25,7 +25,7 @@ To build and run locally
 1. In your renamed `.env` file replace the dummy `xxx...xxx` values for `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` with the values you copied in the previous step
 
 ### Next
-1. Run `npm start` to have Architect bootstrap the application
+1. Run `npm start` to have Architect bootstrap the application (see [the architecture docs](docs/architecture.md) for an overview of what this does)
 
 ### Finally...
 1. Run `npm run coverage` to get an idea of what's under test
