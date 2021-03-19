@@ -32,7 +32,7 @@ Finally...
 ---
 
 ## Coming soon...
-- A login button and some links to sample endpoints (full app will follow SvelteKit's release)
+- A login button and some links to sample endpoints
 - An explanation of some of the conventions around typing pure JS
 
 In the meantime please dig into the code and take a look!
