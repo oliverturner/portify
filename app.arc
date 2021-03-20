@@ -5,6 +5,7 @@ portify
 autocreate true
 
 @http
+get /
 get /login
 get /auth
 post /logout

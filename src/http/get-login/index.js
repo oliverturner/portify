@@ -5,31 +5,7 @@
  */
 
 const { http } = require("@architect/functions");
-const { buildUrl } = require("@architect/shared/utils");
-
-/**
- * @param {NodeJS.ProcessEnv} envVars
- * @param {string[]} scopes
- * @returns {string}
- */
-function getLoginUrl(envVars, scopes) {
-	const {
-		SPOTIFY_CLIENT_ID: client_id = "",
-		SPOTIFY_LOGIN_URL: base = "",
-		SPOTIFY_LOGIN_REDIRECT: redirect_uri = "",
-	} = envVars;
-
-	return buildUrl({
-		base,
-		path: "/authorize",
-		params: {
-			client_id,
-			redirect_uri,
-			response_type: "code",
-			scope: scopes.join(" "),
-		},
-	});
-}
+const { getLoginUrl } = require("@architect/shared/app");
 
 /**
  * @param {HttpRequest} req
@@ -38,13 +14,7 @@ function getLoginUrl(envVars, scopes) {
 /** @type {HttpHandler} */
 const getData = async (req) => {
 	const { user } = req.session || {};
-
-	const scopes = [
-		"user-top-read",
-		"user-modify-playback-state",
-		"playlist-read-private",
-	];
-	const loginUrl = getLoginUrl(process.env, scopes);
+	const loginUrl = getLoginUrl(process.env);
 
 	return {
 		headers: {
