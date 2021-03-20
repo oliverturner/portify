@@ -1,6 +1,4 @@
 /**
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- *
  * @typedef {SpotifyApi.TrackObjectFull} TrackObjectFull
  * @typedef {SpotifyApi.ArtistObjectFull} ArtistObjectFull
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>} AlbumPage

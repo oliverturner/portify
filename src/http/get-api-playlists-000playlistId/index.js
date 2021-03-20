@@ -1,5 +1,4 @@
 /**
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.PlaylistTrackObject>} Page
  */
 
@@ -11,7 +10,7 @@ const {
 	getPrevNext,
 	buildDict,
 } = require("@architect/shared/utils");
-const { makeResponse } = require("@architect/shared/make-response");
+const { onApiRequest } = require("@architect/shared/on-api-request");
 const { getPagingParams } = require("@architect/shared/parse-query-params");
 const { convertTrackObject, isCollection } = require("@architect/shared/spotify");
 const { injectAudio } = require("@architect/shared/audio");
@@ -38,7 +37,7 @@ function processResponse(playlistId, name, tracks) {
 }
 
 /**
- * @param {HttpRequest} req
+ * @param {Architect.HttpRequest} req
  */
 async function getData({ session, pathParameters, queryStringParameters }) {
 	const { playlistId } = pathParameters;
@@ -71,5 +70,5 @@ async function getData({ session, pathParameters, queryStringParameters }) {
 
 module.exports = {
 	getData,
-	handler: http.async(makeResponse(getData)),
+	handler: http.async(onApiRequest(getData)),
 };

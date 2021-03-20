@@ -25,30 +25,37 @@ export interface TrackItemBase {
 }
 export interface TrackItem extends TrackItemBase {
 	href: string;
-  audio: TrackItemAudio;
+	audio: TrackItemAudio;
 	images: Record<string, string>;
-  playLink: string;
+	playLink: string;
 }
 
 export interface Artist {
-  id: string;
-  name: string;
-  href: string;
+	id: string;
+	name: string;
+	href: string;
 }
 
 export interface ArtistFull extends Artist {
-  genres: string[];
-  images: Record<string, string>;
+	genres: string[];
+	images: Record<string, string>;
+}
+
+export interface ArtistResponse {
+	artist: ArtistFull;
+	appearsOn: PortifyApi.Album[];
+	topTracks: PortifyApi.TrackItemBase[];
+	relatedArtists: PortifyApi.ArtistFull[];
 }
 
 export interface Album {
-  id: string;
-  name: string;
-  href: string;
-  release_date: string;
-  album_type: "album" | "single" | "compilation";
-  images: Record<string, string>;
-  artists: Artist[];
+	id: string;
+	name: string;
+	href: string;
+	release_date: string;
+	album_type: "album" | "single" | "compilation";
+	images: Record<string, string>;
+	artists: Artist[];
 }
 
 export as namespace PortifyApi;

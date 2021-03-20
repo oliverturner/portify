@@ -1,6 +1,4 @@
 /**
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- *
  * @typedef {SpotifyApi.ArtistObjectFull} ArtistObjectFull
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>} AlbumPage
  * @typedef {SpotifyApi.TrackObjectFull} TrackObjectFull
@@ -9,7 +7,7 @@
 const { http } = require("@architect/functions");
 const { get } = require("tiny-json-http");
 
-const { makeResponse } = require("@architect/shared/make-response");
+const { onApiRequest } = require("@architect/shared/on-api-request");
 const { requestFactory } = require("@architect/shared/utils");
 const parsers = require("./parsers");
 
@@ -79,7 +77,8 @@ async function processRequests(requests) {
 }
 
 /**
- * @param {HttpRequest} req
+ * @param {Architect.HttpRequest} req
+ * @returns {Promise<PortifyApi.ArtistResponse>}
  */
 async function getData({ session, pathParameters }) {
 	const { artistId } = pathParameters;
@@ -97,5 +96,5 @@ async function getData({ session, pathParameters }) {
 
 module.exports = {
 	getData,
-	handler: http.async(makeResponse(getData)),
+	handler: http.async(onApiRequest(getData)),
 };

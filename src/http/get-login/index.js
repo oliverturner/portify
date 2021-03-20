@@ -1,17 +1,9 @@
-/**
- * @typedef {import("@architect/functions").HttpHandler} HttpHandler
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- * @typedef {import("@architect/functions").HttpResponse} HttpResponse
- */
-
 const { http } = require("@architect/functions");
 const { getLoginUrl } = require("@architect/shared/app");
 
 /**
- * @param {HttpRequest} req
- * @returns {Promise<HttpResponse>}
+ * @param {Architect.HttpRequest} req
  */
-/** @type {HttpHandler} */
 const getData = async (req) => {
 	const { user } = req.session || {};
 	const loginUrl = getLoginUrl(process.env);
@@ -28,7 +20,6 @@ const getData = async (req) => {
 };
 
 module.exports = {
-	getLoginUrl,
-	getData: getData,
+	getData,
 	handler: http.async(getData),
 };

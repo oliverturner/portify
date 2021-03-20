@@ -1,12 +1,11 @@
 /**
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.PlaylistObjectSimplified>} Page
  */
 
 const { http } = require("@architect/functions");
 const { get } = require("tiny-json-http");
 
-const { makeResponse } = require("@architect/shared/make-response");
+const { onApiRequest } = require("@architect/shared/on-api-request");
 const { requestFactory, getPrevNext } = require("@architect/shared/utils");
 const { getPagingParams } = require("@architect/shared/parse-query-params");
 
@@ -49,7 +48,7 @@ function processResponse({ items, next, previous, limit, offset, total }) {
 }
 
 /**
- * @param {HttpRequest} req
+ * @param {Architect.HttpRequest} req
  */
 async function getData({ session, queryStringParameters }) {
 	const params = getPagingParams(queryStringParameters);
@@ -65,5 +64,5 @@ async function getData({ session, queryStringParameters }) {
 
 module.exports = {
 	getData,
-	handler: http.async(makeResponse(getData)),
+	handler: http.async(onApiRequest(getData)),
 };

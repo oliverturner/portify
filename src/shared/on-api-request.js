@@ -7,15 +7,15 @@ const { post } = require("tiny-json-http");
 const { makeSessionRequest, getLogoutResponse } = require("./session-request");
 
 /**
- * Execute the `handleReq` callback and return response
+ * Execute the `requestHandler` callback and return response
  * Handle retries where auth has expired
  * Logout on failed retry
  *
  * @type {(fn: Function) => HttpHandler}
  */
-const makeResponse = (handleReq) => async (req) => {
+const onApiRequest = (requestHandler) => async (req) => {
 	try {
-		const json = await handleReq(req);
+		const json = await requestHandler(req);
 		return { json };
 	} catch (error) {
 		if (!req.session) {
@@ -32,7 +32,7 @@ const makeResponse = (handleReq) => async (req) => {
 
 				// Retain all other session props: only update access_token
 				req.session.access_token = access_token;
-				return await handleReq(req);
+				return await requestHandler(req);
 			} catch (error) {
 				return getLogoutResponse();
 			}
@@ -43,5 +43,5 @@ const makeResponse = (handleReq) => async (req) => {
 };
 
 module.exports = {
-	makeResponse,
+	onApiRequest,
 };

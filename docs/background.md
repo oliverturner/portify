@@ -19,7 +19,7 @@ Based on my experience of rewriting Portify v2 as a pure JS project I'd say "abs
 
 <!-- screenshot -->
 
-Some purists claim that this isn't "true" TS, but my favourite rebuttal comes from Bloomberg's [Rob Palmer](https://twitter.com/robpalmer2/status/1362684227876253697):
+Sometimes I get pushback from people claiming claim that this isn't "true" TS. This is when I like to share [Rob Palmer's](https://twitter.com/robpalmer2/status/1362684227876253697) _excellent_ rebuttal:
 
 > Personally I try to avoid conflating [adoption of TS with transpilation].
 >
@@ -27,4 +27,4 @@ Some purists claim that this isn't "true" TS, but my favourite rebuttal comes fr
 >
 > "using *.ts files" implies inline type syntax and a build step.
 
-Hopefully this repo will demonstrate some of the ways that we can opt in to better code without the having to invest in a different language.
+Hopefully this repo will demonstrate some of the ways that we can opt in to better code without the having to rewrite everything in a different language.

@@ -1,19 +1,14 @@
-/**
- * @typedef {import("@architect/functions").HttpRequest} HttpRequest
- */
-
 const { http } = require("@architect/functions");
 const { get } = require("tiny-json-http");
 
-const { makeResponse } = require("@architect/shared/make-response");
-const { requestFactory, buildDict } = require("@architect/shared/utils");
-
+const parseQuery = require("@architect/shared/parse-query-params");
 const { injectAudio } = require("@architect/shared/audio");
 const { convertTrackObject } = require("@architect/shared/spotify");
-const parseQuery = require("@architect/shared/parse-query-params");
+const { onApiRequest } = require("@architect/shared/on-api-request");
+const { requestFactory, buildDict } = require("@architect/shared/utils");
 
 /**
- * @param {HttpRequest} req
+ * @param {Architect.HttpRequest} req
  */
 async function getData({ session, queryStringParameters }) {
 	const params = {
@@ -37,5 +32,5 @@ async function getData({ session, queryStringParameters }) {
 
 module.exports = {
 	getData,
-	handler: http.async(makeResponse(getData)),
+	handler: http.async(onApiRequest(getData)),
 };
