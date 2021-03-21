@@ -1,4 +1,6 @@
 .env
 preferences.arc
+sam.json
+sam.yaml
 .nyc_output/
 .coverage/
