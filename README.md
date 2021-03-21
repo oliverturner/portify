@@ -9,6 +9,11 @@ The front end is currently minimal: it will be (lavishly) redeveloped in Svelte 
 
 In the meantime please dig into the code and feel free to raise issues and [ask questions](https://twitter.com/oliverturner)!
 
+### Docs
+- [Background](docs/background.md)
+- [Architecture](docs/architecture.md)
+- [Authentication](docs/authentication.md)
+
 ---
 
 ## Development
@@ -43,9 +48,3 @@ If using VSCode these settings enable deeper TS integration
 1. Search for `implementationsCodeLens` and enable it
 
 Installing [the suggested plugins](`.vscode/extensions.json`) is also helpful 
-
----
-
-## Coming soon...
-- A login button and some links to sample endpoints
-- An explanation of some of the conventions around typing pure JS

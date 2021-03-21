@@ -1,5 +1,5 @@
 @app
-portify
+portify-v2
 
 @create
 autocreate true

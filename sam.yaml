@@ -1,0 +1,714 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Exported by architect/package@6.0.4 on 2021-03-21T20:11:05.387Z
+Resources:
+  HTTP:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: $default
+      DefinitionBody:
+        openapi: 3.0.1
+        info:
+          title:
+            Ref: AWS::StackName
+        paths:
+          /:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetIndexHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /login:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetLoginHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /auth:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAuthHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /logout:
+            post:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostLogoutHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /playlists/{playlistId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetPlaylistsPlaylistIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /albums/{albumId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAlbumsAlbumIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /artists/{artistId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetArtistsArtistIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /api/top:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApiTopHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /api/playlists:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApiPlaylistsHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /api/playlists/{playlistId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApiPlaylistsPlaylistIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /api/albums/{albumId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApiAlbumsAlbumIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /api/artists/{artistId}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '2.0'
+                type: aws_proxy
+                httpMethod: POST
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApiArtistsArtistIdHTTPLambda.Arn}/invocations
+                connectionType: INTERNET
+          /_static/{proxy+}:
+            get:
+              x-amazon-apigateway-integration:
+                payloadFormatVersion: '1.0'
+                type: http_proxy
+                httpMethod: GET
+                uri:
+                  Fn::Sub:
+                  - http://${bukkit}.s3.${AWS::Region}.amazonaws.com/{proxy}
+                  - bukkit:
+                      Ref: StaticBucket
+                connectionType: INTERNET
+                timeoutInMillis: 30000
+  GetIndexHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/4a41685e61e6937e862bb42e8073f632
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetIndexHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetLoginHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/f15fd672cd66decdf7c7cfcc0aeb6c51
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetLoginHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /login
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetAuthHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/86e922fce46bc862c02709d429d96a9e
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetAuthHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /auth
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  PostLogoutHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/6823053abd24cbd9c504b0cb63a2af19
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        PostLogoutHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /logout
+            Method: POST
+            ApiId:
+              Ref: HTTP
+  GetPlaylistsPlaylistIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/758227c7848b258d8a16b949ccf65f60
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetPlaylistsPlaylistIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /playlists/{playlistId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetAlbumsAlbumIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/63d29d9ab9e44ba7d7e268c6a5257ad6
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetAlbumsAlbumIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /albums/{albumId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetArtistsArtistIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/46b9a4549922259ea9f73abee493f522
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetArtistsArtistIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /artists/{artistId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetApiTopHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/f2f015033985535672a3cb41f067c208
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetApiTopHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /api/top
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetApiPlaylistsHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/9e19ac0a5788c06b131ca39bb5e8bd26
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetApiPlaylistsHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /api/playlists
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetApiPlaylistsPlaylistIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/b1e301c0eb4ca1292956ab12f199f6bd
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetApiPlaylistsPlaylistIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /api/playlists/{playlistId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetApiAlbumsAlbumIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/93368aa398195e9fa0cb10d113cf3929
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetApiAlbumsAlbumIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /api/albums/{albumId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  GetApiArtistsArtistIdHTTPLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/80b517d3d30b6af2fa23dad8fe2bd9c3
+      Runtime: nodejs12.x
+      MemorySize: 1152
+      Timeout: 5
+      Environment:
+        Variables:
+          ARC_APP_NAME: portify-v2
+          ARC_CLOUDFORMATION:
+            Ref: AWS::StackName
+          ARC_ENV: staging
+          ARC_HTTP: aws_proxy
+          ARC_ROLE:
+            Ref: Role
+          NODE_ENV: staging
+          SESSION_TABLE_NAME: jwe
+          ARC_STATIC_BUCKET:
+            Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
+      Role:
+        Fn::Sub:
+        - arn:aws:iam::${AWS::AccountId}:role/${roleName}
+        - roleName:
+            Ref: Role
+      Events:
+        GetApiArtistsArtistIdHTTPEvent:
+          Type: HttpApi
+          Properties:
+            Path: /api/artists/{artistId}
+            Method: GET
+            ApiId:
+              Ref: HTTP
+  StaticBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+  Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Policies:
+      - PolicyName: ArcGlobalPolicy
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            - logs:DescribeLogStreams
+            Resource: arn:aws:logs:*:*:*
+      - PolicyName: ArcStaticBucketPolicy
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:GetObject
+            - s3:PutObject
+            - s3:PutObjectAcl
+            - s3:DeleteObject
+            Resource:
+            - Fn::Sub:
+              - arn:aws:s3:::${bukkit}
+              - bukkit:
+                  Ref: StaticBucket
+            - Fn::Sub:
+              - arn:aws:s3:::${bukkit}/*
+              - bukkit:
+                  Ref: StaticBucket
+  StaticBucketParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Name:
+        Fn::Sub:
+        - /${AWS::StackName}/static/${key}
+        - key: bucket
+      Value:
+        Ref: StaticBucket
+  StaticFingerprintParam:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Name:
+        Fn::Sub:
+        - /${AWS::StackName}/static/${key}
+        - key: fingerprint
+      Value: 'false'
+  ParameterStorePolicy:
+    Type: AWS::IAM::Policy
+    DependsOn: Role
+    Properties:
+      PolicyName: ArcParameterStorePolicy
+      PolicyDocument:
+        Statement:
+        - Effect: Allow
+          Action: ssm:GetParametersByPath
+          Resource:
+            Fn::Sub:
+            - arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${AWS::StackName}
+            - {}
+      Roles:
+      - Ref: Role
+Outputs:
+  API:
+    Description: API Gateway (HTTP)
+    Value:
+      Fn::Sub:
+      - https://${ApiId}.execute-api.${AWS::Region}.amazonaws.com
+      - ApiId:
+          Ref: HTTP
+  ApiId:
+    Description: API ID (ApiId)
+    Value:
+      Ref: HTTP
+  BucketURL:
+    Description: Bucket URL
+    Value:
+      Fn::Sub:
+      - http://${bukkit}.s3-website-${AWS::Region}.amazonaws.com
+      - bukkit:
+          Ref: StaticBucket
