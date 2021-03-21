@@ -1,6 +1,9 @@
 @app
 portify
 
+@create
+autocreate true
+
 @http
 get /
 get /login

@@ -5,8 +5,7 @@ const { makeSessionRequest, getLogoutResponse } = require("./session-request");
  * Abstract session handling
  * Automatically redirect to login screen if session is invalid
  *
- * @typedef {"html" | "json"} ContentKey
- * @type {(fn: (req: Architect.HttpRequest) => any, type: ContentKey) => Architect.HttpHandler}
+ * @type {PortifyApp.RequestHandler}
  */
 const handleRequest = (routeFn, type) => async (req) => {
 	try {

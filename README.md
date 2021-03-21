@@ -3,9 +3,11 @@
 ## What is this?
 [Portify v1.0](https://www.portify.rocks) is an app that adds links to your Spotify playlists to help you buy the music you love. 
 
-Portify v2.0 is a pure JS rewrite of the app's back end. The background to and reasons for its migration can be read in this doc about [why I rewrote a TypeScript app in pure JS](docs/background.md)
+Portify v2.0 is a pure JS rewrite of the app's back end. The reasons for its migration can be read about in [why I rewrote a TypeScript app in pure JS](docs/background.md)
 
-The front end will be redeveloped in Svelte Kit as soon as it's officially released 😀
+The front end is currently minimal: it will be (lavishly) redeveloped in Svelte Kit as soon as it's officially released 😀
+
+In the meantime please dig into the code and feel free to raise issues and [ask questions](https://twitter.com/oliverturner)!
 
 ---
 
@@ -34,10 +36,16 @@ If you've completed the steps above...
 1. Run `npm run coverage` to get an idea of what's under test
 1. Run `npm run test:types` to trigger type checking on `./src` - no output means everything's working!
 
+## Recommendations
+If using VSCode these settings enable deeper TS integration 
+1. Open preferences (`cmd + ,`)
+1. Search for `implicitProjectConfig` and enable "Check JS", "Strict Function Types" and "Strict Null Checks"
+1. Search for `implementationsCodeLens` and enable it
+
+Installing [the suggested plugins](`.vscode/extensions.json`) is also helpful 
+
 ---
 
 ## Coming soon...
 - A login button and some links to sample endpoints
 - An explanation of some of the conventions around typing pure JS
-
-In the meantime please dig into the code and feel free to ask questions!

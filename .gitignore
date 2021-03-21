@@ -1,3 +1,4 @@
+.env
 preferences.arc
 .nyc_output/
 .coverage/
