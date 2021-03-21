@@ -3,16 +3,17 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getData } = require("../src/http/get-api-playlists");
+const { getPlaylists } = require("../src/views/get-playlists");
 const { apiUrl } = require("./fixtures/spotify.json");
 const { getTestEnv } = require("./helpers");
 const expected = require("./fixtures/playlists.json");
 
-const testEnv = getTestEnv("get-api-playlists");
+const testTitle = "get-playlists"
+const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
 
-test("get-api-playlists", async (t) => {
+test(testTitle, async (t) => {
 	const session = {};
 	const queryStringParameters = { limit: 3, offset: 5 };
 
@@ -23,7 +24,7 @@ test("get-api-playlists", async (t) => {
 			"Content-Type": "application/json",
 		});
 
-	const actual = await getData({ session, queryStringParameters });
+	const actual = await getPlaylists({ session, queryStringParameters });
 
 	t.plan(1);
 	t.deepEquals(actual, expected, "Parsed output matches");

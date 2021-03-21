@@ -1,5 +1,30 @@
 export type TimeRange = "short_term" | "medium_term" | "long_term";
 
+export interface Page<T> {
+	items: T[];
+	limit: number;
+	offset: number;
+	next: string | null;
+	prev: string | null;
+	total: number;
+}
+
+export interface PlaylistTracksPage extends Page<TrackItemBase> {
+	id: string;
+	name: string;
+	isCollection: boolean;
+}
+
+export interface Playlist {
+	id: string;
+	name: string;
+	description: string | null;
+	href: string;
+	imageUrl: string;
+	ownerId: string;
+	tracks: number;
+}
+
 export interface TrackItemArtist {
 	id: string;
 	name: string;

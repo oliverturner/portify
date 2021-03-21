@@ -3,16 +3,17 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getData } = require("../src/http/get-api-playlists-000playlistId");
+const { getPlaylist } = require("../src/views/get-playlist");
 const { getTestEnv } = require("./helpers");
 const { apiUrl, playlistId } = require("./fixtures/spotify.json");
 const expected = require("./fixtures/playlist.json");
 
-const testEnv = getTestEnv("api-playlists-000playlistId");
+const testTitle = "get-playlist";
+const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
 
-test("api-playlists-000playlistId", async (t) => {
+test(testTitle, async (t) => {
 	const session = {};
 	const pathParameters = { playlistId };
 	const queryStringParameters = {};
@@ -31,7 +32,7 @@ test("api-playlists-000playlistId", async (t) => {
 			"Content-Type": "application/json",
 		});
 
-	const actual = await getData({
+	const actual = await getPlaylist({
 		session,
 		pathParameters,
 		queryStringParameters,

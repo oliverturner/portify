@@ -1,7 +1,8 @@
 // @ts-nocheck
 const test = require("tape");
 
-const { getData, getLoginUrl } = require("../src/http/get-login");
+const { getLogin } = require("../src/http/get-login");
+const { getLoginUrl } = require("../src/shared/app");
 const { getTestEnv } = require("./helpers");
 
 const testTitle = "get-login";
@@ -10,7 +11,11 @@ const testEnv = getTestEnv(testTitle);
 testEnv.up();
 
 test(`${testTitle}.getData`, async (t) => {
-	const { SPOTIFY_LOGIN_REDIRECT, SPOTIFY_LOGIN_URL, SPOTIFY_CLIENT_ID } = process.env;
+	const {
+		SPOTIFY_LOGIN_REDIRECT,
+		SPOTIFY_LOGIN_URL,
+		SPOTIFY_CLIENT_ID,
+	} = process.env;
 
 	function getUserResponse(user) {
 		const encodedAuthUrl = encodeURIComponent(SPOTIFY_LOGIN_REDIRECT);
@@ -30,12 +35,12 @@ test(`${testTitle}.getData`, async (t) => {
 	const testUser = { name: "Oliver Turner" };
 	const scenarios = [
 		{
-			actual: await getData({ session: { user: testUser } }),
+			actual: await getLogin({ session: { user: testUser } }),
 			expected: getUserResponse(testUser),
 			desc: "Login returns expected response with user",
 		},
 		{
-			actual: await getData({}),
+			actual: await getLogin({}),
 			expected: getUserResponse(),
 			desc: "Login returns expected response without user",
 		},
@@ -53,10 +58,9 @@ test(`${testTitle}.getLoginUrl`, (t) => {
 		SPOTIFY_CLIENT_ID: "a",
 		SPOTIFY_LOGIN_REDIRECT: "b",
 	};
-	const scopes = ["alpha", "beta", "gamma"];
-	const actual = getLoginUrl(envVars, scopes);
+	const actual = getLoginUrl(envVars);
 	const expected =
-		"https://a.b.com/authorize?client_id=a&redirect_uri=b&response_type=code&scope=alpha+beta+gamma";
+		"https://a.b.com/authorize?client_id=a&redirect_uri=b&response_type=code&scope=user-top-read+user-modify-playback-state+playlist-read-private";
 	const desc = "getLoginUrl matches";
 
 	t.plan(1);

@@ -2,11 +2,11 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { makeResponse } = require("../src/shared/make-response");
+const { handleRequest } = require("../src/shared/handle-request");
 const { getTestEnv } = require("./helpers");
 const fixtures = require("./fixtures/spotify.json");
 
-const testTitle = "shared/makeResponse"
+const testTitle = "shared/handleRequest"
 const testEnv = getTestEnv(testTitle);
 
 const successResponse = { value: "hello" };
@@ -56,7 +56,7 @@ test(testTitle, async (t) => {
 					refresh_token: "f4k3-r3fr35h-t0k3n",
 				},
 			},
-			expected: successResponse,
+			expected: { json: successResponse },
 		},
 		{
 			desc: "permanently rejects unsuccessful retries",
@@ -69,7 +69,7 @@ test(testTitle, async (t) => {
 
 	t.plan(scenarios.length);
 	for (const { request, expected, desc } of scenarios) {
-		const response = await makeResponse(handleReq)(request);
+		const response = await handleRequest(handleReq, "json")(request);
 		t.deepEqual(response, expected, desc);
 	}
 });

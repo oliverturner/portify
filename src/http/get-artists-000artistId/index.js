@@ -1,15 +1,7 @@
 const { http } = require("@architect/functions");
-const { onContentRequest } = require("@architect/shared/on-content-request");
-const { getData } = require("../get-api-artists-000artistId");
-
-/**
- * @param {Architect.HttpRequest} req
- */
-async function getContent(req) {
-	const data = await getData(req);
-	return `Artist: ${data.artist.name}`;
-}
+const { handleRequest } = require("@architect/shared/handle-request");
+const { getArtist } = require("@architect/views/get-artist");
 
 module.exports = {
-	handler: http.async(onContentRequest(getContent)),
+	handler: http.async(handleRequest(getArtist, "json")),
 };

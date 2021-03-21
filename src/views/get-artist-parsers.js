@@ -4,7 +4,7 @@
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.AlbumObjectSimplified>} AlbumPage
  */
 
-const { convertImages, convertArtists } = require("@architect/shared/spotify");
+const { convertImages, convertArtists } = require("../shared/spotify");
 
 // TODO: Define Portify.X types for this output
 // TODO: Add href props consistently to all endpoints

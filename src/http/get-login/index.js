@@ -4,7 +4,7 @@ const { getLoginUrl } = require("@architect/shared/app");
 /**
  * @param {Architect.HttpRequest} req
  */
-const getData = async (req) => {
+const getLogin = async (req) => {
 	const { user } = req.session || {};
 	const loginUrl = getLoginUrl(process.env);
 
@@ -19,7 +19,8 @@ const getData = async (req) => {
 	};
 };
 
+// TODO: extract into @view
 module.exports = {
-	getData,
-	handler: http.async(getData),
+	getLogin,
+	handler: http.async(getLogin),
 };
