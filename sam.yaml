@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Exported by architect/package@6.0.4 on 2021-03-21T20:03:55.330Z
+Description: Exported by architect/package@6.0.4 on 2021-03-21T20:11:05.387Z
 Resources:
   HTTP:
     Type: AWS::Serverless::HttpApi
@@ -137,7 +137,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/6b1d846233d3a8983890049c4f96a48d
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/4a41685e61e6937e862bb42e8073f632
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -154,6 +154,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -171,7 +177,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/c33366ddded3d42b3ef26d71e68c72e7
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/f15fd672cd66decdf7c7cfcc0aeb6c51
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -188,6 +194,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -205,7 +217,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/a8aa054c913439b28f268554c5b1668f
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/86e922fce46bc862c02709d429d96a9e
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -222,6 +234,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -239,7 +257,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/842fa78c722c31f98dfcf1f4adedfa0b
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/6823053abd24cbd9c504b0cb63a2af19
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -256,6 +274,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -273,7 +297,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/75b7093095bcbfca60ef9421aa4cbd2d
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/758227c7848b258d8a16b949ccf65f60
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -290,6 +314,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -307,7 +337,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/67e48df80214b2a3de006ec5801330d0
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/63d29d9ab9e44ba7d7e268c6a5257ad6
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -324,6 +354,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -341,7 +377,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/ddfaea3c268fed34e9e5b81ee131a997
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/46b9a4549922259ea9f73abee493f522
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -358,6 +394,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -375,7 +417,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/ab8b8fa961b20ac221582a58c72496f4
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/f2f015033985535672a3cb41f067c208
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -392,6 +434,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -409,7 +457,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/507639d0e00e0e7a8ca5ec214219724d
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/9e19ac0a5788c06b131ca39bb5e8bd26
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -426,6 +474,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -443,7 +497,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/5eebb5ee8664b88fc79d89256d6f934c
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/b1e301c0eb4ca1292956ab12f199f6bd
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -460,6 +514,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -477,7 +537,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/856a2bf6baf4b903b2c54c0e3295ff84
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/93368aa398195e9fa0cb10d113cf3929
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -494,6 +554,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}
@@ -511,7 +577,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      CodeUri: s3://portify-v2-cfn-deployments-ca934/b551305670f15ffdba34e0bca132cdd2
+      CodeUri: s3://portify-v2-cfn-deployments-ca934/80b517d3d30b6af2fa23dad8fe2bd9c3
       Runtime: nodejs12.x
       MemorySize: 1152
       Timeout: 5
@@ -528,6 +594,12 @@ Resources:
           SESSION_TABLE_NAME: jwe
           ARC_STATIC_BUCKET:
             Ref: StaticBucket
+          SPOTIFY_API_URL: https://api.spotify.com
+          SPOTIFY_API_VERSION: v1
+          SPOTIFY_CLIENT_ID: e07299b6a07a4f71b198054fc759b029
+          SPOTIFY_CLIENT_SECRET: 564e6b6edee44b90a911a5a5fdc9a01d
+          SPOTIFY_LOGIN_REDIRECT: https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth
+          SPOTIFY_LOGIN_URL: https://accounts.spotify.com
       Role:
         Fn::Sub:
         - arn:aws:iam::${AWS::AccountId}:role/${roleName}

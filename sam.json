@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Transform": "AWS::Serverless-2016-10-31",
-  "Description": "Exported by architect/package@6.0.4 on 2021-03-21T20:03:55.330Z",
+  "Description": "Exported by architect/package@6.0.4 on 2021-03-21T20:11:05.387Z",
   "Resources": {
     "HTTP": {
       "Type": "AWS::Serverless::HttpApi",
@@ -219,7 +219,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -269,7 +275,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -319,7 +331,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -369,7 +387,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -419,7 +443,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -469,7 +499,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -519,7 +555,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -569,7 +611,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -619,7 +667,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -669,7 +723,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -719,7 +779,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
@@ -769,7 +835,13 @@
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
-            }
+            },
+            "SPOTIFY_API_URL": "https://api.spotify.com",
+            "SPOTIFY_API_VERSION": "v1",
+            "SPOTIFY_CLIENT_ID": "e07299b6a07a4f71b198054fc759b029",
+            "SPOTIFY_CLIENT_SECRET": "564e6b6edee44b90a911a5a5fdc9a01d",
+            "SPOTIFY_LOGIN_REDIRECT": "https://5ld8b38v2l.execute-api.us-west-2.amazonaws.com/auth",
+            "SPOTIFY_LOGIN_URL": "https://accounts.spotify.com"
           }
         },
         "Role": {
