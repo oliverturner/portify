@@ -15,6 +15,8 @@ const getAuth = async (req) => {
 			queryStringParameters: { code = "" },
 		} = req;
 
+		console.log("auth", { session: req.session });
+
 		const grant_type = "authorization_code";
 		const sessionReq = makeSessionRequest(process.env, { code, grant_type });
 		const session = (await post(sessionReq)).body;

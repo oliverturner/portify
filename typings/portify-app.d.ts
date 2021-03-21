@@ -8,7 +8,9 @@ interface SessionRequestRefresh {
 	grant_type: "refresh_token";
 }
 
-export type SessionRequestData = SessionRequestAuthorise | SessionRequestRefresh;
+export type SessionRequestData =
+	| SessionRequestAuthorise
+	| SessionRequestRefresh;
 
 export interface Session {
 	access_token: string;
@@ -29,5 +31,10 @@ interface RequestConfig {
 }
 
 type BuildRequest = (path: string, params?: Dict | undefined) => RequestConfig;
+
+type RequestHandler = (
+	fn: (req: Architect.HttpRequest) => any,
+	type: "html" | "json"
+) => Architect.HttpHandler;
 
 export as namespace PortifyApp;

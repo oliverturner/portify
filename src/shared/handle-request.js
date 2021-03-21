@@ -1,22 +1,15 @@
-/**
- * @typedef {import("@architect/functions").HttpHandler} HttpHandler
- */
-
 const { post } = require("tiny-json-http");
-
 const { makeSessionRequest, getLogoutResponse } = require("./session-request");
 
 /**
- * Execute the `handleReq` callback and return response
- * Handle retries where auth has expired
- * Logout on failed retry
+ * Abstract session handling
+ * Automatically redirect to login screen if session is invalid
  *
- * @type {(fn: Function) => HttpHandler}
+ * @type {PortifyApp.RequestHandler}
  */
-const makeResponse = (handleReq) => async (req) => {
+const handleRequest = (routeFn, type) => async (req) => {
 	try {
-		const json = await handleReq(req);
-		return { json };
+		return { [type]: await routeFn(req) };
 	} catch (error) {
 		if (!req.session) {
 			return getLogoutResponse();
@@ -30,9 +23,10 @@ const makeResponse = (handleReq) => async (req) => {
 				});
 				const { access_token } = (await post(refreshReq)).body;
 
-				// Retain all other session props: only update access_token
+				// The refresh_token is only issued once at session initialisation
+				// Retain all other props and only update access_token
 				req.session.access_token = access_token;
-				return await handleReq(req);
+				return { [type]: await routeFn(req) };
 			} catch (error) {
 				return getLogoutResponse();
 			}
@@ -43,5 +37,5 @@ const makeResponse = (handleReq) => async (req) => {
 };
 
 module.exports = {
-	makeResponse,
+	handleRequest,
 };

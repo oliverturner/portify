@@ -3,12 +3,12 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getData } = require("../src/http/get-api-artists-000artistId");
+const { getArtist } = require("../src/views/get-artist");
 const { getTestEnv } = require("./helpers");
 const { apiUrl, artistId } = require("./fixtures/spotify.json");
 const expected = require("./fixtures/artist.json");
 
-const testTitle = "get-api-artists-000artistId";
+const testTitle = "get-artist";
 const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
@@ -36,7 +36,7 @@ test(testTitle, async (t) => {
 		queryStringParameters: {},
 	};
 
-	const actual = await getData(req);
+	const actual = await getArtist(req);
 
 	t.plan(1);
 	t.deepEquals(actual, expected, "Parsed output matches");

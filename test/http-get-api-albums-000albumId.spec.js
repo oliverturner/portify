@@ -3,12 +3,12 @@
 const test = require("tape");
 const nock = require("nock");
 
-const { getData } = require("../src/http/get-api-albums-000albumId");
+const { getAlbum } = require("../src/views/get-album");
 const { getTestEnv } = require("./helpers");
 const { apiUrl, albumId } = require("./fixtures/spotify.json");
 const expected = require("./fixtures/album.json");
 
-const testTitle = "api-albums-000albumId";
+const testTitle = "get-album";
 const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
@@ -32,7 +32,7 @@ test(testTitle, async (t) => {
 			"Content-Type": "application/json",
 		});
 
-	const actual = await getData({
+	const actual = await getAlbum({
 		session,
 		pathParameters,
 		queryStringParameters,
