@@ -47,4 +47,4 @@ If using VSCode these settings enable deeper TS integration
 1. Search for `implicitProjectConfig` and enable "Check JS", "Strict Function Types" and "Strict Null Checks"
 1. Search for `implementationsCodeLens` and enable it
 
-Installing [the suggested plugins](`.vscode/extensions.json`) is also helpful 
+Installing [the suggested plugins](.vscode/extensions.json) is also helpful 
