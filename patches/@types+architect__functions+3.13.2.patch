@@ -11,3 +11,14 @@ index 2fd079a..b3ae78a 100644
  }
  /**
   * Defines an HttpHandler that works with architect.
+diff --git a/node_modules/@types/architect__functions/index.d.ts b/node_modules/@types/architect__functions/index.d.ts
+index 7537037..eaa36b0 100644
+--- a/node_modules/@types/architect__functions/index.d.ts
++++ b/node_modules/@types/architect__functions/index.d.ts
+@@ -17,3 +17,5 @@ export const static: Todo;
+ export const events: Todo;
+ export const queues: Todo;
+ export const ws: Todo;
++
++export as namespace Architect
+\ No newline at end of file
