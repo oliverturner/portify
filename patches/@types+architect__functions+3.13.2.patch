@@ -21,4 +21,3 @@ index 7537037..eaa36b0 100644
  export const ws: Todo;
 +
 +export as namespace Architect
-\ No newline at end of file
