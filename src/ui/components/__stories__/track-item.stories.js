@@ -1,5 +1,7 @@
 import TrackItem from "../track-item.svelte";
 
+import { items } from "../../../../test/fixtures/top-tracks.json";
+
 export default {
 	title: "TrackItem",
 	component: TrackItem,
@@ -14,33 +16,12 @@ export default {
 	},
 };
 
-const Template = ({ onClick, ...args }) => ({
+const Template = ({...props}) => ({
 	Component: TrackItem,
-	props: args,
-	on: {
-		click: onClick,
-	},
+	props,
 });
 
 export const Primary = Template.bind({});
-Primary.args = {
-	primary: true,
-	label: "Button",
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-	label: "Button",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-	size: "large",
-	label: "Button",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-	size: "small",
-	label: "Button",
+Primary.props = {
+	trackItem: items[0]
 };
