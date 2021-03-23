@@ -16,12 +16,12 @@ export default {
 	},
 };
 
-const Template = ({...props}) => ({
+const Template = ({...args}) => ({
 	Component: TrackItem,
-	props,
+	props: args,
 });
 
 export const Primary = Template.bind({});
-Primary.props = {
+Primary.args = {
 	trackItem: items[0]
 };
