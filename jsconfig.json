@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@typings/*": ["typings/*"],
-      "@architect/shared/*": ["src/shared/*"]
+      "@architect/shared/*": ["src/shared/*"],
+			"$app/*": [".svelte/dev/runtime/app/*", ".svelte/build/runtime/app/*"],
+			"$lib/*": ["src/ui/lib/*"]
     }
   },
   "include": ["./typings", "./src"],
