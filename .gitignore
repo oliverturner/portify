@@ -4,3 +4,4 @@ sam.json
 sam.yaml
 .nyc_output/
 .coverage/
+public/build
