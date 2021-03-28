@@ -13,7 +13,7 @@ const successResponse = { value: "hello" };
 
 const logoutResponse = {
 	session: {},
-	location: "/",
+	location: "/login",
 };
 
 nock(fixtures.loginUrl)

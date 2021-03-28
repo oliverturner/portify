@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "lib": [
-      "DOM",
+      "dom",
       "es2019",
       "es2020.promise",
       "es2020.bigint",
@@ -20,5 +20,5 @@
     }
   },
   "include": ["./typings", "./src"],
-  "exclude": ["node_modules", "./test"]
+  "exclude": ["node_modules", "./test",  "./src/ui/main.js"]
 }

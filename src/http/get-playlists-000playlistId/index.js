@@ -28,6 +28,7 @@ async function getContent(req) {
 		nav: true,
 		title: `playlist: ${data.name}`,
 		content: render(data),
+		data: JSON.stringify(data),
 	});
 }
 

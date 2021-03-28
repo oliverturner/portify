@@ -37,7 +37,7 @@ function makeSessionRequest(envVars, data) {
 function getLogoutResponse() {
 	return {
 		session: {},
-		location: "/",
+		location: "/login",
 	};
 }
 
