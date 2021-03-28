@@ -1,21 +1,15 @@
-/**
- * @typedef {import("@architect/functions").HttpHandler} HttpHandler
- */
-
 const { http } = require("@architect/functions");
 const { get, post } = require("tiny-json-http");
 
 const { requestFactory } = require("@architect/shared/utils");
 const { makeSessionRequest } = require("@architect/shared/session-request");
 
-/** @type {HttpHandler} */
+/** @type {Architect.HttpHandler} */
 const getAuth = async (req) => {
 	try {
 		const {
 			queryStringParameters: { code = "" },
 		} = req;
-
-		console.log("auth", { session: req.session });
 
 		const grant_type = "authorization_code";
 		const sessionReq = makeSessionRequest(process.env, { code, grant_type });
