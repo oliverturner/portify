@@ -18,7 +18,7 @@ async function getIndex(req) {
 	const data = JSON.stringify({
 		user: req.session && req.session.user,
 		playlists,
-		top,
+		page: top,
 	});
 
 	return getLayout({

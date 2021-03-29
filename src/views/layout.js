@@ -33,10 +33,10 @@ function getLayout({ title, nav, content, data }) {
       ${content}
     </main>
     
-    <script type="application/json">
+    <script type="application/json" id="data">
       ${data}
     </script>
-    <script src="/_static/build/bundle.js"></script>
+    <script src="/_static/build/bundle.js" async defer></script>
   </body>
   </html>
   `;

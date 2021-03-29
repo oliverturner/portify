@@ -25,8 +25,10 @@ const getAuth = async (req) => {
 		};
 	} catch (error) {
 		return {
-			statusCode: error.code,
-			body: error.message,
+			json: {
+				statusCode: error.code,
+				body: error.message,
+			},
 		};
 	}
 };
