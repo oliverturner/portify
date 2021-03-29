@@ -4,3 +4,8 @@ sam.json
 sam.yaml
 .nyc_output/
 .coverage/
+
+/.svelte
+node_modules
+/build
+/functions
