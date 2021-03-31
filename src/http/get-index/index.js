@@ -5,27 +5,21 @@
 
 const { http } = require("@architect/functions");
 const { handleRequest } = require("@architect/shared/handle-request");
-const { getLayout } = require("@architect/views/layout");
-const { getPlaylists } = require("@architect/views/get-playlists");
+const { buildLayout } = require("@architect/views/build-layout");
+const { fetchRouteData } = require("@architect/views/fetch-route-data");
+
 const { getTop } = require("@architect/views/get-top");
 
 /**
  * @param {Architect.HttpRequest} req
  */
 async function getIndex(req) {
-	const [playlists, top] = await Promise.all([getPlaylists(req), getTop(req)]);
+	const routeData = await fetchRouteData(req, getTop);
 
-	const data = JSON.stringify({
-		user: req.session && req.session.user,
-		playlists,
-		page: top,
-	});
-
-	return getLayout({
+	return buildLayout({
 		nav: true,
 		title: "home",
-		content: "",
-		data,
+		routeData,
 	});
 }
 

@@ -1,34 +1,21 @@
 const { http } = require("@architect/functions");
-const { getLayout } = require("@architect/views/layout");
+const { buildLayout } = require("@architect/views/build-layout");
 const { handleRequest } = require("@architect/shared/handle-request");
+const { fetchRouteData } = require("@architect/views/fetch-route-data");
 const { getPlaylist } = require("@architect/views/get-playlist");
-
-/**
- * @param {PortifyApi.PlaylistTracksPage} data
- */
-function render(data) {
-	let items = "";
-	for (const item of data.items) {
-		items += `<li>${item.name}</li>`;
-	}
-
-	return `
-		<p>Playlist: ${data.name}</p>
-		<ul>${items}</ul>
-	`;
-}
 
 /**
  * @param {Architect.HttpRequest} req
  */
 async function getContent(req) {
-	const data = await getPlaylist(req);
+	/** @type {PortifyApi.RouteData<PortifyApi.Playlist>} */
+	const routeData = await fetchRouteData(req, getPlaylist);
+	const { pageData: playlist } = routeData;
 
-	return getLayout({
+	return buildLayout({
 		nav: true,
-		title: `playlist: ${data.name}`,
-		content: render(data),
-		data: JSON.stringify(data),
+		title: `playlist: ${playlist.name}`,
+		routeData,
 	});
 }
 

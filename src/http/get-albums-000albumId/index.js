@@ -1,8 +1,25 @@
 const { http } = require("@architect/functions");
 const { handleRequest } = require("@architect/shared/handle-request");
+const { buildLayout } = require("@architect/views/build-layout");
+const { fetchRouteData } = require("@architect/views/fetch-route-data");
+
 const { getAlbum } = require("@architect/views/get-album");
 
-// TODO create the HTML representation
+/**
+ * @param {Architect.HttpRequest} req
+ */
+async function getIndex(req) {
+	/** @type {PortifyApi.RouteData<PortifyApi.Album>} */
+	const routeData = await fetchRouteData(req, getAlbum);
+	const { pageData: album } = routeData;
+
+	return buildLayout({
+		nav: true,
+		title: `album: ${album.name}`,
+		routeData
+	});
+}
+
 module.exports = {
-	handler: http.async(handleRequest(getAlbum, "html")),
+	handler: http.async(handleRequest(getIndex, "html")),
 };

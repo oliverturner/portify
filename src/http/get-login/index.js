@@ -4,7 +4,7 @@ const { getLoginUrl } = require("@architect/shared/app");
 const getLogin = async () => {
 	const loginUrl = getLoginUrl(process.env);
 
-	const html = `
+	const html = /* html */ `
 		<div class="login">
 			<p><span class="title">Portify</span> makes it easy to support the artists you follow on Spotify.</p> 
 			<a class="loginbtn" href="${loginUrl}">
@@ -24,7 +24,8 @@ const getLogin = async () => {
 			easier give a little back to the artists that give us so much. As a
 			fully
 			<a href="https://github.com/oliverturner/beatportify">open source project</a> your feedback,
-			suggestions, and contributions are welcome.</p></div>
+			suggestions, and contributions are welcome.</p>
+		</div>
 	`;
 
 	return {

@@ -1,19 +1,26 @@
 <script>
-	import TrackItem from "./components/track-item.svelte";
+	import { Router, Route } from "svelte-routing";
+
+	import Top from "./routes/top.svelte";
+	import Playlist from "./routes/playlist.svelte";
 
 	export let user;
+	export let pageData;
+	export let playlists;
 
-	console.log({ user });
+	console.log({ user, pageData, playlists });
+
+	let url = "";
 </script>
 
-<main>
-	<h1>Hello {user.display_name}!</h1>
-	<p>
-		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-		how to build Svelte apps.
-	</p>
-	<TrackItem trackItem={{ name: "Oliver" }} compact={false} />
-</main>
+<Router {url}>
+	<nav />
+
+	<main>
+		<Route path="/playlists/:id" component={Playlist} />
+		<Route component={Top} />
+	</main>
+</Router>
 
 <style lang="scss">
 	main {
@@ -25,12 +32,5 @@
 		@media (min-width: 640px) {
 			max-width: none;
 		}
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
 	}
 </style>

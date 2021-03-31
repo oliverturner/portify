@@ -1,20 +1,15 @@
 import App from "./app.svelte";
+import { getEmbeddedData } from "./utils";
 
-const target = document.querySelector("main") || document.body;
+const target = document.querySelector("#app") || document.body;
+const props = getEmbeddedData("#data");
 
-/**
- * Extract and parse the embedded data
- * @param {string} id
- */
-function getEmbeddedData(id) {
-	/** @type {HTMLScriptElement|null} */
-	const dataEl = document.querySelector(id)
-	return dataEl ? JSON.parse(dataEl.innerText) : null;
-}
+console.log({ props });
 
 const app = new App({
 	target,
-	props: getEmbeddedData("#data"),
+	props,
+	hydrate: true,
 });
 
 export default app;

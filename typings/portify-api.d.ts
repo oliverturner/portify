@@ -67,7 +67,7 @@ export interface ArtistFull extends Artist {
 }
 
 export interface ArtistResponse {
-	artist: ArtistFull;
+	bio: ArtistFull;
 	appearsOn: PortifyApi.Album[];
 	topTracks: PortifyApi.TrackItemBase[];
 	relatedArtists: PortifyApi.ArtistFull[];
@@ -82,5 +82,16 @@ export interface Album {
 	images: Record<string, string>;
 	artists: Artist[];
 }
+
+interface RouteData<T> {
+	user: SpotifyApi.UserObjectPrivate;
+	playlists: Page<Playlist>;
+	pageData: T;
+}
+
+type FetchRouteData<T> = (
+	req: Architect.HttpRequest,
+	pageDataFn: (req: Architect.HttpRequest) => Promise<T>
+) => Promise<RouteData<T>>;
 
 export as namespace PortifyApi;

@@ -1,16 +1,11 @@
 /**
  * @param {{
- *   nav:boolean;
  *   title?:string;
- *   content:string;
- *   data: string;
+ *   content?:string;
+ *   routeData: PortifyApi.RouteData<any>;
  * }} params
  */
-function getLayout({ title, nav, content, data }) {
-	const navHtml = nav
-		? `<form action="/logout" method="post"><button>logout</button></p>`
-		: "";
-
+function buildLayout({ title, content, routeData }) {
 	return /* html */ `
   <!DOCTYPE html>
   <html lang="en">
@@ -21,21 +16,24 @@ function getLayout({ title, nav, content, data }) {
     <link rel="stylesheet" href="/_static/styles.css">
     <link rel="stylesheet" href="/_static/build/bundle.css">
   </head>
-  <body class="padding-32">
-    <header>
-      <h1>Portify</h1>
-      <nav class="flex flex--sb">
-        ${navHtml}
-      </nav>
-    </header>
-    
-    <main>
-      ${content}
-    </main>
-    
+  <body>
+    <div id="app">
+      <header>
+        <h1>Portify</h1>
+        <nav class="flex flex--sb">
+          <form action="/logout" method="post"><button>logout</button></p>
+        </nav>
+      </header>
+      
+      <main>
+        ${content ? content : ""}
+      </main>
+    </div>
+
     <script type="application/json" id="data">
-      ${data}
+      ${JSON.stringify({ ...routeData })}
     </script>
+
     <script src="/_static/build/bundle.js" async defer></script>
   </body>
   </html>
@@ -43,5 +41,5 @@ function getLayout({ title, nav, content, data }) {
 }
 
 module.exports = {
-	getLayout,
+	buildLayout,
 };

@@ -37,4 +37,5 @@ type RequestHandler = (
 	type: "html" | "json"
 ) => Architect.HttpHandler;
 
+
 export as namespace PortifyApp;

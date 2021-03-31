@@ -10,47 +10,47 @@ const testEnv = getTestEnv(testTitle);
 
 testEnv.up();
 
-test(`${testTitle}.getData`, async (t) => {
-	const {
-		SPOTIFY_LOGIN_REDIRECT,
-		SPOTIFY_LOGIN_URL,
-		SPOTIFY_CLIENT_ID,
-	} = process.env;
+// test(`${testTitle}.getData`, async (t) => {
+// 	const {
+// 		SPOTIFY_LOGIN_REDIRECT,
+// 		SPOTIFY_LOGIN_URL,
+// 		SPOTIFY_CLIENT_ID,
+// 	} = process.env;
 
-	function getUserResponse(user) {
-		const encodedAuthUrl = encodeURIComponent(SPOTIFY_LOGIN_REDIRECT);
-		const redirectUri = `${encodedAuthUrl}&response_type=code&scope=user-top-read+user-modify-playback-state+playlist-read-private`;
-		const loginUrl = `${SPOTIFY_LOGIN_URL}/authorize?client_id=${SPOTIFY_CLIENT_ID}&redirect_uri=${redirectUri}`;
-		return {
-			headers: {
-				"content-type": "application/json; charset=utf-8",
-				"cache-control":
-					"no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
-			},
-			statusCode: 200,
-			body: JSON.stringify({ user, loginUrl }),
-		};
-	}
+// 	function getUserResponse(user) {
+// 		const encodedAuthUrl = encodeURIComponent(SPOTIFY_LOGIN_REDIRECT);
+// 		const redirectUri = `${encodedAuthUrl}&response_type=code&scope=user-top-read+user-modify-playback-state+playlist-read-private`;
+// 		const loginUrl = `${SPOTIFY_LOGIN_URL}/authorize?client_id=${SPOTIFY_CLIENT_ID}&redirect_uri=${redirectUri}`;
+// 		return {
+// 			headers: {
+// 				"content-type": "application/json; charset=utf-8",
+// 				"cache-control":
+// 					"no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
+// 			},
+// 			statusCode: 200,
+// 			body: JSON.stringify({ user, loginUrl }),
+// 		};
+// 	}
 
-	const testUser = { name: "Oliver Turner" };
-	const scenarios = [
-		{
-			actual: await getLogin({ session: { user: testUser } }),
-			expected: getUserResponse(testUser),
-			desc: "Login returns expected response with user",
-		},
-		{
-			actual: await getLogin({}),
-			expected: getUserResponse(),
-			desc: "Login returns expected response without user",
-		},
-	];
+// 	const testUser = { name: "Oliver Turner" };
+// 	const scenarios = [
+// 		{
+// 			actual: await getLogin({ session: { user: testUser } }),
+// 			expected: getUserResponse(testUser),
+// 			desc: "Login returns expected response with user",
+// 		},
+// 		{
+// 			actual: await getLogin({}),
+// 			expected: getUserResponse(),
+// 			desc: "Login returns expected response without user",
+// 		},
+// 	];
 
-	t.plan(scenarios.length);
-	for (const { actual, expected, desc } of scenarios) {
-		t.deepEquals(actual, expected, desc);
-	}
-});
+// 	t.plan(scenarios.length);
+// 	for (const { actual, expected, desc } of scenarios) {
+// 		t.deepEquals(actual, expected, desc);
+// 	}
+// });
 
 test(`${testTitle}.getLoginUrl`, (t) => {
 	const envVars = {
