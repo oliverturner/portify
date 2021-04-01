@@ -3,7 +3,9 @@ const postcssPresetEnv = require("postcss-preset-env");
 const postcssInset = require("postcss-inset");
 const cssnano = require("cssnano");
 
-const { customMedia } = require("./src/ui/theme.js");
+const { customMedia, customProperties } = require("./src/ui/theme.js");
+
+console.log({ customProperties });
 
 function getPlugins(isProd) {
 	const plugins = [
@@ -12,6 +14,11 @@ function getPlugins(isProd) {
 				// "nesting-rules": true,
 				"custom-selectors": true,
 				"custom-media-queries": { importFrom: { customMedia } },
+				"custom-properties": {
+					importFrom: ["./src/ui/theme.js"],
+					exportTo: "./public/build/props.css",
+					preserve: true,
+				},
 			},
 		}),
 		postcssInset(),

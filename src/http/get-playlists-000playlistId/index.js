@@ -13,8 +13,7 @@ async function getContent(req) {
 	const { pageData: playlist } = routeData;
 
 	return buildLayout({
-		nav: true,
-		title: `playlist: ${playlist.name}`,
+		title: `Playlist: ${playlist.name}`,
 		routeData,
 	});
 }

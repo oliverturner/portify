@@ -17,8 +17,7 @@ async function getIndex(req) {
 	const routeData = await fetchRouteData(req, getTop);
 
 	return buildLayout({
-		nav: true,
-		title: "home",
+		title: "Top Tracks",
 		routeData,
 	});
 }

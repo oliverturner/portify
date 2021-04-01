@@ -14,8 +14,7 @@ async function getIndex(req) {
 	const { pageData: artist } = routeData;
 
 	return buildLayout({
-		nav: true,
-		title: `artist: ${artist.bio.name}`,
+		title: `Artist: ${artist.bio.name}`,
 		routeData,
 	});
 }

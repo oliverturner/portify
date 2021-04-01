@@ -14,8 +14,7 @@ async function getIndex(req) {
 	const { pageData: album } = routeData;
 
 	return buildLayout({
-		nav: true,
-		title: `album: ${album.name}`,
+		title: `Album: ${album.name}`,
 		routeData
 	});
 }
