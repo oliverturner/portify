@@ -37,5 +37,6 @@ type RequestHandler = (
 	type: "html" | "json"
 ) => Architect.HttpHandler;
 
+export type RouteId = "toptracks" | "album" | "artist" | "playlist";
 
 export as namespace PortifyApp;

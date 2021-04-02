@@ -38,6 +38,12 @@ body {
 	font-size: var(--step-0);
 }
 
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
 h1 {
 	font-size: var(--step-3);
 }
@@ -48,6 +54,26 @@ h2 {
 
 h3 {
 	font-size: var(--step-1);
+}
+
+.title {
+	--spacing: 1px;
+
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: var(--spacing);
+}
+
+h1.title {
+	--spacing: 2px;
+}
+
+h2.title {
+	--spacing: 1.6px;
+}
+
+h3.title {
+	--spacing: 1.2px;
 }
 
 .flex {

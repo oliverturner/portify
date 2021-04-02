@@ -10,7 +10,7 @@ const { getArtist } = require("@architect/views/get-artist");
  */
 async function getIndex(req) {
 	/** @type {PortifyApi.RouteData<PortifyApi.ArtistResponse>} */
-	const routeData = await fetchRouteData(req, getArtist);
+	const routeData = await fetchRouteData(req, "artist", getArtist);
 	const { pageData: artist } = routeData;
 
 	return buildLayout({

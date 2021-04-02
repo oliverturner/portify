@@ -10,7 +10,7 @@ const { getAlbum } = require("@architect/views/get-album");
  */
 async function getIndex(req) {
 	/** @type {PortifyApi.RouteData<PortifyApi.Album>} */
-	const routeData = await fetchRouteData(req, getAlbum);
+	const routeData = await fetchRouteData(req, "album", getAlbum);
 	const { pageData: album } = routeData;
 
 	return buildLayout({

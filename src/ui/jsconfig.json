@@ -5,7 +5,5 @@
     "paths": {
       "@typings/*": ["../../typings/*"]
     }
-  },
-  "include": ["."],
-  "exclude": ["node_modules"]
+  }
 }

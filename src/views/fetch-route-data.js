@@ -5,7 +5,7 @@ const { getPlaylists } = require("./get-playlists");
  *
  * @type {PortifyApi.FetchRouteData<any>}
  */
-async function fetchRouteData(req, getRouteDataFn) {
+async function fetchRouteData(req, routeId, getRouteDataFn) {
 	const [playlists, pageData] = await Promise.all([
 		getPlaylists(req),
 		getRouteDataFn(req),
@@ -14,6 +14,7 @@ async function fetchRouteData(req, getRouteDataFn) {
 	return {
 		user: req.session && req.session.user,
 		playlists,
+		routeId,
 		pageData,
 	};
 }

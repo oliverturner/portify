@@ -5,17 +5,18 @@ const cssnano = require("cssnano");
 
 const { customMedia, customProperties } = require("./src/ui/theme.js");
 
-console.log({ customProperties });
-
+/**
+ * @param {boolean} isProd
+ * @returns {Transformer[]}
+ */
 function getPlugins(isProd) {
 	const plugins = [
 		postcssPresetEnv({
 			features: {
-				// "nesting-rules": true,
 				"custom-selectors": true,
 				"custom-media-queries": { importFrom: { customMedia } },
 				"custom-properties": {
-					importFrom: ["./src/ui/theme.js"],
+					importFrom: { customProperties },
 					exportTo: "./public/build/props.css",
 					preserve: true,
 				},

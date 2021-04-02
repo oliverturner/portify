@@ -1,11 +1,10 @@
 /**
  * @param {{
  *   title?:string;
- *   content?:string;
  *   routeData: PortifyApi.RouteData<any>;
  * }} params
  */
-function buildLayout({ title, content, routeData }) {
+function buildLayout({ title, routeData }) {
 	return /* html */ `
   <!DOCTYPE html>
   <html lang="en">

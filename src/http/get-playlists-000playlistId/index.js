@@ -9,7 +9,7 @@ const { getPlaylist } = require("@architect/views/get-playlist");
  */
 async function getContent(req) {
 	/** @type {PortifyApi.RouteData<PortifyApi.Playlist>} */
-	const routeData = await fetchRouteData(req, getPlaylist);
+	const routeData = await fetchRouteData(req, "playlist", getPlaylist);
 	const { pageData: playlist } = routeData;
 
 	return buildLayout({

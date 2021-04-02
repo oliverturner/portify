@@ -1,3 +1,5 @@
+import { RouteId } from "./portify-app";
+
 export type TimeRange = "short_term" | "medium_term" | "long_term";
 
 export interface Page<T> {
@@ -83,15 +85,28 @@ export interface Album {
 	artists: Artist[];
 }
 
-interface RouteData<T> {
+export interface RouteDataGeneric {
 	user: SpotifyApi.UserObjectPrivate;
 	playlists: Page<Playlist>;
+	routeId: RouteId;
+	pageData: any
+}
+
+export interface RouteData<T> extends RouteDataGeneric {
 	pageData: T;
 }
 
-type FetchRouteData<T> = (
+export type FetchRouteData<T> = (
 	req: Architect.HttpRequest,
+	routeId: RouteId,
 	pageDataFn: (req: Architect.HttpRequest) => Promise<T>
 ) => Promise<RouteData<T>>;
+
+export interface User {
+	id: string;
+	display_name: string;
+	product: string;
+	imageUrl: string;
+}
 
 export as namespace PortifyApi;

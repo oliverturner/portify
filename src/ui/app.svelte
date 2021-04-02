@@ -2,54 +2,88 @@
 	import { onMount } from "svelte";
 	import { Router, Route } from "svelte-routing";
 
-	import { user, playlists } from "./stores/api";
+	import * as apiStores from "./stores/api";
 
-	import Top from "./routes/top.svelte";
+	import AppNav from "./components/app-nav.svelte";
+	import PlaylistNav from "./components/playlist-nav.svelte";
+
+	import Top from "./routes/top-tracks.svelte";
 	import Artist from "./routes/artist.svelte";
 	import Playlist from "./routes/playlist.svelte";
 	import Album from "./routes/album.svelte";
 
-	import AppNav from "./components/app-nav.svelte";
-	import PlaylistNav from "./components/playlists.svelte";
-
-	// import "./global.scss";
-
+	/** @type {PortifyApi.RouteDataGeneric}*/
 	export let routeData;
 
-	let url = "";
+	const { user, playlists, ...storeDict } = apiStores;
 
+	// Bootstrap app with embedded data on first load
 	onMount(() => {
-		// Bootstrap app with embedded data on first load
-		console.log({ routeData });
-
+		// Global values
 		user.set(routeData.user);
 		playlists.set(routeData.playlists);
+   
+		// Route-specific values
+		const routeStore = storeDict[routeData.routeId];
+		if (routeStore) {
+			routeStore.set(routeData.pageData);
+		} else {
+			console.warn(
+				routeData.routeId,
+				"trying to set data on non-existent store"
+			);
+		}
 	});
 </script>
 
 <div class="app">
-	<AppNav />
-	<PlaylistNav />
-	<Router {url}>
-		<main>
+	<header class="app__header">
+		<AppNav />
+	</header>
+
+	<div class="app__playlists">
+		<PlaylistNav />
+	</div>
+
+	<main class="app__content">
+		<Router>
 			<Route path="/artists/:id" component={Artist} />
 			<Route path="/albums/:id" component={Album} />
 			<Route path="/playlists/:id" component={Playlist} />
 			<Route component={Top} />
-		</main>
-	</Router>
+		</Router>
+	</main>
 </div>
 
 <style lang="scss">
-	main {
-		max-width: var(--width-large);
-		margin: 0 auto;
-		padding: 1em;
-		text-align: center;
-		background-color: lightcoral;
+	.app {
+		display: grid;
+		grid-template-areas:
+			"a a"
+			"b c";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 20vw 1fr;
 
-		@media (--mq-medium) {
-			background-color: aquamarine;
-		}
+		overflow: hidden;
+		max-width: var(--width-xxlarge);
+		height: 100vh;
+		margin: auto;
+	}
+
+	.app__header {
+		grid-area: a;
+		background-color: lightsalmon;
+	}
+	.app__playlists {
+		grid-area: b;
+
+		overflow: hidden;
+		background-color: lightseagreen;
+	}
+	.app__content {
+		grid-area: c;
+		
+		overflow: hidden;
+		background-color: lightslategrey;
 	}
 </style>

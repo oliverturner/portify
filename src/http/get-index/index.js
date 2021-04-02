@@ -14,7 +14,7 @@ const { getTop } = require("@architect/views/get-top");
  * @param {Architect.HttpRequest} req
  */
 async function getIndex(req) {
-	const routeData = await fetchRouteData(req, getTop);
+	const routeData = await fetchRouteData(req, "toptracks", getTop);
 
 	return buildLayout({
 		title: "Top Tracks",

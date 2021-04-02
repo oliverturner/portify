@@ -5,17 +5,26 @@ const { requestFactory } = require("@architect/shared/utils");
 const { makeSessionRequest } = require("@architect/shared/session-request");
 
 /**
- * Simplify user object
+ * Simplify user object returned by Spotify
+ *
+ * UserObject is private because, in order to use the `from_token` value to 
+ * avoid returning per-market availability in queries for tracks and albums, we 
+ * need access to their market
  *
  * @param {SpotifyApi.UserObjectPrivate} userResult
+ *
+ * @returns {PortifyApi.User}
  */
- function processUser(userResult) {
-	const { images, ...user } = userResult;
-	const imageUrl = images && images[0] && images[0].url || "/_static/assets/portify.svg"
+function processUser(userResult) {
+	const { images, id, product, display_name = "" } = userResult;
+	const imageUrl =
+		(images && images[0] && images[0].url) || "/_static/assets/portify.svg";
 
 	return {
-		...user,
-		imageUrl
+		id,
+		display_name,
+		product,
+		imageUrl,
 	};
 }
 
