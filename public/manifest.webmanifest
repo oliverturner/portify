@@ -11,7 +11,7 @@
 	"description": "An app to help you buy your Spotify favourites",
 	"orientation": "any",
 	"related_applications": ["Spotify"],
-	"prefer_related_applications": "false",
+	"prefer_related_applications": false,
 	"icons": [
 		{
 			"src": "https://www.portify.rocks/assets/icons/portify-192.png",
@@ -24,7 +24,5 @@
 			"sizes": "512x512"
 		}
 	],
-	"url": "https://www.portify.rocks",
-	"generated": true,
 	"screenshots": []
 }

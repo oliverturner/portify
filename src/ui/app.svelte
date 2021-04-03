@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import { Router, Route } from "svelte-routing";
 
+	import { user, options, playlists } from "./stores/app";
 	import * as apiStores from "./stores/api";
 
 	import AppNav from "./components/app-nav.svelte";
@@ -12,28 +13,30 @@
 	import Playlist from "./routes/playlist.svelte";
 	import Album from "./routes/album.svelte";
 
-	/** @type {PortifyApi.RouteDataGeneric}*/
-	export let routeData;
-
-	const { user, playlists, ...storeDict } = apiStores;
+	/** @type {PortifyApi.AppDataGeneric}*/
+	export let appData;
 
 	// Bootstrap app with embedded data on first load
 	onMount(() => {
 		// Global values
-		user.set(routeData.user);
-		playlists.set(routeData.playlists);
-   
+		user.set(appData.user);
+		options.set(appData.options);
+		playlists.set(appData.playlists);
+
 		// Route-specific values
-		const routeStore = storeDict[routeData.routeId];
+		const routeStore = apiStores[appData.route.id];
 		if (routeStore) {
-			routeStore.set(routeData.pageData);
+			routeStore.set(appData.route.data);
 		} else {
 			console.warn(
-				routeData.routeId,
+				appData.route.id,
 				"trying to set data on non-existent store"
 			);
 		}
 	});
+
+	$: console.log({ appData });
+	$: console.log({ options: $options });
 </script>
 
 <div class="app">
@@ -62,7 +65,7 @@
 			"a a"
 			"b c";
 		grid-template-rows: auto 1fr;
-		grid-template-columns: 20vw 1fr;
+		grid-template-columns: max(20vw, 300px) 1fr;
 
 		overflow: hidden;
 		max-width: var(--width-xxlarge);
@@ -82,7 +85,7 @@
 	}
 	.app__content {
 		grid-area: c;
-		
+
 		overflow: hidden;
 		background-color: lightslategrey;
 	}

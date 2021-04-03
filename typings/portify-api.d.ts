@@ -2,6 +2,15 @@ import { RouteId } from "./portify-app";
 
 export type TimeRange = "short_term" | "medium_term" | "long_term";
 
+export interface Options {
+	TIME_RANGES: TimeRange[];
+	TIME_RANGE_DEFAULT: TimeRange;
+	PAGE_LIMIT_DEFAULT: number;
+	PAGE_LIMIT_MAX: number;
+	MUSIC_NOTATIONS: string[];
+	MUSIC_NOTATION_DEFAULT: string;
+}
+
 export interface Page<T> {
 	items: T[];
 	limit: number;
@@ -68,11 +77,15 @@ export interface ArtistFull extends Artist {
 	images: Record<string, string>;
 }
 
-export interface ArtistResponse {
+export interface ArtistPage {
 	bio: ArtistFull;
 	appearsOn: PortifyApi.Album[];
 	topTracks: PortifyApi.TrackItemBase[];
 	relatedArtists: PortifyApi.ArtistFull[];
+}
+
+export interface TopTracksPage {
+	items: TrackItemBase[];
 }
 
 export interface Album {
@@ -85,15 +98,20 @@ export interface Album {
 	artists: Artist[];
 }
 
-export interface RouteDataGeneric {
+export interface AppDataGeneric {
 	user: SpotifyApi.UserObjectPrivate;
 	playlists: Page<Playlist>;
-	routeId: RouteId;
-	pageData: any
+	route: {
+		id: RouteId;
+		data: any;
+	};
 }
 
-export interface RouteData<T> extends RouteDataGeneric {
-	pageData: T;
+export interface AppData<T> extends AppDataGeneric {
+	route: {
+		id: RouteId;
+		data: T;
+	};
 }
 
 export type FetchRouteData<T> = (

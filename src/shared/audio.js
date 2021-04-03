@@ -20,15 +20,18 @@ function processItemAudio(itemAudio) {
 
 /**
  * Inject audio_features into TrackItems
- * 
+ *
  * @param {Record<string, PortifyApi.TrackItemBase>} trackItemDict
  * @param {{url:string, headers: any}} audioRequest
  */
 async function addTrackAudio(trackItemDict, audioRequest) {
 	const { audio_features } = (await get(audioRequest)).body;
+
 	for (const itemAudio of audio_features) {
-		const trackItem = trackItemDict[itemAudio.id];
-		trackItem.audio = processItemAudio(itemAudio);
+		if (itemAudio) {
+			const trackItem = trackItemDict[itemAudio.id];
+			trackItem.audio = processItemAudio(itemAudio);
+		}
 	}
 
 	return trackItemDict;

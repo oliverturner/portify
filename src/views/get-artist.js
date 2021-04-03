@@ -75,7 +75,7 @@ async function processRequests(requests) {
 
 /**
  * @param {Architect.HttpRequest} req
- * @returns {Promise<PortifyApi.ArtistResponse>}
+ * @returns {Promise<PortifyApi.ArtistPage>}
  */
 async function getArtist({ session, pathParameters }) {
 	const { artistId } = pathParameters;

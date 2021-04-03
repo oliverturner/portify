@@ -8,7 +8,7 @@ const { requestFactory, buildDict } = require("../shared/utils");
 /**
  * @param {Architect.HttpRequest} req
  *
- * @returns {Promise<{items: PortifyApi.TrackItemBase[];}>}
+ * @returns {Promise<PortifyApi.TopTracksPage>}
  */
 async function getTop({ session, queryStringParameters }) {
 	const params = {

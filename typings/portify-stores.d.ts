@@ -2,6 +2,7 @@ import { Writable } from "svelte/store";
 import { Page } from "./portify-api";
 
 export type User = Writable<?PortifyApi.User>;
+export type Options = Writable<?PortifyApi.Options>;
 export type Playlists = Writable<?Page<PortifyApi.Playlist>>;
 
 export type TopTracks = Writable<?Page<PortifyApi.TrackItem>>;

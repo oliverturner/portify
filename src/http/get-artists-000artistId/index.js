@@ -9,13 +9,13 @@ const { getArtist } = require("@architect/views/get-artist");
  * @param {Architect.HttpRequest} req
  */
 async function getIndex(req) {
-	/** @type {PortifyApi.RouteData<PortifyApi.ArtistResponse>} */
-	const routeData = await fetchRouteData(req, "artist", getArtist);
-	const { pageData: artist } = routeData;
+	/** @type {PortifyApi.AppData<PortifyApi.ArtistPage>} */
+	const appData = await fetchRouteData(req, "artist", getArtist);
+	const artist = appData.route.data;
 
 	return buildLayout({
 		title: `Artist: ${artist.bio.name}`,
-		routeData,
+		appData,
 	});
 }
 

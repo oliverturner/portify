@@ -4,9 +4,10 @@ const { getPlaylists } = require("./get-playlists");
  * Return a consistently structured page object
  *
  * @type {PortifyApi.FetchRouteData<any>}
+ * @returns {Promise<PortifyApi.AppDataGeneric>}
  */
 async function fetchRouteData(req, routeId, getRouteDataFn) {
-	const [playlists, pageData] = await Promise.all([
+	const [playlists, routeData] = await Promise.all([
 		getPlaylists(req),
 		getRouteDataFn(req),
 	]);
@@ -14,8 +15,10 @@ async function fetchRouteData(req, routeId, getRouteDataFn) {
 	return {
 		user: req.session && req.session.user,
 		playlists,
-		routeId,
-		pageData,
+		route: {
+			id: routeId,
+			data: routeData,
+		},
 	};
 }
 

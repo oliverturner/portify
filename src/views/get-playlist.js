@@ -49,19 +49,27 @@ async function getPlaylist({ session, pathParameters, queryStringParameters }) {
 	const buildRequest = requestFactory(process.env, session);
 	const apiReq = buildRequest(`/playlists/${playlistId}`, params);
 
-	/** @type {SpotifyApi.PlaylistObjectFull} */
-	const { name, tracks } = (await get(apiReq)).body;
-	const pagingObject = processResponse(playlistId, name, tracks);
+	try {
+		/** @type {SpotifyApi.PlaylistObjectFull} */
+		const { name, tracks } = (await get(apiReq)).body;
+		const pagingObject = processResponse(playlistId, name, tracks);
 
-	const itemTracks = tracks.items.map(({ track }) => track);
-	const trackDict = buildDict(itemTracks, convertTrackObject);
-	const audioTrackDict = await injectAudio(trackDict, buildRequest);
+		const itemTracks = tracks.items.map(({ track }) => track);
+		const trackDict = buildDict(itemTracks, convertTrackObject);
+		const audioTrackDict = await injectAudio(trackDict, buildRequest);
 
-	return {
-		...pagingObject,
-		items: Object.values(audioTrackDict),
-		isCollection: isCollection(itemTracks),
-	};
+		// console.log({pagingObject});
+		// console.log({trackDict});
+		// console.log({audioTrackDict});
+
+		return {
+			...pagingObject,
+			items: Object.values(audioTrackDict),
+			isCollection: isCollection(itemTracks),
+		};
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 module.exports = {

@@ -1,10 +1,12 @@
+const options = require("../shared/options");
+
 /**
  * @param {{
  *   title?:string;
- *   routeData: PortifyApi.RouteData<any>;
+ *   appData: PortifyApi.AppDataGeneric;
  * }} params
  */
-function buildLayout({ title, routeData }) {
+function buildLayout({ title, appData }) {
 	return /* html */ `
   <!DOCTYPE html>
   <html lang="en">
@@ -27,8 +29,8 @@ function buildLayout({ title, routeData }) {
       <div id="app__loader">loading...</div>
     </div>
 
-    <script type="application/json" id="route-data">
-      ${JSON.stringify({ ...routeData })}
+    <script type="application/json" id="app-data">
+      ${JSON.stringify({ options, ...appData })}
     </script>
 
     <script src="/_static/build/bundle.js" async defer></script>

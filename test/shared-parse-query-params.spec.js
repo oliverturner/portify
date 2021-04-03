@@ -1,6 +1,6 @@
 const test = require("tape");
+const options = require("../src/shared/options");
 const {
-	constants,
 	getPagingParams,
 	getTimeRange,
 } = require("../src/shared/parse-query-params");
@@ -9,12 +9,12 @@ test("shared/parse-query-params", (t) => {
 	const scenarios = [
 		{
 			actual: getPagingParams(),
-			expected: { limit: constants.PAGE_LIMIT_DEFAULT, offset: 0 },
+			expected: { limit: options.PAGE_LIMIT_DEFAULT, offset: 0 },
 			desc: "getPagingParams handles no input",
 		},
 		{
 			actual: getPagingParams({ limit: "1000" }),
-			expected: { limit: constants.PAGE_LIMIT_MAX, offset: 0 },
+			expected: { limit: options.PAGE_LIMIT_MAX, offset: 0 },
 			desc: "getPagingParams handles excessive limit",
 		},
 		{
@@ -24,12 +24,12 @@ test("shared/parse-query-params", (t) => {
 		},
 		{
 			actual: getPagingParams({ limit: "non_existent" }),
-			expected: { limit: constants.PAGE_LIMIT_DEFAULT, offset: 0 },
+			expected: { limit: options.PAGE_LIMIT_DEFAULT, offset: 0 },
 			desc: "getPagingParams handles bad input",
 		},
 		{
 			actual: getTimeRange({ time_range: "non_existent" }),
-			expected: constants.TIME_RANGE_DEFAULT,
+			expected: options.TIME_RANGE_DEFAULT,
 			desc: "getTimeRange handles bad input",
 		},
 		{

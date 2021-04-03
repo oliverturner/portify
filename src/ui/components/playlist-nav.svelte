@@ -1,13 +1,15 @@
 <script>
-	import { playlists } from "../stores/api";
+	import { links } from "svelte-routing";
+
+	import { playlists } from "../stores/app";
 
 	$: console.log({ playlists: $playlists });
 </script>
 
 {#if $playlists}
-	<ul class="playlists">
+	<ul class="playlists" use:links>
 		{#each $playlists.items as playlist}
-			<li>{playlist.name}</li>
+			<li><a href={playlist.href}>{playlist.name}</a></li>
 		{/each}
 	</ul>
 {/if}

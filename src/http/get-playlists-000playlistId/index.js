@@ -8,13 +8,13 @@ const { getPlaylist } = require("@architect/views/get-playlist");
  * @param {Architect.HttpRequest} req
  */
 async function getContent(req) {
-	/** @type {PortifyApi.RouteData<PortifyApi.Playlist>} */
-	const routeData = await fetchRouteData(req, "playlist", getPlaylist);
-	const { pageData: playlist } = routeData;
+	/** @type {PortifyApi.AppData<PortifyApi.Playlist>} */
+	const appData = await fetchRouteData(req, "playlist", getPlaylist);
+	const playlist = appData.route.data;
 
 	return buildLayout({
 		title: `Playlist: ${playlist.name}`,
-		routeData,
+		appData: appData,
 	});
 }
 

@@ -1,17 +1,13 @@
-const constants = {
-	TIME_RANGES: ["short_term", "medium_term", "long_term"],
-	TIME_RANGE_DEFAULT: "medium_term",
-	PAGE_LIMIT_DEFAULT: 48,
-	PAGE_LIMIT_MAX: 100,
-};
+const options = require("./options");
 
 /**
  * @param {Record<string, string>} queryStringParameters
  */
 function getTimeRange({ time_range }) {
-	return constants.TIME_RANGES.includes(time_range)
+	// @ts-ignore
+	return options.TIME_RANGES.includes(time_range)
 		? time_range
-		: constants.TIME_RANGE_DEFAULT;
+		: options.TIME_RANGE_DEFAULT;
 }
 
 /**
@@ -19,10 +15,10 @@ function getTimeRange({ time_range }) {
  */
 function getLimit({ limit }) {
 	const n = parseInt(limit, 10);
-	const x = isNaN(n) ? constants.PAGE_LIMIT_DEFAULT : n;
+	const x = isNaN(n) ? options.PAGE_LIMIT_DEFAULT : n;
 
 	let num;
-	num = x > constants.PAGE_LIMIT_MAX ? constants.PAGE_LIMIT_MAX : x;
+	num = x > options.PAGE_LIMIT_MAX ? options.PAGE_LIMIT_MAX : x;
 	num = x < 0 ? 0 : num;
 
 	return num;
@@ -48,7 +44,6 @@ function getPagingParams(queryStringParameters = {}) {
 }
 
 module.exports = {
-	constants,
 	getTimeRange,
 	getLimit,
 	getOffset,
