@@ -1,27 +1,47 @@
 <script>
-	/** @type {PortifyApi.TrackItemBase} */
-	export let trackItem;
+	/** @type {PortifyApi.TrackItem} */
+	export let item;
 	export let compact = false;
 
-	const { name } = trackItem;
+	const { name } = item;
 </script>
 
-<article class="trackitem" class:compact>
-	<h1>{name}</h1>
-	<a href="#fake" class="link">link</a>
+<article class="track" class:compact>
+	{#if compact === false}
+		<img class="track__cover" src={item.images["300"]} alt="cover art" />
+	{/if}
+	<div class="track__content">
+		<h3 class="title">{name}</h3>
+		<div class="artists">
+			{#each item.artists as artist}
+				<a href={`/artists/${artist.id}`} class="artist">{artist.name}</a>
+			{/each}
+		</div>
+	</div>
 </article>
 
 <style lang="scss">
-	.trackitem {
-		background-color: lightcoral;
+	.track {
+		display: flex;
 
 		&.compact {
 			background-color: lightgoldenrodyellow;
 		}
 	}
 
-	.link {
-		background: #000;
+	.track__cover {
+		width: 33%;
+
+		aspect-ratio: 1;
+		object-fit: cover;
+	}
+
+	.track__content {
+		padding: var(--s2);
+	}
+
+	.artist {
+		display: inline-block;
 
 		&:enter {
 			background: #fff;

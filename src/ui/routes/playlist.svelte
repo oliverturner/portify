@@ -1,13 +1,13 @@
 <script>
+	import { links } from "svelte-routing";
+
 	import { playlist } from "../stores/api";
+	import TrackItem from "../components/track-item.svelte";
 
 	export let id;
 	export let location;
 
 	async function fetchData(id, location) {
-		// Don't delete bootstrap data
-		// if (!$playlist) return;
-
 		try {
 			playlist.set(null);
 
@@ -27,59 +27,37 @@
 </script>
 
 {#if $playlist && $playlist.items}
-	<section class="page">
-		<header class="page__header">
-			<h1 class="title">{$playlist.name}</h1>
-		</header>
-		<div class="page__content grid">
-			{#each $playlist.items as item}
-				<article>{item.name}</article>
-			{/each}
+	<section class="page fade-in">
+		{#if $playlist.isCollection}
+			<header class="page__header page__header--collection">
+				<img src={$playlist.items[0].images["300"]} alt="cover art" />
+				<h1 class="title">{$playlist.name}</h1>
+			</header>
+		{:else}
+			<header class="page__header">
+				<h1 class="title">{$playlist.name}</h1>
+			</header>
+		{/if}
+		<div class="page__content">
+			<div class="trackitems" use:links>
+				{#each $playlist.items as item}
+					<TrackItem {item} compact={$playlist.isCollection} />
+				{/each}
+			</div>
 		</div>
 	</section>
 {:else}
-	<div class="grid loading">
+	<div class="page page--loading fade-in">
 		<p class="title">loading...</p>
 	</div>
 {/if}
 
 <style lang="scss">
-	@keyframes fade-in {
-		to {
-			opacity: 1;
-		}
-	}
-	.page {
-		opacity: 0;
-		animation: fade-in 1s forwards;
-
+	.page__header--collection {
 		display: grid;
-		grid-template-rows: auto 1fr;
-		gap: 1rem;
-
-		height: 100%;
-		padding: 1rem 0;
-	}
-
-	.page__header {
-		padding: 0 1rem;
-	}
-
-	.title {
-		font-size: var(--step-2);
-	}
-
-	.grid {
-		display: grid;
-		align-content: start;
-
-		overflow-y: auto;
-		padding: 0 1rem;
-
-		&.loading {
-			height: 100%;
-			align-content: center;
-			justify-content: center;
-		}
+		grid-auto-flow: column;
+		grid-template-columns: 96px 1fr;
+		gap: var(--s2);
+		align-items: end;
 	}
 </style>

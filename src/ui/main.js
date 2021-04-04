@@ -3,7 +3,7 @@ import { getEmbeddedData } from "./utils";
 
 const target = document.querySelector("#app") || document.body;
 const props = {
-	appData: getEmbeddedData("#app-data")
+	appData: getEmbeddedData("#app-data"),
 };
 
 console.log({ props });

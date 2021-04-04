@@ -62,7 +62,7 @@
 	.app {
 		display: grid;
 		grid-template-areas:
-			"a a"
+			"a c"
 			"b c";
 		grid-template-rows: auto 1fr;
 		grid-template-columns: max(20vw, 300px) 1fr;

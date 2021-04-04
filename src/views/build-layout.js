@@ -14,8 +14,8 @@ function buildLayout({ title, appData }) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${title && title + " - "}Portify</title>
-    <link rel="stylesheet" href="/_static/styles.css">
     <link rel="stylesheet" href="/_static/build/props.css">
+    <link rel="stylesheet" href="/_static/build/global.css">
     <link rel="stylesheet" href="/_static/build/bundle.css">
 
     <link rel="icon" href="/_static/assets/icons/portify.svg" type="image/svg+xml">

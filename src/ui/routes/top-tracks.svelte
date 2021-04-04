@@ -1,5 +1,6 @@
 <script>
 	import { toptracks } from "../stores/api";
+	import TrackItem from "../components/track-item.svelte";
 
 	export let location;
 
@@ -7,9 +8,6 @@
 	// $: console.log({ location });
 
 	async function fetchData(location) {
-		// Don't delete bootstrap data
-		// if (!$toptracks) return;
-
 		try {
 			toptracks.set(null);
 
@@ -30,44 +28,26 @@
 	$: fetchData(location);
 </script>
 
-{#if $toptracks}
+{#if $toptracks && $toptracks.items}
 	<!-- content here -->
-	<section class="page">
-		<header>
+	<section class="page fade-in">
+		<header class="page__header">
 			<h1 class="title">Top Tracks</h1>
 		</header>
-		<div class="content grid">
-			{#if $toptracks}
+		<div class="page__content">
+			<div class="trackitems">
 				{#each $toptracks.items as item}
-					<article>{item.name}</article>
+					<TrackItem {item} />
 				{/each}
-			{:else}
-				<p class="title">loading...</p>
-			{/if}
+			</div>
 		</div>
 	</section>
 {:else}
-	<div class="grid loading">
+	<div class="page page--loading fade-in">
 		<p class="title">loading...</p>
 	</div>
 {/if}
 
 <style lang="scss">
-	.page {
-		display: grid;
-		grid-template-rows: auto 1fr;
-		gap: 1rem;
 
-		height: 100%;
-	}
-
-	.grid {
-		display: grid;
-		overflow-y: auto;
-		padding: 1rem;
-
-		&.loading {
-			place-content: center;
-		}
-	}
 </style>

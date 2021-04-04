@@ -1,6 +1,8 @@
 const postcssPseudoEnter = require("postcss-pseudo-class-enter");
-const postcssPresetEnv = require("postcss-preset-env");
 const postcssInset = require("postcss-inset");
+const postcssNesting = require("postcss-nesting");
+const postCssCustomMedia = require("postcss-custom-media");
+const postcssCustomProperties = require("postcss-custom-properties");
 const cssnano = require("cssnano");
 
 const { customMedia, customProperties } = require("./src/ui/theme.js");
@@ -11,16 +13,12 @@ const { customMedia, customProperties } = require("./src/ui/theme.js");
  */
 function getPlugins(isProd) {
 	const plugins = [
-		postcssPresetEnv({
-			features: {
-				"custom-selectors": true,
-				"custom-media-queries": { importFrom: { customMedia } },
-				"custom-properties": {
-					importFrom: { customProperties },
-					exportTo: "./public/build/props.css",
-					preserve: true,
-				},
-			},
+		postcssNesting(),
+		postCssCustomMedia({ importFrom: { customMedia } }),
+		postcssCustomProperties({
+			importFrom: { customProperties },
+			preserve: true,
+			exportTo: "./public/build/props.css",
 		}),
 		postcssInset(),
 		postcssPseudoEnter(),

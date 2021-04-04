@@ -61,7 +61,6 @@ export interface TrackItemBase {
 }
 export interface TrackItem extends TrackItemBase {
 	href: string;
-	audio: TrackItemAudio;
 	images: Record<string, string>;
 	playLink: string;
 }

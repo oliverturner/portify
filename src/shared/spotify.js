@@ -70,9 +70,7 @@ function convertTrackObject(item) {
  * @param {SpotifyApi.TrackObjectFull[]} items
  */
 function isCollection(items) {
-	return (
-		items.length > 1 && new Set(items.map(({ album }) => album.id)).size === 1
-	);
+	return items.length > 1 && new Set(items.map(({ album }) => album.id)).size === 1
 }
 
 module.exports = {
