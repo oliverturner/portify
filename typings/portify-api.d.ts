@@ -23,6 +23,7 @@ export interface Page<T> {
 export interface PlaylistTracksPage extends Page<TrackItemBase> {
 	id: string;
 	name: string;
+	imageUrl?: string;
 	isCollection: boolean;
 }
 

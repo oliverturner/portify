@@ -5,21 +5,21 @@
 const { get } = require("tiny-json-http");
 
 const { requestFactory, getPrevNext, buildDict } = require("../shared/utils");
-const { convertTrackObject, isCollection } = require("../shared/spotify");
+const { convertTrackObject, itemsShareAlbum } = require("../shared/spotify");
 const { getPagingParams } = require("../shared/parse-query-params");
 const { injectAudio } = require("../shared/audio");
 
 /**
- * @param {string} playlistId
+ * @param {string} id
  * @param {string} name
  * @param {Page} tracks
  */
-function processResponse(playlistId, name, tracks) {
+function processResponse(id, name, tracks) {
 	const { next, previous, limit, offset, total } = tracks;
-	const processUrl = getPrevNext(`/api/playlist/${playlistId}`);
+	const processUrl = getPrevNext(`/api/playlist/${id}`);
 
 	return {
-		id: playlistId,
+		id,
 		name,
 		items: [],
 		total,
@@ -28,6 +28,20 @@ function processResponse(playlistId, name, tracks) {
 		next: processUrl(next),
 		prev: processUrl(previous),
 	};
+}
+
+/**
+ *
+ * @param {SpotifyApi.ImageObject[]} images
+ * @param {PortifyApi.TrackItemBase[]} items
+ *
+ * @returns {string | undefined}
+ */
+function getCoverImage(images = [], items) {
+	return (
+		(images[0] && images[0].url) ||
+		(items[0] && items[0].images && items[0].images["300"])
+	);
 }
 
 /**
@@ -51,19 +65,21 @@ async function getPlaylist({ session, pathParameters, queryStringParameters }) {
 
 	/** @type {SpotifyApi.PlaylistObjectFull} */
 	const { name, tracks, images } = (await get(apiReq)).body;
-
-	console.log({ images });
-
-	const pagingObject = processResponse(playlistId, name, tracks, images);
+	const pagingObject = processResponse(playlistId, name, tracks);
 
 	const itemTracks = tracks.items.map(({ track }) => track);
 	const trackDict = buildDict(itemTracks, convertTrackObject);
 	const audioTrackDict = await injectAudio(trackDict, buildRequest);
+	const items = Object.values(audioTrackDict);
+
+	const isCollection = itemsShareAlbum(itemTracks);
+	const imageUrl = isCollection ? getCoverImage(images, items) : undefined;
 
 	return {
 		...pagingObject,
-		items: Object.values(audioTrackDict),
-		isCollection: isCollection(itemTracks),
+		items,
+		imageUrl,
+		isCollection,
 	};
 }
 

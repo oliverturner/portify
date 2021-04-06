@@ -4,6 +4,7 @@ const postcssNesting = require("postcss-nesting");
 const postCssCustomMedia = require("postcss-custom-media");
 const postcssCustomProperties = require("postcss-custom-properties");
 const cssnano = require("cssnano");
+const atImport = require("postcss-import");
 
 const { customMedia, customProperties } = require("./src/ui/theme.js");
 
@@ -13,6 +14,7 @@ const { customMedia, customProperties } = require("./src/ui/theme.js");
  */
 function getPlugins(isProd) {
 	const plugins = [
+		atImport({ root: "src/ui/global.css" }),
 		postcssNesting(),
 		postCssCustomMedia({ importFrom: { customMedia } }),
 		postcssCustomProperties({

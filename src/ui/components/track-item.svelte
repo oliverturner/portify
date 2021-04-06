@@ -11,7 +11,7 @@
 		<img class="track__cover" src={item.images["300"]} alt="cover art" />
 	{/if}
 	<div class="track__content">
-		<h3 class="title">{name}</h3>
+		<h3 class="title"><a href={item.href}>{name}</a></h3>
 		<div class="artists">
 			{#each item.artists as artist}
 				<a href={`/artists/${artist.id}`} class="artist">{artist.name}</a>
@@ -38,6 +38,10 @@
 
 	.track__content {
 		padding: var(--s2);
+	}
+
+	.title {
+		font-size: var(--step-0);
 	}
 
 	.artist {

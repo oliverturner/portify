@@ -32,7 +32,14 @@ const handleRequest = (routeFn, type) => async (req) => {
 			}
 		}
 
-		return error;
+		console.log(error);
+
+		return {
+			[type]: {
+				statusCode: error.statusCode,
+				message: error.message,
+			},
+		};
 	}
 };
 

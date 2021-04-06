@@ -16,7 +16,9 @@ export default [
 	{
 		input: "src/ui/global.css",
 		output: { file: "public/build/global.css" },
-		plugins: [postcss({ extract: true })],
+		plugins: [
+			postcss({ extract: true })
+		],
 	},
 	{
 		input: "src/ui/main.js",

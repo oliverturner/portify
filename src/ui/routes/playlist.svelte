@@ -28,17 +28,15 @@
 
 {#if $playlist && $playlist.items}
 	<section class="page fade-in">
-		{#if $playlist.isCollection}
-			<header class="page__header page__header--collection">
-				<img src={$playlist.items[0].images["300"]} alt="cover art" />
-				<h1 class="title">{$playlist.name}</h1>
-			</header>
-		{:else}
-			<header class="page__header">
-				<h1 class="title">{$playlist.name}</h1>
-			</header>
-		{/if}
+		<header class="page__header">
+			<h1 class="title">{$playlist.name}</h1>
+		</header>
 		<div class="page__content">
+			{#if $playlist.isCollection}
+				<div class="info">
+					<img src={$playlist.imageUrl} alt="cover art" />
+				</div>
+			{/if}
 			<div class="trackitems" use:links>
 				{#each $playlist.items as item}
 					<TrackItem {item} compact={$playlist.isCollection} />
@@ -53,7 +51,7 @@
 {/if}
 
 <style lang="scss">
-	.page__header--collection {
+	.info {
 		display: grid;
 		grid-auto-flow: column;
 		grid-template-columns: 96px 1fr;

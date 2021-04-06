@@ -14,13 +14,14 @@ function processItems(rawItems) {
 	const items = [];
 	for (const item of rawItems) {
 		const { id, name, description, images, owner, tracks } = item;
+		const imageUrl = images[0] && images[0].url;
 
 		items.push({
 			id,
 			name,
 			description,
+			imageUrl,
 			href: `/playlists/${id}`,
-			imageUrl: images[0].url,
 			ownerId: owner.id,
 			tracks: tracks.total,
 		});

@@ -4,7 +4,7 @@ module.exports = {
 		es6: true,
 		browser: true,
 	},
-	extends: ["eslint:recommended", "plugin:node/recommended"],
+	extends: ["eslint:recommended"],
 	parserOptions: {
 		ecmaVersion: 2020,
 		sourceType: "module",

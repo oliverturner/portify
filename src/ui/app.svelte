@@ -6,6 +6,7 @@
 	import * as apiStores from "./stores/api";
 
 	import AppNav from "./components/app-nav.svelte";
+	import AppUser from "./components/app-user.svelte";
 	import PlaylistNav from "./components/playlist-nav.svelte";
 
 	import Top from "./routes/top-tracks.svelte";
@@ -56,16 +57,20 @@
 			<Route component={Top} />
 		</Router>
 	</main>
+
+	<aside class="app__user">
+		<AppUser />
+	</aside>
 </div>
 
-<style lang="scss">
+<style>
 	.app {
 		display: grid;
 		grid-template-areas:
-			"a c"
-			"b c";
+			"a c d"
+			"b c d";
 		grid-template-rows: auto 1fr;
-		grid-template-columns: max(20vw, 300px) 1fr;
+		grid-template-columns: max(20vw, 300px) 1fr auto;
 
 		overflow: hidden;
 		max-width: var(--width-xxlarge);
@@ -75,18 +80,24 @@
 
 	.app__header {
 		grid-area: a;
-		background-color: lightsalmon;
+		/* background-color: lightsalmon; */
 	}
 	.app__playlists {
 		grid-area: b;
 
 		overflow: hidden;
-		background-color: lightseagreen;
+		/* background-color: lightseagreen; */
 	}
 	.app__content {
 		grid-area: c;
 
 		overflow: hidden;
-		background-color: lightslategrey;
+		/* background-color: lightslategrey; */
+	}
+
+	.app__user {
+		grid-area: d;
+
+		/* background-color: lightsteelblue; */
 	}
 </style>
