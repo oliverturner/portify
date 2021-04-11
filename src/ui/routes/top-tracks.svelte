@@ -1,22 +1,18 @@
 <script>
+	import { createEventDispatcher } from "svelte";
+
 	import { toptracks } from "../stores/api";
 	import TrackItem from "../components/track-item.svelte";
 
-	export let location;
+	const dispatch = createEventDispatcher();
+	let fetching = false;
 
-	// $: loading = $toptracks === null;
-	// $: console.log({ location });
-
-	async function fetchData(location) {
+	async function fetchData() {
 		try {
-			toptracks.set(null);
-
 			const res = await fetch(`/api/top`);
 			const data = res.ok ? await res.json() : Promise.reject(res);
-
-			console.log({ data });
-
 			toptracks.set(data);
+			dispatch("pageUpdate", { pageTitle: "Top Tracks" });
 		} catch (error) {
 			console.warn({
 				statusCode: error.statusCode,
@@ -25,11 +21,14 @@
 		}
 	}
 
-	$: fetchData(location);
+	$: fetching = fetchData();
 </script>
 
-{#if $toptracks && $toptracks.items}
-	<!-- content here -->
+{#await fetching}
+	<div class="page page--loading fade-in">
+		<p class="title">loading...</p>
+	</div>
+{:then}
 	<section class="page fade-in">
 		<header class="page__header">
 			<h1 class="title">Top Tracks</h1>
@@ -42,12 +41,7 @@
 			</div>
 		</div>
 	</section>
-{:else}
-	<div class="page page--loading fade-in">
-		<p class="title">loading...</p>
-	</div>
-{/if}
+{/await}
 
 <style lang="scss">
-
 </style>

@@ -1,16 +1,10 @@
-/**
- * @typedef {import("@typings/portify-stores").User} UserStore
- * @typedef {import("@typings/portify-stores").Options} OptionsStore
- * @typedef {import("@typings/portify-stores").Playlists} PlaylistsStore
- */
-
 import { writable } from "svelte/store";
 
-/** @type {UserStore} */
+/** @type {PortifyStores.User} */
 export const user = writable(null);
 
-/** @type {OptionsStore} */
+/** @type {PortifyStores.Options} */
 export const options = writable(null);
 
-/** @type {PlaylistsStore} */
+/** @type {import("@typings/portify-stores").Playlists} */
 export const playlists = writable(null);

@@ -1,20 +1,13 @@
-/**
- * @typedef {import("@typings/portify-stores").Album} AlbumStore
- * @typedef {import("@typings/portify-stores").Artist} ArtistStore
- * @typedef {import("@typings/portify-stores").Playlist} PlaylistStore
- * @typedef {import("@typings/portify-stores").TopTracks} TopTracksStore
- */
-
 import { writable } from "svelte/store";
 
-/** @type {AlbumStore} */
+/** @type {PortifyStores.Album} */
 export const album = writable(null);
 
-/** @type {ArtistStore} */
+/** @type {PortifyStores.Artist} */
 export const artist = writable(null);
 
-/** @type {PlaylistStore} */
+/** @type {PortifyStores.Playlist} */
 export const playlist = writable(null);
 
-/** @type {TopTracksStore} */
+/** @type {PortifyStores.TopTracks} */
 export const toptracks = writable(null);

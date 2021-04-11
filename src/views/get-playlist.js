@@ -1,13 +1,14 @@
 /**
  * @typedef {SpotifyApi.PagingObject<SpotifyApi.PlaylistTrackObject>} Page
+ * @typedef {import("@architect/functions").HttpRequest} HttpRequest
  */
 
 const { get } = require("tiny-json-http");
 
 const { requestFactory, getPrevNext, buildDict } = require("../shared/utils");
-const { convertTrackObject, itemsShareAlbum } = require("../shared/spotify");
 const { getPagingParams } = require("../shared/parse-query-params");
 const { injectAudio } = require("../shared/audio");
+const spotify = require("../shared/spotify");
 
 /**
  * @param {string} id
@@ -45,7 +46,7 @@ function getCoverImage(images = [], items) {
 }
 
 /**
- * @param {Architect.HttpRequest} req
+ * @param {HttpRequest} req
  *
  * @returns {Promise<PortifyApi.PlaylistTracksPage>}
  */
@@ -68,11 +69,11 @@ async function getPlaylist({ session, pathParameters, queryStringParameters }) {
 	const pagingObject = processResponse(playlistId, name, tracks);
 
 	const itemTracks = tracks.items.map(({ track }) => track);
-	const trackDict = buildDict(itemTracks, convertTrackObject);
+	const trackDict = buildDict(itemTracks, spotify.convertTrackObject);
 	const audioTrackDict = await injectAudio(trackDict, buildRequest);
 	const items = Object.values(audioTrackDict);
 
-	const isCollection = itemsShareAlbum(itemTracks);
+	const isCollection = spotify.playlistIsCollection(itemTracks);
 	const imageUrl = isCollection ? getCoverImage(images, items) : undefined;
 
 	return {

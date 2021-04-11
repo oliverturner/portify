@@ -1,24 +1,52 @@
 <script>
 	import { links } from "svelte-routing";
+	import { useMachine } from "@xstate/svelte";
 
-	import { playlists } from "../stores/app";
+	import { observeScroll } from "../actions/observe-scroll";
+	import { infiniteScrollMachine } from "../machines/infinite-scroll";
 
-	$: console.log({ playlists: $playlists });
+	export let initialData = {
+		items: [],
+		limit: 0,
+		prev: null,
+		next: null,
+		offset: 0,
+		total: 0,
+	};
+
+	const machine = infiniteScrollMachine(initialData);
+	const { state, send } = useMachine(machine);
 </script>
 
-{#if $playlists}
-	<ul class="playlists" use:links>
-		{#each $playlists.items as playlist}
-			<li><a href={playlist.href}>{playlist.name}</a></li>
+<div class="container" use:observeScroll={{ send }}>
+	<nav class="playlists" use:links>
+		{#each $state.context.items as playlist (playlist.id)}
+			<a href={playlist.href}>{playlist.name}</a>
 		{/each}
-	</ul>
-{/if}
+	</nav>
+</div>
 
 <style lang="scss">
-	.playlists {
+	.container {
 		overflow-y: auto;
 		height: 100%;
 		margin: 0;
 		padding: 1rem;
+	}
+	.playlists {
+		display: grid;
+		align-content: start;
+		gap: var(--s1);
+
+		& a {
+			padding: var(--s2);
+			text-decoration: none;
+			background-color: var(--bg-dark);
+			color: var(--bg-dark-text);
+
+			&:hover {
+				color: var(--bg-dark-text--hover);
+			}
+		}
 	}
 </style>

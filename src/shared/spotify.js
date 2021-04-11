@@ -68,9 +68,13 @@ function convertTrackObject(item) {
 
 /**
  * @param {SpotifyApi.TrackObjectFull[]} items
+ * @param {boolean} [debug]
  */
-function itemsShareAlbum(items) {
-	console.log(new Set(items.map(({ album }) => album.id)));
+function playlistIsCollection(items, debug) {
+	if (debug) {
+		console.log(new Set(items.map(({ album }) => album.id)));
+	}
+
 	return (
 		items.length > 1 && new Set(items.map(({ album }) => album.id)).size === 1
 	);
@@ -80,5 +84,5 @@ module.exports = {
 	convertImages,
 	convertArtists,
 	convertTrackObject,
-	itemsShareAlbum,
+	playlistIsCollection,
 };

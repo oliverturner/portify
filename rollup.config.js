@@ -6,6 +6,7 @@ import css from "rollup-plugin-css-only";
 import postcss from "rollup-plugin-postcss";
 import livereload from "rollup-plugin-livereload";
 import svelte from "rollup-plugin-svelte";
+import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
 
 import { preprocess } from "./svelte.config";
@@ -16,9 +17,7 @@ export default [
 	{
 		input: "src/ui/global.css",
 		output: { file: "public/build/global.css" },
-		plugins: [
-			postcss({ extract: true })
-		],
+		plugins: [postcss({ extract: true })],
 	},
 	{
 		input: "src/ui/main.js",
@@ -29,6 +28,10 @@ export default [
 			file: "public/build/bundle.js",
 		},
 		plugins: [
+			replace({
+				"process.env.NODE_ENV": process.env.NODE_ENV,
+			}),
+
 			svelte({
 				preprocess,
 				compilerOptions: {

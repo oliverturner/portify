@@ -23,9 +23,11 @@
 <style lang="scss">
 	.track {
 		display: flex;
+		background-color: var(--bg-dark);
+		color: var(--bg-dark-text);
 
 		&.compact {
-			background-color: lightgoldenrodyellow;
+			background-color: var(--bg-dark);
 		}
 	}
 
@@ -47,8 +49,15 @@
 	.artist {
 		display: inline-block;
 
-		&:enter {
-			background: #fff;
+		&::after {
+			content: ",";
+			margin-right: var(--s1);
+			text-decoration: none;
+		}
+
+		&:last-child::after {
+			content: "";
+			margin: 0;
 		}
 	}
 </style>

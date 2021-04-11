@@ -6,10 +6,9 @@
 	import * as apiStores from "./stores/api";
 
 	import AppNav from "./components/app-nav.svelte";
-	import AppUser from "./components/app-user.svelte";
 	import PlaylistNav from "./components/playlist-nav.svelte";
 
-	import Top from "./routes/top-tracks.svelte";
+	import TopTracks from "./routes/top-tracks.svelte";
 	import Artist from "./routes/artist.svelte";
 	import Playlist from "./routes/playlist.svelte";
 	import Album from "./routes/album.svelte";
@@ -17,12 +16,14 @@
 	/** @type {PortifyApi.AppDataGeneric}*/
 	export let appData;
 
+	let pageTitle = "Portify";
+
 	// Bootstrap app with embedded data on first load
 	onMount(() => {
 		// Global values
 		user.set(appData.user);
 		options.set(appData.options);
-		playlists.set(appData.playlists);
+		// playlists.set(appData.playlists);
 
 		// Route-specific values
 		const routeStore = apiStores[appData.route.id];
@@ -36,9 +37,14 @@
 		}
 	});
 
-	$: console.log({ appData });
-	$: console.log({ options: $options });
+	function onPageUpdate(event) {
+		pageTitle = `${event.detail.pageTitle} - Portify`;
+	}
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+</svelte:head>
 
 <div class="app">
 	<header class="app__header">
@@ -46,21 +52,25 @@
 	</header>
 
 	<div class="app__playlists">
-		<PlaylistNav />
+		<PlaylistNav initialData={appData.playlists} />
 	</div>
 
 	<main class="app__content">
 		<Router>
-			<Route path="/artists/:id" component={Artist} />
-			<Route path="/albums/:id" component={Album} />
-			<Route path="/playlists/:id" component={Playlist} />
-			<Route component={Top} />
+			<Route path="/artists/:id" let:params>
+				<Artist id={params.id} on:pageUpdate={onPageUpdate} />
+			</Route>
+			<Route path="/albums/:id" let:params>
+				<Album id={params.id} on:pageUpdate={onPageUpdate} />
+			</Route>
+			<Route path="/playlists/:id" let:params>
+				<Playlist id={params.id} on:pageUpdate={onPageUpdate} />
+			</Route>
+			<Route>
+				<TopTracks on:pageUpdate={onPageUpdate} />
+			</Route>
 		</Router>
 	</main>
-
-	<aside class="app__user">
-		<AppUser />
-	</aside>
 </div>
 
 <style>
@@ -95,9 +105,8 @@
 		/* background-color: lightslategrey; */
 	}
 
-	.app__user {
+	/* .app__user {
 		grid-area: d;
 
-		/* background-color: lightsteelblue; */
-	}
+	}*/
 </style>

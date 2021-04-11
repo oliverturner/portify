@@ -15,5 +15,6 @@
 	}
 	.title {
 		font-size: var(--step-1);
+		color: yellow;
 	}
 </style>
